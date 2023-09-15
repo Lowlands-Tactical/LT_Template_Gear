@@ -253,7 +253,7 @@ clearAllItemsFromBackpack _unit;
 if (_nvg == "True") then 
 {
 	_buildinNVG = [(headgear _unit)] call LT_fnc_buildinNVG;
-	if (_buildinNVG) then 
+	if (!_buildinNVG) then 
 	{
 		_unit linkItem (selectRandom _nvgs);
 	};
