@@ -40,8 +40,9 @@ _itemsTrow = ["gm_handgrenade_frag_rgd5","gm_smokeshell_wht_gc","gm_smokeshell_g
 _itemTrowAmt = [2,2,2,0,0,0];
 
 _itemsRole = ["ACE_DAGR","ACE_Flashlight_XL50","ACE_EntrenchingTool","ACE_IR_Strobe_Item"];
-_itemsSpecial = ["gm_repairkit_01","ACE_Clacker","ACE_wirecutter","gm_explosive_petn_charge","gm_explosive_plnp_charge","MineDetector"];
-_itemsSpecialAmt = [0,1,1,6,0,1];
+_itemsDMR = ["ACE_RangeCard","ACE_SpottingScope", _itemsRadio select 0, _itemsRole select 0, _itemsRole select 2];
+_itemsSpecial = ["gm_repairkit_01","ACE_M26_Clacker","ACE_wirecutter","gm_explosive_petn_charge","gm_explosive_plnp_charge","MineDetector","ACE_DefusalKit","ACE_marker_flags_red","ACE_marker_flags_green"];
+_itemsSpecialAmt = [0,1,1,6,0,1,1,6,6];
 
 _itemsPackMedic	= ["ACE_fieldDressing","ACE_elasticBandage","ACE_quikclot","ACE_tourniquet","ACE_splint","ACE_morphine","ACE_epinephrine","ACE_bloodIV","ACE_plasmaIV_500","ACE_salineIV_500","ACE_surgicalKit"];
 _itemsPackMedicAmt = [50,50,10,12,15,30,20,6,6,2,1];
@@ -285,6 +286,12 @@ if (_role == "medic") then
 };
 
 // Add special gear
+if (_role == "dmr") then 
+{
+	{
+		(backpackContainer _unit) addItemCargoGlobal [_x, 1];
+	}forEach _itemsDMR;
+};
 if (_role IN _roleSpecial) then 
 {
 	_unit setUnitTrait ["engineer", true];
