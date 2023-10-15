@@ -234,7 +234,7 @@ if (_role IN _roleGL) then
 	};
 	(vestContainer _unit) addItemCargoGlobal [_rifle_Mags, 8];
 	(vestContainer _unit) addItemCargoGlobal [_rifle_Mags_Tr, 4];
-	if (_hgGL) then {(backpackContainer _unit) addItemCargoGlobal _handGunGL};
+	if (_hgGL) then {(backpackContainer _unit) addItemCargoGlobal [_handGunGL, 1]};
 	_unit addWeapon (selectRandom _rifleGL);
 };
 if (_role IN _roleAir) then 
