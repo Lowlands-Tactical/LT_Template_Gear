@@ -240,7 +240,7 @@ clearAllItemsFromBackpack _unit;
 // Add basic items
 if (_nvg == "True") then 
 {
-	_buildinNVG = [(headgear _unit)] remoteExec ["LT_fnc_buildinNVG"];
+	_buildinNVG = [(headgear _unit)] call LT_fnc_buildinNVG;
 	if (!_buildinNVG) then 
 	{
 		_unit linkItem (selectRandom _nvgs);
