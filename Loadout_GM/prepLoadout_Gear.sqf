@@ -41,8 +41,11 @@ _itemTrowAmt = [2,2,2,0,0,0];
 
 _itemsRole = ["ACE_DAGR","ACE_Flashlight_XL50","ACE_EntrenchingTool","ACE_IR_Strobe_Item"];
 _itemsDMR = ["ACE_RangeCard","ACE_SpottingScope", _itemsRadio select 0, _itemsRole select 0, _itemsRole select 2];
-_itemsSpecial = ["gm_repairkit_01","ACE_M26_Clacker","ACE_wirecutter","gm_explosive_petn_charge","gm_explosive_plnp_charge","MineDetector","ACE_DefusalKit","ACE_marker_flags_red","ACE_marker_flags_green"];
-_itemsSpecialAmt = [0,1,1,6,0,1,1,6,6];
+_itemsSpecial = ["gm_repairkit_01","ACE_M26_Clacker","ACE_wirecutter","MineDetector","ACE_DefusalKit","ACE_marker_flags_red","ACE_marker_flags_green"];
+_itemsSpecialAmt = [0,1,1,1,1,6,6];
+
+_itemEngExpl = ["gm_explosive_petn_charge","gm_explosive_plnp_charge"];
+_itemEngMine = ["","gm_mine_at_tm46","gm_mine_at_dm21","gm_mine_ap_dm31",""];
 
 _itemsPackMedic	= ["ACE_fieldDressing","ACE_elasticBandage","ACE_quikclot","ACE_tourniquet","ACE_splint","ACE_morphine","ACE_epinephrine","ACE_bloodIV","ACE_plasmaIV_500","ACE_salineIV_500","ACE_surgicalKit"];
 _itemsPackMedicAmt = [50,50,10,12,15,30,20,6,6,2,1];
@@ -70,7 +73,9 @@ if (!isPlayer _unit) exitWith
 		_itemsRadio, 
 		_itemsSpecial, 
 		_itemsRole, 
-		_itemsNVG
+		_itemsNVG,
+		_itemEngExpl,
+		_itemEngMine
 	];
 
 	#include "\lt_template_gear\Reference\LT_Items.sqf"
