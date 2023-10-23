@@ -63,9 +63,9 @@ _handGunAttMuzzle = [""];
 _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
-_launcher = ["CUP_launcher_M136"];
-_launcher_MagAA = "";
-_launcher_MagAT = "";
+_launcher = ["gm_pzf3_blk"];
+_launcher_MagAA = "gm_1Rnd_60mm_heat_dm32_pzf3";
+_launcher_MagAT = "gm_1Rnd_60mm_heat_dm22_pzf3";
 
 _binocular = ["Rangefinder"];
 
