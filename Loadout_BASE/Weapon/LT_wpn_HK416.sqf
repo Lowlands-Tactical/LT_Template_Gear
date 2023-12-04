@@ -37,7 +37,7 @@ _rifleMarkAttRailIR = _rifleAttRailIR;
 _rifleMarkAttRailFL = _rifleAttRailFL;
 _rifleMarkAttMuzzle = ["muzzle_snds_b"];
 _rifleMarkAttBipod = _rifleAttBipod;
-_rifleMarkAttScope = ["optic_mrco"];
+_rifleMarkAttScope = ["CUP_optic_SB_11_4x20_PM"];
 
 _rifleAir = ["CUP_smg_MP5A5_Rail"];
 _rifleAir_Mags = "30Rnd_9x21_Mag_SMG_02_Tracer_Green";
