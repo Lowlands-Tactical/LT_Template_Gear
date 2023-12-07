@@ -9,7 +9,7 @@ Description:
 
 //=====================================================================================
 
-
+// Define type of weapons to use
 _rifle = ["gm_g11k2_blk"];
 _rifleGL = [""];
 _rifle_Mags	= "gm_50Rnd_473x33mm_B_DM11_g11_blk";
