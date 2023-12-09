@@ -36,7 +36,7 @@ _itemsLink = ["ItemMap","gm_ge_army_conat2","gm_watch_kosei_80"];
 _itemsRadio = ["ACRE_SEM52SL","ACRE_SEM70"];
 _itemsUniform = ["ACE_fieldDressing","ACE_elasticBandage","ACE_tourniquet","ACE_morphine","ACE_splint","ACE_quikclot","ACE_CableTie"];
 _itemUniformAmt = [5,5,2,2,2,2,1];
-_itemsTrow = ["gm_handgrenade_frag_rgd5","gm_smokeshell_wht_gc","gm_smokeshell_grn_gc","gm_smokeshell_red_gc","gm_smokeshell_yel_gc","gm_smokeshell_blu_gc"];
+_itemsTrow = ["gm_handgrenade_frag_dm51a1","gm_smokeshell_wht_gc","gm_smokeshell_grn_gc","gm_smokeshell_red_gc","gm_smokeshell_yel_gc","gm_smokeshell_blu_gc"];
 _itemTrowAmt = [2,2,2,0,0,0];
 
 _itemsRole = ["ACE_DAGR","ACE_Flashlight_XL50","ACE_EntrenchingTool","ACE_IR_Strobe_Item"];
