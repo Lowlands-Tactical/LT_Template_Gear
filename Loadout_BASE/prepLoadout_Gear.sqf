@@ -40,7 +40,7 @@ _itemsTrow = ["HandGrenade","SmokeShell","SmokeShellGreen","SmokeShellRed","Smok
 _itemTrowAmt = [2,2,2,0,0,0];
 
 _itemsRole = ["ItemGPS","ACE_Flashlight_XL50","ACE_EntrenchingTool","ACE_IR_Strobe_Item"];
-_itemsDMR = ["ACE_RangeCard","ACE_SpottingScope", _itemsRadio select 0, _itemsRole select 0, _itemsRole select 2];
+_itemsDMR = ["ACE_RangeCard","ACE_SpottingScope", _itemsRadio select 1, _itemsRole select 0, _itemsRole select 2];
 _itemsSpecial = ["ToolKit","ACE_M26_Clacker","ACE_wirecutter","MineDetector","ACE_DefusalKit","ACE_marker_flags_red","ACE_marker_flags_green"];
 _itemsSpecialAmt = [0,1,1,1,1,6,6];
 
