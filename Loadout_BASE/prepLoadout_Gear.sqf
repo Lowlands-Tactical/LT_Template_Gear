@@ -335,6 +335,7 @@ if (_role IN _roleSpecial) then
 		_unit setUnitTrait ["explosiveSpecialist", true];
 		if (_roleItems == 1) then 
 		{
+			(backpackContainer _unit) addItemCargoGlobal [_itemEngExpl select 0, 6];
 			{
 				(backpackContainer _unit) addItemCargoGlobal [_x, _itemsSpecialAmt select _forEachIndex];
 			}forEach _itemsSpecial;
