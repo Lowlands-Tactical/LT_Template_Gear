@@ -77,7 +77,7 @@ if (!isPlayer _unit) exitWith
 {
 	// Define variables for vehicle loadout
 	_itemsNVG = [(selectRandom _nvgs),_itemsRole select 1,_itemsRole select 3];
-	_itemsRole = [_itemsRole select 0,_uavTerminal,_itemsRole select 2,_itemsRole select 5,_backpackJTAC];
+	_itemsRole = [_itemsRole select 0,_uavTerminal,_itemsRole select 2,_itemsRole select 4,_backpackJTAC];
 	_items = 
 	[
 		_itemsTrow, 
@@ -294,7 +294,7 @@ if (_role == "jtac") then
 		if !("NONE" IN _roleRadio) then 
 		{
 			(uniformContainer _unit) addItemCargoGlobal [_itemsRadio select 1, 1];
-			(uniformContainer _unit) addItemCargoGlobal [_itemsRole select 5, 4];
+			(uniformContainer _unit) addItemCargoGlobal [_itemsRole select 4, 4];
 		};
 		_itemTrowAmt = [0,4,6,6,6,6];
 		{
