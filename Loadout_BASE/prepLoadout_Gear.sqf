@@ -39,7 +39,7 @@ _itemUniformAmt = [5,5,2,2,2,2,1];
 _itemsTrow = ["HandGrenade","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellYellow","SmokeShellPurple"];
 _itemTrowAmt = [2,2,2,0,0,0];
 
-_itemsRole = ["ItemGPS","ACE_Flashlight_XL50","ACE_EntrenchingTool","ACE_IR_Strobe_Item"];
+_itemsRole = ["ItemGPS","ACE_Flashlight_XL50","ACE_EntrenchingTool","ACE_IR_Strobe_Item","ACE_UAVBattery"];
 _itemsDMR = ["ACE_RangeCard","ACE_SpottingScope", _itemsRadio select 1, _itemsRole select 0, _itemsRole select 2];
 _itemsSpecial = ["ToolKit","ACE_M26_Clacker","ACE_wirecutter","MineDetector","ACE_DefusalKit","ACE_marker_flags_red","ACE_marker_flags_green"];
 _itemsSpecialAmt = [0,1,1,1,1,6,6];
@@ -77,7 +77,7 @@ if (!isPlayer _unit) exitWith
 {
 	// Define variables for vehicle loadout
 	_itemsNVG = [(selectRandom _nvgs),_itemsRole select 1,_itemsRole select 3];
-	_itemsRole = [_itemsRole select 0,_uavTerminal,_itemsRole select 2];
+	_itemsRole = [_itemsRole select 0,_uavTerminal,_itemsRole select 2,_itemsRole select 5,_backpackJTAC];
 	_items = 
 	[
 		_itemsTrow, 
@@ -294,6 +294,7 @@ if (_role == "jtac") then
 		if !("NONE" IN _roleRadio) then 
 		{
 			(uniformContainer _unit) addItemCargoGlobal [_itemsRadio select 1, 1];
+			(uniformContainer _unit) addItemCargoGlobal [_itemsRole select 5, 4];
 		};
 		_itemTrowAmt = [0,4,6,6,6,6];
 		{

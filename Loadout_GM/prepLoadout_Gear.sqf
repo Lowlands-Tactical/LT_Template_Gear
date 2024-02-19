@@ -15,10 +15,10 @@ if ("lt_debug" call bis_fnc_getParamValue == 1) then
 };
 
 // Define parameters
-params[
+params [
 	["_unit", objNull, [objNull]],
 	["_nvg", "false", ["false"]],
-	["_srRadio" , [], [[]]],
+	["_srRadio", [], [[]]],
 	["_roleRadio", [], [[]]],
 	["_lt_camoTMP", 0, [0]]		//used in switchGear
 ];
@@ -39,7 +39,7 @@ _itemUniformAmt = [5,5,2,2,2,2,1];
 _itemsTrow = ["gm_handgrenade_frag_dm51a1","gm_smokeshell_wht_gc","gm_smokeshell_grn_gc","gm_smokeshell_red_gc","gm_smokeshell_yel_gc","gm_smokeshell_blu_gc"];
 _itemTrowAmt = [2,2,2,0,0,0];
 
-_itemsRole = ["ACE_DAGR","ACE_Flashlight_XL50","ACE_EntrenchingTool","ACE_IR_Strobe_Item"];
+_itemsRole = ["ACE_DAGR","ACE_Flashlight_XL50","ACE_EntrenchingTool","ACE_IR_Strobe_Item",""];
 _itemsDMR = ["ACE_RangeCard","ACE_SpottingScope", _itemsRadio select 1, _itemsRole select 0, _itemsRole select 2];
 _itemsSpecial = ["gm_repairkit_01","ACE_M26_Clacker","ACE_wirecutter","MineDetector","ACE_DefusalKit","ACE_marker_flags_red","ACE_marker_flags_green"];
 _itemsSpecialAmt = [0,1,1,1,1,6,6];
@@ -65,7 +65,7 @@ if (!isPlayer _unit) exitWith
 {
 	// Define variables for vehicle loadout
 	_itemsNVG = [(selectRandom _nvgs),_itemsRole select 1,_itemsRole select 3];
-	_itemsRole = [_itemsRole select 0,"",_itemsRole select 2];
+	_itemsRole = [_itemsRole select 0,"",_itemsRole select 2,"",""];
 	_items = 
 	[
 		_itemsTrow, 
