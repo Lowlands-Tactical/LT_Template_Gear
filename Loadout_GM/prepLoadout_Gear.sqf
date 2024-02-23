@@ -303,10 +303,10 @@ if (_role IN _roleSpecial) then
 	(backpackContainer _unit) addItemCargoGlobal [(_itemsSpecial select 0), 1];
 	if (_role == "eng") then 
 	{
-		[backpackContainer _unit, 400] remoteExec ["LT_fnc_resetMaxLoad"];
 		_unit setUnitTrait ["explosiveSpecialist", true];
 		if (_roleItems == 1) then 
 		{
+			(backpackContainer _unit) addItemCargoGlobal [_itemEngExpl select 0, 6];
 			{
 				(backpackContainer _unit) addItemCargoGlobal [_x, _itemsSpecialAmt select _forEachIndex];
 			}forEach _itemsSpecial;
