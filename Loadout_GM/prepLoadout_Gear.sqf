@@ -34,7 +34,7 @@ _roleItems = _unit getVariable ["LT_unit_item", 1];
 
 _itemsLink = ["ItemMap","gm_ge_army_conat2","gm_watch_kosei_80"];
 _itemsRadio = ["ACRE_SEM52SL","ACRE_SEM70"];
-_itemsUniform = ["ACE_fieldDressing","ACE_elasticBandage","ACE_tourniquet","ACE_morphine","ACE_splint","ACE_quikclot","ACE_CableTie"];
+_itemsUniform = ["ACE_fieldDressing","ACE_elasticBandage","ACE_tourniquet","ACE_painkillers","ACE_splint","ACE_quikclot","ACE_CableTie"];
 _itemUniformAmt = [5,5,2,2,2,2,1];
 _itemsTrow = ["gm_handgrenade_frag_dm51a1","gm_smokeshell_wht_gc","gm_smokeshell_grn_gc","gm_smokeshell_red_gc","gm_smokeshell_yel_gc","gm_smokeshell_blu_gc"];
 _itemTrowAmt = [2,2,2,0,0,0];
@@ -47,8 +47,8 @@ _itemsSpecialAmt = [0,1,1,1,1,6,6];
 _itemEngExpl = ["gm_explosive_petn_charge","gm_explosive_plnp_charge"];
 _itemEngMine = ["","gm_mine_at_tm46","gm_mine_at_dm21","gm_mine_ap_dm31",""];
 
-_itemsPackMedic	= ["ACE_fieldDressing","ACE_elasticBandage","ACE_quikclot","ACE_tourniquet","ACE_splint","ACE_morphine","ACE_epinephrine","ACE_bloodIV","ACE_plasmaIV_500","ACE_salineIV_500","ACE_surgicalKit"];
-_itemsPackMedicAmt = [50,50,10,12,15,30,20,6,6,2,1];
+_itemsPackMedic	= ["ACE_fieldDressing","ACE_elasticBandage","ACE_quikclot","ACE_tourniquet","ACE_splint","ACE_painkillers","ACE_morphine","ACE_epinephrine","ACE_bloodIV","ACE_plasmaIV_500","ACE_salineIV_500","ACE_surgicalKit"];
+_itemsPackMedicAmt = [50,50,10,12,15,10,30,20,6,6,2,1];
 
 // Define role specific parameters
 _rolePackSmall = ["com","sql","jtac","ftl","gren","rifl","dmr","comms","ar","vhco","vhgu","vhdr"];
