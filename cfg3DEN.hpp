@@ -57,6 +57,7 @@ class Cfg3DEN
 					{
 						class LT_Loadout_Base 	{data = "BASE";	text = "[LT-Base] Huidig"; default = 1;};
 						class LT_Loadout_GM 	{data = "GM";	text = "[LT-GM] Koude Oorlog";};
+						class LT_Loadout_VN		{data = "VN";	text = "[LT-VN] Vietnam";};
 					};
 				};
 			};
