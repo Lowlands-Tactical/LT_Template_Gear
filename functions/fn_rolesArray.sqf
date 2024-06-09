@@ -14,10 +14,10 @@ Parameters:
 
 */
 
-_roleSelect = param [0, "Test", ["Test"]];
+private _roleSelect = param [0, "Test", ["Test"]];
 
-_roles = ["com","sql","jtac","ftl","gren","comms","rifl","riflat","dmr","ar","aar","medic","eng","vhco","vhgu","vhdr","pilot","crew","jet","lvdw"];
-_result = switch (_roleSelect) do
+private _roles = ["com","sql","jtac","ftl","gren","comms","rifl","riflat","dmr","ar","aar","medic","eng","vhco","vhgu","vhdr","pilot","crew","jet","lvdw"];
+private _result = switch (_roleSelect) do
 {
 	case "Test":	{"Test\Roles"};
 	case "Small":	{[_roles #0, _roles #1, _roles #2, _roles #3, _roles #4, _roles#5, _roles #6, _roles #8, _roles #9, _roles #13, _roles #14, _roles #15]};

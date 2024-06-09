@@ -14,14 +14,14 @@ Parameters:
 
 */
 
-_scope = param [0, "True", ["True"]];
-_caseNum = param [1, "9", ["9"]];
-_attArr = param [2, [], [[]]]; 
+private _scope = param [0, "True", ["True"]];
+private _caseNum = param [1, "9", ["9"]];
+private _attArr = param [2, [], [[]]]; 
 
-_result = [];
+private _result = [];
 if (_scope == "False") then {_attArr set [4,""]};
-_attIR = (_attArr #0);
-_attFL = (_attArr #1);
+private _attIR = (_attArr #0);
+private _attFL = (_attArr #1);
 
 _result = switch (_caseNum) do
 {
