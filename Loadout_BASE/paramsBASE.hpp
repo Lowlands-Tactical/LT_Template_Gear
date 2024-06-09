@@ -91,7 +91,7 @@ class lt_gear_SR
 class lt_gear_radiopack
 {
     title = "Long range radio settings";
-    values[] = {0,2,3,4,5,6,7};
+    values[] = {0,2,3,4,5,6};
     texts[] = {"Nobody","Commandant/Squad Leader","Commandant/Squad Leader/Fire Team Leader","Commandant/Squad Leader/Fire Team Leader/Combat Life Safer","Commandant/Squad Leader/Fire Team Leader/Genadier","Commandant/Squad Leader/Fire Team Leader/Dedicated markmen","Commandant/Squad Leader/Fire Team Leader/Engineer"};
     default = LONG_RADIO;
 };
