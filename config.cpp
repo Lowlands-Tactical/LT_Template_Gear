@@ -30,7 +30,7 @@ class CfgSettings
 				main_addon = "LT_Template_Gear";
 				class Dependancies 
 				{
-					LT_Base[] = {"LT_Template_Base", {3,23,156}, "true"};
+					LT_Base[] = {"LT_Template_Base", {3,27,170}, "true"};
 					LT_Gear[] = {"LT_Template_Gear", {VERSION_AR}, "true"};
 				};
 			};
@@ -38,4 +38,5 @@ class CfgSettings
 	};
 };
 
+#include "cfgFunctions.hpp"
 #include "cfg3DEN.hpp"
