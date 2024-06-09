@@ -1,14 +1,14 @@
 #ifndef BLUE_GEAR
-    #define BLUE_GEAR 0
+    #define BLUE_GEAR 1
 #endif
 #ifndef BLUE_WEAPON
-    #define BLUE_WEAPON 0
+    #define BLUE_WEAPON 1
 #endif
 #ifndef RED_GEAR
-    #define RED_GEAR 0
+    #define RED_GEAR 3
 #endif
 #ifndef RED_WEAPON
-    #define RED_WEAPON 0
+    #define RED_WEAPON 3
 #endif
 #ifndef GREEN_GEAR
     #define GREEN_GEAR 0
@@ -17,7 +17,7 @@
     #define GREEN_WEAPON 0
 #endif
 #ifndef SHORT_RADIO
-    #define SHORT_RADIO 0
+    #define SHORT_RADIO 1
 #endif
 #ifndef LONG_RADIO
     #define LONG_RADIO 1
@@ -84,7 +84,7 @@ class lt_gear_weapon_green
 class lt_gear_SR
 {
     title = "Short range radio settings";
-    values[] = {0,1,2,3,4,5,6};
+    values[] = {0,1,2,3,4,5,6,7};
     texts[] = {"Nobody","Everyone","Commandant/Squad Leader","Commandant/Squad Leader/Fire Team Leader","Commandant/Squad Leader/Fire Team Leader/Combat Life Safer","Commandant/Squad Leader/Fire Team Leader/Genadier","Commandant/Squad Leader/Fire Team Leader/Dedicated markmen","Commandant/Squad Leader/Fire Team Leader/Radioman(GM/VN)"};
     default = SHORT_RADIO;
 };
