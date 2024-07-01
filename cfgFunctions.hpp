@@ -21,8 +21,8 @@ class cfgRemoteExec
         // 0= all machines 1= only clients 2= only server
         mode = 2;
         jip = 1;
-        class LT_fnc_gearItems      {allowedTargets = 0};
-        class LT_fnc_weaponItems    {allowedTargets = 0};
-        class LT_fnc_rolesArray     {allowedTargets = 0};
+        class LT_fnc_gearItems      {allowedTargets = 0;};
+        class LT_fnc_weaponItems    {allowedTargets = 0;};
+        class LT_fnc_rolesArray     {allowedTargets = 0;};
     };
 };
