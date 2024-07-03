@@ -32,6 +32,17 @@
     #define WEAPON_SCOPE 1
 #endif
 
+#define LT_GEAR_VN_V 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+#define LT_GEAR_VN_1_T "Use customGear","US Army Olive","US Army ERDL Brown","US Navy Olive","US Special Forces 66 Leopard","US Special Forces Tiger","AUS Army Olive","AUS SAS ERDL","ROK Army Frog","MACV Olive","MACV Black"
+#define LT_GEAR_VN_2_T "VC Main Army Black","VC Local Cadre Mix","Korea Army Black","Polish Army Brown","PAVN Army","PAVN Marines","PAVN Commandos"
+#define LT_GEAR_VN_3_T "FANK Olive","ARVN Olive","ARVN Ranger BDQ","RLA Army Frog"
+
+#define LT_GEAR_VN_T LT_GEAR_VN_1_T,LT_GEAR_VN_2_T,LT_GEAR_VN_3_T
+
+#define LT_WEAPON_VN_V 0,1,2,3,6,7
+#define LT_WEAPON_VN_T "Use customWeapon","US M16A1 Black","US M16A1 Camo","US Navy SEALS","XM17","XM17 Camo"
+
 class lt_Empty_02 
 {
     title = "========== Template setting ==========";
@@ -42,43 +53,43 @@ class lt_Empty_02
 class lt_gear_camo_blue
 {
     title = "[BLUEFOR] - Camoflage";
-    values[] = {0,1,2,3,4,5,6,7,8,9,10};
-    texts[] = {"Use customGear","US Army Olive","US Army ERDL Brown","US Navy Olive","US Special Forces 66 Leopard","US Special Forces Tiger","AUS Army Olive","AUS SAS ERDL","ROK Army Frog","MACV Olive","MACV Black"};
+    values[] = {LT_GEAR_VN_V};
+    texts[] = {LT_GEAR_VN_T};
     default = BLUE_GEAR;
 };
 class lt_gear_weapon_blue
 {
     title = "[BLUEFOR] - Weapons";
-    values[] = {0,1,2,3,6,7};
-    texts[] = {"Use customWeapon","US M16A1 Black","US M16A1 Camo","US Navy SEALS","XM17","XM17 Camo"};
+    values[] = {LT_WEAPON_VN_V};
+    texts[] = {LT_WEAPON_VN_T};
     default = BLUE_WEAPON;
 };
 class lt_gear_camo_red
 {
     title = "[OPFOR] - Camoflage";
-    values[] = {0,11,12,13,14,15,16,17};
-    texts[] = {"Use customGear","VC Main Army Black","VC Local Cadre Mix","Korea Army Black","Polish Army Brown","PAVN Army","PAVN Marines","PAVN Commandos"};
+    values[] = {LT_GEAR_VN_V};
+    texts[] = {LT_GEAR_VN_T};
     default = RED_GEAR;
 };
 class lt_gear_weapon_red
 {
     title = "[OPFOR] - Weapons";
-    values[] = {0,1,2,3,6,7};
-    texts[] = {"Use customWeapon","US M16A1 Black","US M16A1 Camo","US Navy SEALS","XM17","XM17 Camo"};
+    values[] = {LT_WEAPON_VN_V};
+    texts[] = {LT_WEAPON_VN_T};
     default = RED_WEAPON;
 };
 class lt_gear_camo_green
 {
     title = "[GUER] - Camoflage";
-    values[] = {0,18,19,20,21};
-    texts[] = {"Use customGear","FANK Olive","ARVN Olive","ARVN Ranger BDQ","RLA Army Frog"};
+    values[] = {LT_GEAR_VN_V};
+    texts[] = {LT_GEAR_VN_T};
     default = GREEN_GEAR;
 };
 class lt_gear_weapon_green
 {
     title = "[GUER] - Weapons";
-    values[] = {0,1,2,3,6,7};
-    texts[] = {"Use customWeapon","US M16A1 Black","US M16A1 Camo","US Navy SEALS","XM17","XM17 Camo"};
+    values[] = {LT_WEAPON_VN_V};
+    texts[] = {LT_WEAPON_VN_T};
     default = GREEN_WEAPON;
 };
 class lt_gear_SR
