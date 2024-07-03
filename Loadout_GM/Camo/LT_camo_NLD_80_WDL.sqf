@@ -25,15 +25,15 @@ _goggles = [""];
 
 _unifCrew = _unif;
 _vestCrew = ["gm_ge_army_vest_80_rifleman"];
-_helmCrew = ["H_HelmetCrew_I"];
+_helmCrew = ["gm_ge_headgear_crewhat_80_blk"];
 
-_unifHeliP = _unif;
-_unifHeliC = _unif;
+_unifHeliP = ["NAF_U_HeliCoveralls_Support"];
+_unifHeliC = ["NAF_U_HeliCoveralls_Support"];
 _vestHeli = _vest;
 _helmHeli = ["gm_ge_headgear_hat_80_m62_oli","gm_ge_headgear_sidecap_80_m62_oli"];
 
-_unifJet = ["NLD_Helicrew_base"];
-_helmJet = ["H_PilotHelmetFighter_B"];
+_unifJet = ["NAF_U_PilotCoveralls_Support"];
+_helmJet = ["gm_ge_headgear_sph4_oli"];
 
 _backpackSmall = ["gm_dk_army_backpack_73_oli"];
 _backpackLarge = ["gm_ge_army_backpack_90_oli"];
