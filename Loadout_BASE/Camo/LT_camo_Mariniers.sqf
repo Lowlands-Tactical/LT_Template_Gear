@@ -12,32 +12,32 @@ Reset player weapons set from mission parameters
 //=====================================================================================
 
 // Define clothing that will be used
-_unif = ["NLD_KMI_Camo"];
-_vest = ["NLD_KMI_Vest"];
-_helm = ["NLD_KMI_Helmet"];
-	//Optioneel medic kleding
+_unif = ["NAF_U_GVT_marn","NAF_U_GVTV_marn"];
+_vest = ["NAF_V_PlateCarrier2_marn","NAF_V_PlateCarrierGL_marn","NAF_V_PlateCarrierSpec_marn"];
+_helm = ["NAF_H_HelmetIA_marn"];
+
 _unifMedic = _unif;
 _vestMedic = _vest;
 _helmMedic = _helm;
 
-_nvgs = ["NVGoggles_INDEP"];
-_goggles = ["SP_Goggles_Green"];
+_nvgs = ["O_NVGoggles_ghex_F"];
+_goggles = [""];
 
-_unifCrew = ["NLD_Helicrew_Base"];
-_vestCrew = ["V_Rangemaster_belt"];
-_helmCrew = ["H_Tank_eaf_F"];
+_unifCrew = ["NAF_U_GVTT_marn"];
+_vestCrew = ["NAF_V_PlateCarrier1_marn"];
+_helmCrew = ["NAF_H_MilCap_marn"];
 
-_unifHeliP = ["NLD_Helipilot_Base"];
-_unifHeliC = ["NLD_Helicrew_Base"];
-_vestHeli = ["V_TacVest_oli"];
+_unifHeliP = ["NAF_U_HeliCoveralls_Support"];
+_unifHeliC = ["NAF_U_HeliCoveralls_Support"];
+_vestHeli = ["V_TacVest_blk"];
 _helmHeli = ["H_PilotHelmetHeli_O"];
 
-_unifJet = ["U_B_PilotCoveralls"];
+_unifJet = ["NAF_U_PilotCoveralls_Support"];
 _helmJet = ["H_PilotHelmetFighter_B"];
 
-_backpackSmall = ["NLD_KM_Carryall_Empty"];
-_backpackLarge = ["NLD_KMI_Carryall_Empty"];
-_backpackMedic = ["NLD_KMI_Carryall_Empty"];
-_backpackRadio = ["NLD_Radiobag_M81"];
+_backpackSmall = ["NAF_AssaultPack_marn","NAF_FieldPack_marn","NAF_ViperHarness_marn"];
+_backpackLarge = ["NAF_Carryall_marn","NAF_Bergen_marn"];
+_backpackMedic = ["NAF_TacticalPack_marn","NAF_Kitbag_marn","NAF_OperatorBag_marn"];
+_backpackRadio = ["NAF_Radiobag_marn"];
 
 //=====================================================================================
