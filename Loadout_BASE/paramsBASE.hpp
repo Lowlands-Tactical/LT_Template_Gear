@@ -32,6 +32,12 @@
     #define WEAPON_SCOPE 1
 #endif
 
+#define LT_GEAR_V 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14
+#define LT_GEAR_T "Use customGear","NATO","CSAT","AAF","Woodland","Winter","Desert","Jungle","Korps Mariniers","NFP Green","NFP Tan","NFP Winter","Special Forces Black","PMC","DSI"
+
+#define LT_WEAPON_V 0,1,2,3,4,5,6,7,8,9,10,11,12,13
+#define LT_WEAPON_T "Use customWeapon","NATO","CSAT","AAF","NLD Colt","Mk17 Mk16","HK416 MP5A5","M4A1","PMC","NLD MX","DSI","MSBS","AK15","UNA (WS)"
+
 class lt_Empty_02 
 {
     title = "========== Template setting ==========";
@@ -42,43 +48,43 @@ class lt_Empty_02
 class lt_gear_camo_blue
 {
     title = "[BLUEFOR] - Camoflage";
-    values[] = {0,1,2,3,4,5,6,7,8,9,10,11};
-    texts[] = {"Use customGear","NATO","CSAT","AAF","Woodland","Winter","Desert","Korps Mariniers","NFP Tan","Special Forces Black","PMC","DSI"};
+    values[] = {LT_GEAR_V};
+    texts[] = {LT_GEAR_T};
     default = BLUE_GEAR;
 };
 class lt_gear_weapon_blue
 {
     title = "[BLUEFOR] - Weapons";
-    values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13};
-    texts[] = {"Use customWeapon","NATO","CSAT","AAF","NLD Colt","Mk17 Mk16","HK416 MP5A5","M4A1","PMC","NLD MX","DSI","MSBS","AK15","UNA (WS)"};
+    values[] = {LT_WEAPON_V};
+    texts[] = {LT_WEAPON_T};
     default = BLUE_WEAPON;
 };
 class lt_gear_camo_red
 {
     title = "[OPFOR] - Camoflage";
-    values[] = {0,1,2,3,4,5,6,7,8,9,10,11};
-    texts[] = {"Use customGear","NATO","CSAT","AAF","Woodland","Winter","Desert","Korps Mariniers","NFP Tan","Special Forces Black","PMC","DSI"};
+    values[] = {LT_GEAR_V};
+    texts[] = {LT_GEAR_T};
     default = RED_GEAR;
 };
 class lt_gear_weapon_red
 {
     title = "[OPFOR] - Weapons";
-    values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13};
-    texts[] = {"Use customWeapon","NATO","CSAT","AAF","NLD Colt","Mk17 Mk16","HK416 MP5A5","M4A1","PMC","NLD MX","DSI","MSBS","AK15","UNA (WS)"};
+    values[] = {LT_WEAPON_V};
+    texts[] = {LT_WEAPON_T};
     default = RED_WEAPON;
 };
 class lt_gear_camo_green
 {
     title = "[GUER] - Camoflage";
-    values[] = {0,1,2,3,4,5,6,7,8,9,10,11};
-    texts[] = {"Use customGear","NATO","CSAT","AAF","Woodland","Winter","Desert","Korps Mariniers","NFP Tan","Special Forces Black","PMC","DSI"};
+    values[] = {LT_GEAR_V};
+    texts[] = {LT_GEAR_T};
     default = GREEN_GEAR;
 };
 class lt_gear_weapon_green
 {
     title = "[GUER] - Weapons";
-    values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13};
-    texts[] = {"Use customWeapon","NATO","CSAT","AAF","NLD Colt","Mk17 Mk16","HK416 MP5A5","M4A1","PMC","NLD MX","DSI","MSBS","AK15","UNA (WS)"};
+    values[] = {LT_WEAPON_V};
+    texts[] = {LT_WEAPON_T};
     default = GREEN_WEAPON;
 };
 class lt_gear_SR
