@@ -51,7 +51,7 @@ switch (_lt_wpnTMP) do
 		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_NLDMX.sqf"
 	};
 	case 10: {
-		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_DSI.sqf"
+		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_KMAR.sqf"
 	};
 	case 11: {
 		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_MSBS.sqf"
@@ -59,7 +59,7 @@ switch (_lt_wpnTMP) do
 	case 12: {
 		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_AK15.sqf"
 	};
-	case 12: {
+	case 13: {
 		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_UNA_WS.sqf"
 	};
 };

@@ -63,6 +63,6 @@ switch (_lt_camoTMP) do
 		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_PMC.sqf"
 	};
 	case 14: {
-		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_DSI.sqf"
+		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_KMAR.sqf"
 	};
 };
