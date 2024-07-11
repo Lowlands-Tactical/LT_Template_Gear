@@ -281,6 +281,10 @@ if (_role IN _roleCrew) then
 	{
 		_unit linkItem (_itemsRole select 0);
 	};
+	if (_role == "vhdr") then
+	{
+		_unit setUnitTrait ["medic", true];
+	};
 	_unit setUnitTrait ["engineer", true];
 	if !("NONE" IN _roleRadio) then 
 	{
