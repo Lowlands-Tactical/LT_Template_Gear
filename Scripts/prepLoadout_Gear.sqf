@@ -89,7 +89,7 @@ if (_lt_loadout == "GM" OR _lt_loadout == "VN") then
 };
 
 _gpsLinkOrItem = ((_itemsRole select 0) == "ACE_DAGR");
-_backpackLVDW = selectRandomWeighted ["NLD_BigDickBag",0.7,"NLD_DickBag",0.3];
+_backpackLVDW = selectRandomWeighted ["NAF_BigDigBag_extra",0.7,"NAF_Digbag_extra",0.3];
 _lvdwTexture = "\lt_template_base\Logos\lvdwcamo.paa";
 _parachute = [_loadout, "Parachute"] call LT_fnc_gearItems;
 
@@ -280,6 +280,10 @@ if (_role IN _roleCrew) then
 	}else
 	{
 		_unit linkItem (_itemsRole select 0);
+	};
+	if (_role == "vhdr") then
+	{
+		_unit setUnitTrait ["medic", true];
 	};
 	_unit setUnitTrait ["engineer", true];
 	if !("NONE" IN _roleRadio) then 

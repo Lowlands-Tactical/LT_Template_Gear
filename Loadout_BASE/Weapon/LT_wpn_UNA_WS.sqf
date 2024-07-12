@@ -57,7 +57,7 @@ _rifleARAttScope = ["optic_MRCO"];
 
 _handGun = ["hgun_ACPC2_F"];
 _handGun_Mags = "9Rnd_45ACP_Mag";
-_handGunAttRailIR = ["CUP_acc_MLPLS_Laser"];
+_handGunAttRailIR = ["Aegis_acc_pointer_compact_pistol_green"];
 _handGunAttRailFL = ["acc_flashlight_pistol"];
 _handGunAttMuzzle = ["muzzle_snds_acp"];
 _handGunAttBipod = [""];

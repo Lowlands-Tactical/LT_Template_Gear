@@ -45,23 +45,23 @@ _rifleAirAttRailIR = [""];
 _rifleAirAttRailFL = ["acc_flashlight_smg_01"];
 _rifleAirAttMuzzle = ["muzzle_snds_acp"];
 _rifleAirAttBipod = [""];
-_rifleAirAttScope = ["cup_optic_ac11704_black"];
+_rifleAirAttScope = ["JCA_optic_ARO_black"];
 
-_rifleAR = ["CUP_lmg_Mk48","CUP_lmg_Mk48_od","CUP_lmg_Mk48_wdl"];
-_rifleAR_Mags = "150Rnd_762x51_Box_Tracer";
-_rifleARAttRailIR = _rifleAttRailIR;
-_rifleARAttRailFL = ["CUP_acc_flashlight"];
-_rifleARAttMuzzle = ["ace_muzzle_mzls_b"];
+_rifleAR = ["hlc_lmg_minimipara_railed"];
+_rifleAR_Mags = "hlc_200rnd_556x45_M_SAW";
+_rifleARAttRailIR = [""];
+_rifleARAttRailFL = [""];
+_rifleARAttMuzzle = ["hlc_muzzle_A1_FlashHider"];
 _rifleARAttBipod = [""];
-_rifleARAttScope = ["CUP_optic_aimm_microt1_blk"];
+_rifleARAttScope = ["optic_Yorris"];
 
-_handGun = ["NLD_Glock17"];
-_handGun_Mags = "CUP_17Rnd_9x19_glock17";
+_handGun = ["hgun_G17_black_F"];
+_handGun_Mags = "17Rnd_9x21_Mag";
 _handGunAttRailIR = [""];
-_handGunAttRailFL = ["acc_flashlight_pistol"];
+_handGunAttRailFL = [""];
 _handGunAttMuzzle = ["muzzle_snds_L"];
 _handGunAttBipod = [""];
-_handGunAttScope = ["optic_MRD_black"];
+_handGunAttScope = [""];
 
 _launcher = ["launch_NLAW_F"];
 _launcher_MagAA = "";

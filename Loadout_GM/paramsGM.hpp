@@ -32,6 +32,12 @@
     #define WEAPON_SCOPE 1
 #endif
 
+#define LT_GEAR_GM_V 0,1,2,3,4,5
+#define LT_GEAR_GM_T "Use customGear","NLD 80 Woodland","NLD 90 Woodland","DE 80 Summer","DE 90","DE 90 FLAK"
+
+#define LT_WEAPON_GM_V 0,1,2,3,4,5,6,7
+#define LT_WEAPON_GM_T "Use customWeapon","NLD 80","NLD 90","G3A3","G11K2","G36A1","SG542","SG550"
+
 class lt_Empty_02 
 {
     title = "========== Template setting ==========";
@@ -42,43 +48,43 @@ class lt_Empty_02
 class lt_gear_camo_blue
 {
     title = "[BLUEFOR] - Camoflage";
-    values[] = {0,1,2,3,4,5};
-    texts[] = {"Use customGear","NLD 80 Woodland","NLD 90 Woodland","DE 80 Summer","DE 90","DE 90 FLAK"};
+    values[] = {LT_GEAR_GM_V};
+    texts[] = {LT_GEAR_GM_T};
     default = BLUE_GEAR;
 };
 class lt_gear_weapon_blue
 {
     title = "[BLUEFOR] - Weapons";
-    values[] = {0,1,2,3,4,5,6,7};
-    texts[] = {"Use customWeapon","NLD 80","NLD 90","G3A3","G11K2","G36A1","SG542","SG550"};
+    values[] = {LT_WEAPON_GM_V};
+    texts[] = {LT_WEAPON_GM_T};
     default = BLUE_WEAPON;
 };
 class lt_gear_camo_red
 {
     title = "[OPFOR] - Camoflage";
-    values[] = {0,1,2,3,4,5};
-    texts[] = {"Use customGear","NLD 80 Woodland","NLD 90 Woodland","DE 80 Summer","DE 90","DE 90 FLAK"};
+    values[] = {LT_GEAR_GM_V};
+    texts[] = {LT_GEAR_GM_T};
     default = RED_GEAR;
 };
 class lt_gear_weapon_red
 {
     title = "[OPFOR] - Weapons";
-    values[] = {0,1,2,3,4,5,6,7};
-    texts[] = {"Use customWeapon","NLD 80","NLD 90","G3A3","G11K2","G36A1","SG542","SG550"};
+    values[] = {LT_WEAPON_GM_V};
+    texts[] = {LT_WEAPON_GM_T};
     default = RED_WEAPON;
 };
 class lt_gear_camo_green
 {
     title = "[GUER] - Camoflage";
-    values[] = {0,1,2,3,4,5};
-    texts[] = {"Use customGear","NLD 80 Woodland","NLD 90 Woodland","DE 80 Summer","DE 90","DE 90 FLAK"};
+    values[] = {LT_GEAR_GM_V};
+    texts[] = {LT_GEAR_GM_T};
     default = GREEN_GEAR;
 };
 class lt_gear_weapon_green
 {
     title = "[GUER] - Weapons";
-    values[] = {0,1,2,3,4,5,6,7};
-    texts[] = {"Use customWeapon","NLD 80","NLD 90","G3A3","G11K2","G36A1","SG542","SG550"};
+    values[] = {LT_WEAPON_GM_V};
+    texts[] = {LT_WEAPON_GM_T};
     default = GREEN_WEAPON;
 };
 class lt_gear_SR

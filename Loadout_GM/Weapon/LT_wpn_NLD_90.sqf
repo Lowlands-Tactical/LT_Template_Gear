@@ -23,7 +23,7 @@ _rifleCrew_Mags_Tr = _rifleCrew_Mags;
 
 _rifleAttRailIR = [""];
 _rifleAttRailFL = [""];
-_rifleAttMuzzle = [""];
+_rifleAttMuzzle = ["gm_suppressor_atec150_556mm_blk"];
 _rifleAttBipod = [""];
 _rifleAttScope = ["gm_c79a1_blk"];
 
@@ -31,8 +31,8 @@ _itemsGL = ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_
 _itemsGLNVG = ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"];
 _itemsGLAmt	= [8,6,4,4];
 
-_rifleMark = ["gm_c7a1_blk"];
-_rifleMark_Mags = "gm_30Rnd_556x45mm_B_T_M856_stanag_gry";
+_rifleMark = _rifle;
+_rifleMark_Mags = _rifle_Mags;
 _rifleMarkAttRailIR = [""];
 _rifleMarkAttRailFL = [""];
 _rifleMarkAttMuzzle = [""];
@@ -47,16 +47,16 @@ _rifleAirAttMuzzle = [""];
 _rifleAirAttBipod = [""];
 _rifleAirAttScope = [""]; 
 
-_rifleAR = ["CUP_lmg_FNMAG"];
-_rifleAR_Mags = "150Rnd_762x51_Box";
+_rifleAR = ["LMG_S77_lxWS"];
+_rifleAR_Mags = "100Rnd_762x51_S77_Green_lxWS";
 _rifleARAttRailIR = [""]; 
 _rifleARAttRailFL = [""];
 _rifleARAttMuzzle = [""];
 _rifleARAttBipod = [""];
 _rifleARAttScope = [""];
 
-_handGun = ["CUP_hgun_Colt1911"];
-_handGun_Mags = "CUP_7Rnd_45ACP_1911";
+_handGun = ["hgun_ACPC2_black_F"];
+_handGun_Mags = "9Rnd_45ACP_Mag";
 _handGunAttRailIR = [""];
 _handGunAttRailFL = [""];
 _handGunAttMuzzle = [""];

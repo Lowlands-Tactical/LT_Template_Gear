@@ -42,18 +42,27 @@ switch (_lt_camoTMP) do
 		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_Desert.sqf"
 	};
 	case 7: {
-		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_Mariniers.sqf"
+		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_Jungle.sqf"
 	};
 	case 8: {
-		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_NFP_TAN.sqf"
+		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_Mariniers.sqf"
 	};
 	case 9: {
-		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_SF_Black.sqf"
+		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_NFP_GREEN.sqf"
 	};
 	case 10: {
-		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_PMC.sqf"
+		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_NFP_TAN.sqf"
 	};
 	case 11: {
-		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_DSI.sqf"
+		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_NFP_WINTER.sqf"
+	};
+	case 12: {
+		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_SF_Black.sqf"
+	};
+	case 13: {
+		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_PMC.sqf"
+	};
+	case 14: {
+		#include "\lt_template_gear\Loadout_BASE\Camo\LT_camo_KMAR.sqf"
 	};
 };

@@ -12,54 +12,54 @@ Reset player weapons set from mission parameters
 //=====================================================================================
 
 // Define type of weapons to use
-_rifle = ["CUP_arifle_M4A1_black"];
-_rifleGL = ["CUP_arifle_M4A1_BUIS_GL"];
-_rifle_Mags	= "CUP_30Rnd_556x45_Emag";
-_rifle_Mags_Tr = "CUP_30Rnd_556x45_Emag_Tracer_Green";
+_rifle = ["JCA_arifle_M4A1_black_F"];
+_rifleGL = ["JCA_arifle_M4A1_GL_black_F"];
+_rifle_Mags	= "30Rnd_556x45_Stanag";
+_rifle_Mags_Tr = "30Rnd_556x45_Stanag_green";
 
-_rifleCrew = ["CUP_arifle_M4A1_standard_short_black"];
+_rifleCrew = ["JCA_arifle_M4A1_short_black_F"];
 _rifleCrew_Mags = _rifle_Mags;
 _rifleCrew_Mags_Tr = _rifle_Mags_Tr;
 
-_rifleAttRailIR = ["CUP_acc_ANPEQ_15_Black"];
-_rifleAttRailFL = ["CUP_acc_Flashlight"];
-_rifleAttMuzzle = ["CUP_muzzle_mfsup_Flashhider_556x45_Black"];
-_rifleAttBipod = ["bipod_01_F_blk","bipod_02_F_blk","bipod_03_F_blk"];
-_rifleAttScope = ["CUP_optic_AIMM_MICROT1_BLK"];
+_rifleAttRailIR = ["ACE_acc_pointer_green"];
+_rifleAttRailFL = ["ACE_SPIR"];
+_rifleAttMuzzle = ["JCA_muzzle_snds_556_advanced_black"];
+_rifleAttBipod = ["JCA_bipod_04_black"];
+_rifleAttScope = ["JCA_optic_ACOG_black"];
 
 _itemsGL = ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"];
 _itemsGLNVG = ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"];
 _itemsGLAmt	= [8,6,4,4];
 
-_rifleMark = ["CUP_arifle_M4A1_standard_black"];
+_rifleMark = _rifle;
 _rifleMark_Mags = _rifle_Mags_Tr;
 _rifleMarkAttRailIR = _rifleAttRailIR;
 _rifleMarkAttRailFL = _rifleAttRailFL;
 _rifleMarkAttMuzzle = _rifleAttMuzzle;
 _rifleMarkAttBipod = _rifleAttBipod;
-_rifleMarkAttScope = ["optic_sos"];
+_rifleMarkAttScope = ["JCA_optic_AICO_black"];
 
-_rifleAir = ["CUP_smg_MP5A5_Rail"];
-_rifleAir_Mags = "30Rnd_9x21_Mag_SMG_02_Tracer_Green";
-_rifleAirAttRailIR = ["cup_acc_llm_black"];
-_rifleAirAttRailFL = ["cup_acc_flashlight"];
-_rifleAirAttMuzzle = ["muzzle_snds_acp_mp5"];
+_rifleAir = ["SMG_01_F"];
+_rifleAir_Mags = "30Rnd_45ACP_Mag_SMG_01_Tracer_Red";
+_rifleAirAttRailIR = [""];
+_rifleAirAttRailFL = ["acc_flashlight_smg_01"];
+_rifleAirAttMuzzle = ["muzzle_snds_acp"];
 _rifleAirAttBipod = [""];
-_rifleAirAttScope = ["cup_optic_microt1_low"];
+_rifleAirAttScope = ["JCA_optic_ARO_black"];
 
-_rifleAR = ["CUP_lmg_M60E4_norail"];
-_rifleAR_Mags = "150Rnd_762x51_Box_Tracer";
+_rifleAR = ["hlc_lmg_minimipara_railed"];
+_rifleAR_Mags = "hlc_200rnd_556x45_M_SAW";
 _rifleARAttRailIR = [""];
 _rifleARAttRailFL = [""];
-_rifleARAttMuzzle = [""];
+_rifleARAttMuzzle = ["hlc_muzzle_A1_FlashHider"];
 _rifleARAttBipod = [""];
-_rifleARAttScope = [""];
+_rifleARAttScope = ["optic_Yorris"];
 
-_handGun = ["CUP_hgun_Deagle"];
-_handGun_Mags = "CUP_7Rnd_50AE_Deagle";
+_handGun = ["hgun_G17_black_F"];
+_handGun_Mags = "17Rnd_9x21_Mag";
 _handGunAttRailIR = [""];
 _handGunAttRailFL = [""];
-_handGunAttMuzzle = [""];
+_handGunAttMuzzle = ["muzzle_snds_L"];
 _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
