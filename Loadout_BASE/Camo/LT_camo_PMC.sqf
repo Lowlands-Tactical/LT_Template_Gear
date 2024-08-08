@@ -12,32 +12,32 @@ Reset player weapons set from mission parameters
 //=====================================================================================
 
 // Define clothing that will be used
-_unif = ["CUP_I_B_PMC_Unit_37","CUP_I_B_PMC_Unit_38","CUP_I_B_PMC_Unit_9","CUP_I_B_PMC_Unit_8","CUP_I_B_PMC_Unit_7"];
-_vest = ["CUP_V_PMC_CIRAS_OD_Patrol","NLD_SF_PlateCarrier","CUP_V_CZ_NPP2006_nk_black","CUP_V_PMC_IOTV_Black_AR","CUP_V_MBSS_PACA2_Black"];
-_helm = ["NLD_SF_ECH","NLD_DSI_Helmet","CUP_H_RUS_Altyn_Shield_Down_black","CUP_H_PMC_Beanie_Headphones_Black","CUP_H_PMC_Cap_EP_Grey"];
+_unif = ["U_lxWS_ION_Casual2","U_lxWS_ION_Casual3","U_lxWS_ION_Casual4","U_lxWS_ION_Casual6"];
+_vest = ["Atlas_V_OCarrierRig_blk_F","Atlas_V_OCarrierRig_Lite_blk_F","Atlas_V_OCarrierRig_Lite_alt_blk_F","V_BandollierB_blk"];
+_helm = ["H_HelmetB_black","H_HelmetSpecB_blk","H_HelmetB_light_black","H_PASGT_neckprot_black_F"];
 	//Optioneel medic kleding
 _unifMedic = _unif;
 _vestMedic = _vest;
 _helmMedic = _helm;
 
-_nvgs = ["ACE_NVG_Wide_Black","CUP_NVG_HMNVS","CUP_NVG_PVS14","CUP_NVG_PVS15_black"];
-_goggles = ["G_Tactical_clear","G_Spectacles_Tinted","CUP_G_Scarf_Face_Red","CUP_PMC_Facewrap_Skull"];
+_nvgs = ["NVGogglesB_blk_F"];
+_goggles = ["G_Cigarette","G_Headset_lxWS","G_WirelessEarpiece_F","rhsusf_shemagh_od"];
 
-_unifCrew = ["NLD_Helicrew_Base"];
-_vestCrew = ["V_Rangemaster_belt"];
-_helmCrew = ["H_Tank_eaf_F"];
+_unifCrew = ["NAF_U_GVTT_blk"];
+_vestCrew = ["NAF_V_PlateCarrier1_blk"];
+_helmCrew = ["NAF_H_MilCap_blk"];
 
-_unifHeliP = ["NLD_Helipilot_Base"];
-_unifHeliC = ["NLD_Helicrew_Base"];
-_vestHeli = ["V_TacVest_oli"];
+_unifHeliP = ["NAF_U_HeliCoveralls_Support"];
+_unifHeliC = ["NAF_U_HeliCoveralls_Support"];
+_vestHeli = ["V_TacVest_blk"];
 _helmHeli = ["H_PilotHelmetHeli_O"];
 
-_unifJet = ["U_B_PilotCoveralls"];
+_unifJet = ["NAF_U_PilotCoveralls_Support"];
 _helmJet = ["H_PilotHelmetFighter_B"];
 
-_backpackSmall = ["CUP_B_Kombat_Olive","CUP_B_AssaultPack_Black","B_TacticalPack_blk"];
-_backpackLarge = ["NLD_SF_Carryall_Empty","NLD_Minion3","B_Carryall_blk"];
-_backpackMedic = ["B_MAV_B_BACKPACK","NLD_Minion4","NLD_SF_Carryall_Empty"];
-_backpackRadio = ["CUP_B_Kombat_Radio_Olive","NLD_Radiobag_Black"];
+_backpackSmall = ["NAF_AssaultPack_blk","NAF_FieldPack_blk","NAF_ViperHarness_blk"];
+_backpackLarge = ["NAF_Carryall_blk","NAF_Bergen_blk"];
+_backpackMedic = ["NAF_TacticalPack_blk","NAF_Kitbag_blk","NAF_OperatorBag_blk"];
+_backpackRadio = ["NAF_Radiobag_blk"];
 
 //=====================================================================================
