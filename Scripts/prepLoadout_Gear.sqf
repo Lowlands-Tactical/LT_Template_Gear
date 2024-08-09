@@ -373,10 +373,14 @@ if (_role == "medic") then
 // Add special gear
 if (_role == "dmr") then 
 {
+	if (_roleItems == 1) then 
 	{
-		(backpackContainer _unit) addItemCargoGlobal [_x, 1];
-	}forEach _itemsDMR;
+		{
+			(backpackContainer _unit) addItemCargoGlobal [_x, 1];
+		}forEach _itemsDMR;
+	};	
 };
+
 if (_role IN _roleSpecial) then 
 {
 	_unit setUnitTrait ["engineer", true];
