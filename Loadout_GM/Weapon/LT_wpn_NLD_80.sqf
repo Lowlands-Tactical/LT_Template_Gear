@@ -31,7 +31,7 @@ _itemsGL = ["1Rnd_40mm_HE_lxWS","1Rnd_58mm_AT_lxWS","1Rnd_50mm_Smoke_lxWS"];
 _itemsGLNVG = ["1Rnd_40mm_HE_lxWS","1Rnd_58mm_AT_lxWS","1Rnd_50mm_Smoke_lxWS"];
 _itemsGLAmt	= [8,8,6];
 
-_rifleMark = ["arifle_SLR_V_lxW"];
+_rifleMark = ["arifle_SLR_V_lxWS"];
 _rifleMark_Mags = "20Rnd_762x51_slr_lxWS";
 _rifleMarkAttRailIR = [""];
 _rifleMarkAttRailFL = [""];
@@ -63,9 +63,9 @@ _handGunAttMuzzle = [""];
 _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
-_launcher = ["gm_m72a3_oli"];
+_launcher = ["gm_pzf44_2_oli"];
 _launcher_MagAA = "";
-_launcher_MagAT = "";
+_launcher_MagAT = "gm_1Rnd_44x537mm_heat_dm32_pzf44_2";
 
 _binocular = ["gm_ferod16_oli"];
 
