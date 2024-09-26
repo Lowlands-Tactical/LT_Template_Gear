@@ -30,7 +30,7 @@ class CfgSettings
 				main_addon = "LT_Template_Gear";
 				class Dependancies 
 				{
-					LT_Base[] = {"LT_Template_Base", {3,28,70}, "true"};
+					LT_Base[] = {"LT_Template_Base", {3,31,70}, "true"};
 					LT_Gear[] = {"LT_Template_Gear", {VERSION_AR}, "true"};
 				};
 			};

@@ -62,4 +62,7 @@ switch (_lt_wpnTMP) do
 	case 13: {
 		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_UNA_WS.sqf"
 	};
+	case 14: {
+		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_DSI.sqf"
+	};
 };
