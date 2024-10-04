@@ -31,7 +31,7 @@ _itemsGL = ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_
 _itemsGLNVG = ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"];
 _itemsGLAmt	= [8,6,4,4];
 
-_rifleMark = "hlc_rifle_416D20";
+_rifleMark = ["hlc_rifle_416D20"];
 _rifleMark_Mags = _rifle_Mags_Tr;
 _rifleMarkAttRailIR = _rifleAttRailIR;
 _rifleMarkAttRailFL = _rifleAttRailFL;
