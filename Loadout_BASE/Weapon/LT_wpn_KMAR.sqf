@@ -22,7 +22,7 @@ _rifleCrew_Mags = _rifle_Mags;
 _rifleCrew_Mags_Tr = _rifle_Mags_Tr;
 
 _rifleAttRailIR = ["ACE_acc_pointer_green"];
-_rifleAttRailFL = ["ACE_SPIR"];
+_rifleAttRailFL = ["acc_flashlight"];
 _rifleAttMuzzle = ["JCA_muzzle_snds_556_advanced_black"];
 _rifleAttBipod = ["JCA_bipod_04_black"];
 _rifleAttScope = ["JCA_optic_ACOG_black"];

@@ -22,7 +22,7 @@ _rifleCrew_Mags = _rifle_Mags;
 _rifleCrew_Mags_Tr = _rifle_Mags_Tr;
 
 _rifleAttRailIR = ["Aegis_acc_pointer_DM"];
-_rifleAttRailFL = ["ACE_SPIR"];
+_rifleAttRailFL = ["acc_flashlight"];
 _rifleAttMuzzle = ["JCA_muzzle_snds_556_advanced_black"];
 _rifleAttBipod = ["hlc_grip_PMVFG_Black"];
 _rifleAttScope = ["hlc_optic_HensoldtZO_lo_Docter_2D"];

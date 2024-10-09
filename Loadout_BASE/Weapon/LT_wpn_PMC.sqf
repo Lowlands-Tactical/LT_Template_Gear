@@ -22,7 +22,7 @@ _rifleCrew_Mags = _rifle_Mags;
 _rifleCrew_Mags_Tr = _rifle_Mags_Tr;
 
 _rifleAttRailIR = ["Aegis_acc_pointer_compact_green"];
-_rifleAttRailFL = ["ACE_SPIR"];
+_rifleAttRailFL = ["acc_flashlight"];
 _rifleAttMuzzle = ["hlc_muzzle_A1_FlashHider"];
 _rifleAttBipod = ["hlc_grip_AFG2"];
 _rifleAttScope = ["optic_Yorris"];
