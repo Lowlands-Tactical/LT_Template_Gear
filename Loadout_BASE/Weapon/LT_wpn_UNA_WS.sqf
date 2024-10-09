@@ -17,9 +17,9 @@ _rifleGL = ["arifle_VelkoR5_GL_lxWS"];
 _rifle_Mags	= "35Rnd_556x45_Velko_reload_tracer_green_lxWS";
 _rifle_Mags_Tr = "35Rnd_556x45_Velko_tracer_green_lxWS";
 
-_rifleCrew = ["arifle_VelkoR5_lxWS"];
-_rifleCrew_Mags = ["35Rnd_556x45_Velko_reload_tracer_green_lxWS"];
-_rifleCrew_Mags_Tr = ["35Rnd_556x45_Velko_tracer_green_lxWS"];
+_rifleCrew = _rifle;
+_rifleCrew_Mags = _rifle_Mags;
+_rifleCrew_Mags_Tr = _rifle_Mags_Tr;
 
 _rifleAttRailIR = ["ACE_acc_pointer_green"];
 _rifleAttRailFL = ["acc_flashlight"];
@@ -40,7 +40,7 @@ _rifleMarkAttBipod = ["bipod_01_F_blk"];
 _rifleMarkAttScope = ["optic_Hamr_sand_lxWS"];
 
 _rifleAir = ["SMG_01_Holo_F"];;
-_rifleAir_Mags = ["30Rnd_45ACP_Mag_SMG_01"];;
+_rifleAir_Mags = "30Rnd_45ACP_Mag_SMG_01";
 _rifleAirAttRailIR = [""];
 _rifleAirAttRailFL = ["acc_flashlight_smg_01"];
 _rifleAirAttMuzzle = [""];
