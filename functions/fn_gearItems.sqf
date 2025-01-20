@@ -20,8 +20,10 @@ private _gear = param [1, "Test", ["Test"]];
 private _uniAmt = [5,5,2,2,2,2,1];
 private _trowAmt = [2,2,2,0,0,0];
 private _specAmt = [0,1,1,1,1,6,6];
-private _meds = ["ACE_fieldDressing","ACE_elasticBandage","ACE_quikclot","ACE_tourniquet","ACE_splint","ACE_morphine","ACE_epinephrine","ACE_bloodIV","ACE_plasmaIV_500","ACE_salineIV_500","ACE_surgicalKit"];
-private _medAmt = [50,50,10,12,15,30,20,6,6,2,1];
+private _meds = ["ACE_fieldDressing","ACE_elasticBandage","ACE_quikclot","ACE_tourniquet","ACE_splint","ACE_painkillers","ACE_morphine","ACE_epinephrine","ACE_bloodIV","ACE_plasmaIV_500","ACE_salineIV_500","ACE_bodyBag","ACE_surgicalKit"];
+private _medAmt = [50,50,10,12,15,5,30,20,6,6,2,10,1];
+private _mineAmt = [20,10,10,10,5];
+private _explAmt = [20,10];
 
 private _result = [];
 
@@ -47,7 +49,9 @@ switch (_period) do
 			case "Special":		{["ToolKit","ACE_M26_Clacker","ACE_wirecutter","MineDetector","ACE_DefusalKit","ACE_marker_flags_red","ACE_marker_flags_green"]};
 			case "SpecialAmt":	{_specAmt};
 			case "Expl":		{["DemoCharge_Remote_Mag","SatchelCharge_Remote_Mag"]};
+			case "ExplAmt":		{_explAmt};
 			case "Mine":		{["APERSMineDispenser_Mag","ATMine_Range_Mag","APERSBoundingMine_Range_Mag","APERSMine_Range_Mag","SLAMDirectionalMine_Wire_Mag"]};
+			case "MineAmt":		{_mineAmt};
 			case "Medic":		{_meds};
 			case "MedicAmt":	{_medAmt};
 			case "Parachute":	{"B_Parachute"};
@@ -72,7 +76,9 @@ switch (_period) do
 			case "Special":		{["gm_repairkit_01","ACE_M26_Clacker","ACE_wirecutter","MineDetector","ACE_DefusalKit","ACE_marker_flags_red","ACE_marker_flags_green"]};
 			case "SpecialAmt":	{_specAmt};
 			case "Expl":		{["gm_explosive_petn_charge","gm_explosive_plnp_charge"]};
+			case "ExplAmt":		{_explAmt};
 			case "Mine":		{["","gm_mine_at_tm46","gm_mine_at_dm21","gm_mine_ap_dm31",""]};
+			case "MineAmt":		{_mineAmt};
 			case "Medic":		{_meds};
 			case "MedicAmt":	{_medAmt};
 			case "Parachute":	{"gm_backpack_rs9_parachute"};
@@ -97,7 +103,9 @@ switch (_period) do
 			case "Special":		{["vn_b_item_toolkit","ACE_Clacker","ACE_wirecutter","","ACE_DefusalKit","ACE_marker_flags_red","ACE_marker_flags_green"]};
 			case "SpecialAmt":	{_specAmt};
 			case "Expl":		{["vn_mine_satchel_remote_02_mag","vn_mine_cartridge_mag"]};
+			case "ExplAmt":		{_explAmt};
 			case "Mine":		{["","","","",""]};
+			case "MineAmt":		{_mineAmt};
 			case "Medic":		{_meds};
 			case "MedicAmt":	{_medAmt};
 			case "Parachute":	{"vn_b_pack_t10_01"};

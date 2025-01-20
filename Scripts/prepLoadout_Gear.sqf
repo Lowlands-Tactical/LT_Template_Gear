@@ -20,8 +20,7 @@ params [
 	["_nvg", "false", ["false"]],
 	["_srRadio", [], [[]]],
 	["_roleRadio", [], [[]]],
-	["_lt_camoTMP", 0, [0]],		//used in switchGear
-	["_lt_loadout", "BASE", ["BASE"]]
+	["_lt_camoTMP", 0, [0]]		//used in switchGear
 ];
 _role = _unit getVariable ["LT_unit_role", "custom"];
 _consumable = _unit getVariable ["LT_unit_gear", 1];
@@ -31,8 +30,9 @@ _roleItems = _unit getVariable ["LT_unit_item", 1];
 #include "\lt_template_gear\Reference\BaseGear.sqf"
 
 // Select gear textures
+LT_Loadout = getMissionConfigValue ["LT_Loadout_ID","BASE"];
 _loadout = 0;
-switch (_lt_loadout) do 
+switch (LT_Loadout) do 
 {
 	case "BASE": {
 		#include "\lt_template_gear\Loadout_BASE\SwitchGearBASE.sqf"
@@ -100,14 +100,9 @@ if (!isPlayer _unit) exitWith
 	_itemsRole = [_itemsRole #0,_uavTerminal,_itemsRole #2,_itemsRole #4,_backpackJTAC];
 	_items = 
 	[
-		_itemsTrow, 
-		_itemsPackMedic, 
-		_itemsRadio, 
-		_itemsSpecial, 
-		_itemsRole, 
 		_itemsNVG,
-		_itemEngExpl,
-		_itemEngMine
+		[20,20,40],
+		_itemsRole
 	];
 
 	#include "\lt_template_gear\Reference\LT_Items.sqf"
