@@ -76,12 +76,16 @@ _uavTerminal = switch (side _unit) do
 	case east: {"O_UavTerminal"};
 	case resistance: {"I_UavTerminal"};
 };
+_backpackJTAC = "BB_RQ11B_Backpack"; //LATER CHECK IF AVAILABLE
+/*
+if (isNil{""}) then {}else{};
 _backpackJTAC = switch (side _unit) do 
 {
 	case west: {"B_UAV_01_backpack_F"};
 	case east: {"O_UAV_01_backpack_F"};
 	case resistance: {"I_UAV_01_backpack_F"};
 };
+*/
 if (_lt_loadout == "GM" OR _lt_loadout == "VN") then 
 {
 	_uavTerminal = "";
