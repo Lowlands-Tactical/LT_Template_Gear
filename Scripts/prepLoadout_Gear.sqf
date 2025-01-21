@@ -20,7 +20,8 @@ params [
 	["_nvg", "false", ["false"]],
 	["_srRadio", [], [[]]],
 	["_roleRadio", [], [[]]],
-	["_lt_camoTMP", 0, [0]]		//used in switchGear
+	["_lt_camoTMP", 0, [0]],		//used in switchGear
+	["_lt_loadout", "BASE", ["BASE"]]
 ];
 _role = _unit getVariable ["LT_unit_role", "custom"];
 _consumable = _unit getVariable ["LT_unit_gear", 1];
@@ -30,9 +31,8 @@ _roleItems = _unit getVariable ["LT_unit_item", 1];
 #include "\lt_template_gear\Reference\BaseGear.sqf"
 
 // Select gear textures
-LT_Loadout = getMissionConfigValue ["LT_Loadout_ID","BASE"];
 _loadout = 0;
-switch (LT_Loadout) do 
+switch (_lt_loadout) do 
 {
 	case "BASE": {
 		#include "\lt_template_gear\Loadout_BASE\SwitchGearBASE.sqf"
@@ -70,7 +70,9 @@ _roleCrew = ["Crew"] call LT_fnc_rolesArray;
 _roleSpecial = ["Special"] call LT_fnc_rolesArray;
 _roleColourSmoke = ["Colour"] call LT_fnc_rolesArray;
 
-if (LT_Loadout == "BASE") then 
+_uavTerminal = "";
+_backpackJTAC = "";
+if (_lt_loadout == "BASE") then 
 {
 	_uavTerminal = switch (side _unit) do 
 	{
@@ -90,10 +92,6 @@ if (LT_Loadout == "BASE") then
 			case resistance: {"I_UAV_01_backpack_F"};
 		};
 	};
-}else
-{
-	_uavTerminal = "";
-	_backpackJTAC = "";
 };
 
 _gpsLinkOrItem = ((_itemsRole select 0) == "ACE_DAGR");
