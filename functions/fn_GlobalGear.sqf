@@ -112,6 +112,6 @@ if ("lt_debug" call bis_fnc_getParamValue == 1) then
 {
     systemChat ["[LT] (Loadout) %1",_message];
 };
-
-if (_check == 1) then {_result = false} else {_result = true;};
+_result = false;
+if (_check == 1) then {_result} else {_result = true;};
 _result
