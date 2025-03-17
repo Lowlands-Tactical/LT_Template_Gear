@@ -14,7 +14,8 @@ Empty case for when added
 
 switch (_lt_camoTMP) do 
 {
-	case 0: {
+	case 0:
+	{
 		if (fileExists "Scripts\customGear.sqf") then 
 		{
 			call compileScript ["Scripts\customGear.sqf"]
@@ -23,19 +24,24 @@ switch (_lt_camoTMP) do
 			#include "\lt_template_gear\Reference\LT_camo_CUSTOM.sqf"
 		};
 	};
-	case 1: {
+	case 1:
+	{
 		#include "\lt_template_gear\Loadout_GM\Camo\LT_camo_NLD_80_WDL.sqf"
 	};
-	case 2: {
+	case 2:
+	{
 		#include "\lt_template_gear\Loadout_GM\Camo\LT_camo_NLD_90_WDL.sqf"
 	};
-	case 3: {
+	case 3:
+	{
 		#include "\lt_template_gear\Loadout_GM\Camo\LT_camo_DE_80_Summer.sqf"
 	};
-	case 4: {
+	case 4:
+	{
 		#include "\lt_template_gear\Loadout_GM\Camo\LT_camo_DE_90.sqf"
 	};
-	case 5: {
+	case 5:
+	{
 		#include "\lt_template_gear\Loadout_GM\Camo\LT_camo_DE_90_FLAK.sqf"
 	};
 };
