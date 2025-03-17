@@ -1,11 +1,10 @@
 /*
 
-	File: LT_camo_DE_80_Summer.sqf
-	Tijdperk: GM (BASE / GM / VN)
-	Author: Flenders(Stefan)
+File: LT_camo_DE_80_Summer.sqf
+Author: Flenders(Stefan)
 
-	Description:
-	Reset player weapons set from mission parameters
+Description:
+Reset player weapons set from mission parameters
 
 */
 
@@ -15,7 +14,7 @@
 _unif = ["gm_ge_army_uniform_soldier_80_oli","gm_ge_army_uniform_soldier_gloves_80_ols","gm_ge_army_uniform_soldier_80_ols"];
 _vest = ["gm_ge_army_vest_80_rifleman","gm_ge_army_vest_80_machinegunner","gm_ge_army_vest_80_leader"];
 _helm = ["gm_ge_headgear_m62_net","gm_ge_headgear_m62"];
-// Optioneel medic kleding
+
 _unifMedic = _unif;
 _vestMedic = ["gm_ge_army_vest_80_medic"];
 _helmMedic = _helm;
