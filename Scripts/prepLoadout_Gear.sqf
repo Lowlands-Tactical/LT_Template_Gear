@@ -28,20 +28,45 @@ _consumable = _unit getVariable ["LT_unit_gear", 1];
 _roleItems = _unit getVariable ["LT_unit_item", 1];
 
 // Default variables gear
-#include "\lt_template_gear\Reference\BaseGear.sqf"
+//#include "\lt_template_gear\Reference\BaseGear.sqf"
+_unif = [""];
+_vest = [""];
+_helm = [""];
+_unifMedic = [""];
+_vestMedic = [""];
+_helmMedic = [""];
+_nvgs = [""];
+_goggles = [""];
+_unifCrew = [""];
+_vestCrew = [""];
+_helmCrew = [""];
+_unifHeliP = [""];
+_unifHeliC = [""];
+_vestHeli = [""];
+_helmHeli = [""];
+_unifJet = [""];
+_helmJet = [""];
+_backpackSmall = [""];
+_backpackLarge = [""];
+_backpackMedic = [""];
+_backpackRadio = [""];
 
 // Select gear textures
 _loadout = 0;
 switch (_lt_loadout) do 
 {
-	case "BASE": {
+	case "BASE":
+	{
+		_loadout = 0;
 		#include "\lt_template_gear\Loadout_BASE\SwitchGearBASE.sqf"
 	};
-	case "GM": {
+	case "GM":
+	{
 		_loadout = 1;
 		#include "\lt_template_gear\Loadout_GM\SwitchGearGM.sqf"
 	};
-	case "VN": {
+	case "VN":
+	{
 		_loadout = 2;
 		#include "\lt_template_gear\Loadout_VN\SwitchGearVN.sqf"
 	};
@@ -110,8 +135,8 @@ if (!isPlayer _unit) exitWith
 		[20,20,40],
 		_itemsRole
 	];
-
-	#include "\lt_template_gear\Reference\LT_Items.sqf"
+	[_unit,_items,0] call LT_fnc_GlobalGear;
+	//#include "\lt_template_gear\Reference\LT_Items.sqf"
 };
 
 // (Re)set unit traits

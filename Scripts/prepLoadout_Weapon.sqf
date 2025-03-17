@@ -28,7 +28,53 @@ _consumable = _unit getVariable ["LT_unit_gear", 1];
 _roleItems = _unit getVariable ["LT_unit_item", 1];
 
 // Default variables weapons
-#include "\lt_template_gear\Reference\BaseWeapon.sqf"
+//#include "\lt_template_gear\Reference\BaseWeapon.sqf"
+_rifle = [""];
+_rifleGL = [""];
+_rifle_Mags	= "";
+_rifle_Mags_Tr = "";
+_rifleCrew = [""];
+_rifleCrew_Mags = "";
+_rifleCrew_Mags_Tr = "";
+_rifleAttRailIR = [""];
+_rifleAttRailFL = [""];
+_rifleAttMuzzle = [""];
+_rifleAttBipod = [""];
+_rifleAttScope = [""];
+_itemsGL = ["","","",""];
+_itemsGLNVG = ["","","",""];
+_itemsGLAmt	= [8,6,4,4];
+_rifleMark = [""];
+_rifleMark_Mags = "";
+_rifleMarkAttRailIR = [""];
+_rifleMarkAttRailFL = [""];
+_rifleMarkAttMuzzle = [""];
+_rifleMarkAttBipod = [""];
+_rifleMarkAttScope = [""];
+_rifleAir = [""];
+_rifleAir_Mags = "";
+_rifleAirAttRailIR = [""];
+_rifleAirAttRailFL = [""];
+_rifleAirAttMuzzle = [""];
+_rifleAirAttBipod = [""];
+_rifleAirAttScope = [""];
+_rifleAR = [""];
+_rifleAR_Mags = "";
+_rifleARAttRailIR = [""];
+_rifleARAttRailFL = [""];
+_rifleARAttMuzzle = [""];
+_rifleARAttBipod = [""];
+_rifleARAttScope = [""];
+_handGun = [""];
+_handGun_Mags = "";
+_handGunAttRailIR = [""];
+_handGunAttRailFL = [""];
+_handGunAttMuzzle = [""];
+_handGunAttBipod = [""];
+_handGunAttScope = [""];
+_launcher = [""];
+_launcher_Mags = [];
+_binocular = [""];
 
 // Check for GL weapon if not give normal rifle and add GL Handgun to backpack
 _hgGL = false;
@@ -43,19 +89,34 @@ if (((_rifleGL select 0) == "") OR ((_rifleGL select 0) == (_rifle select 0))) t
 _loadout = 0;
 switch (_lt_loadout) do 
 {
-	case "BASE":{
+	case "BASE":
+	{
+		_loadout = 0;
 		#include "\lt_template_gear\Loadout_BASE\SwitchWeaponBASE.sqf"
 	};
-	case "GM":{
+	case "GM":
+	{
 		_loadout = 1;
 		_handGunGL = "gm_pallad_d_brn";
 		#include "\lt_template_gear\Loadout_GM\SwitchWeaponGM.sqf"
 	};
-	case "VN":{
+	case "VN":
+	{
 		_loadout = 2;
 		_handGunGL = "vn_m79_p";
 		#include "\lt_template_gear\Loadout_VN\SwitchWeaponVN.sqf"
 	};
+};
+
+if !(isNil "_launcher_MagAA") then 
+{
+	_launcher_Mags pushBack _launcher_MagAA;
+	systemChat "[LT] (Weapon) Old launcherMag detected update customGear.sqf";
+};
+if !(isNil "_launcher_MagAT") then 
+{
+	_launcher_Mags pushBack _launcher_MagAT;
+	systemChat "[LT] (Weapon) Old launcherMag detected update customGear.sqf";
 };
 
 // build different arrays for the weapons
@@ -111,11 +172,11 @@ if (!isPlayer _unit) exitWith
 		[_rifleAir, _rifleAir_Mags], 
 		[_rifleAR, _rifleAR_Mags], 
 		[_handGun, _handGun_Mags],
-		[(selectRandom _launcher), _launcher_MagAA, _launcher_MagAT],
+		[(selectRandom _launcher), _launcher_Mags],
 		(selectRandom _binocular)
 	];
-
-	#include "\lt_template_gear\Reference\LT_Weapons.sqf"
+	[_unit,_weapons,1] call LT_fnc_GlobalGear;
+	//#include "\lt_template_gear\Reference\LT_Weapons.sqf"
 };
 
 _weapons = weapons _unit;
@@ -130,15 +191,10 @@ if (_role IN _roleGL OR _role IN _roleHG) then
 if (_roleItems == 1 && _role == "riflat") then 
 {
 	_unit addWeapon (selectRandom _launcher);
-	if (_launcher_MagAA != "") then 
 	{
-		(backpackContainer _unit) addItemCargoGlobal [_launcher_MagAA, 2];
-	};
-	if (_launcher_MagAT != "") then 
-	{
-		(backpackContainer _unit) addItemCargoGlobal [_launcher_MagAT, 2];
-	};
-	if ((_launcher_MagAA == "") && (_launcher_MagAT == "")) then 
+		(backpackContainer _unit) addItemCargoGlobal [_x,2];
+	}forEach _launcher_Mags;
+	if (((_launcher_Mags select 0) == "")) then 
 	{
 		(backpackContainer _unit) addItemCargoGlobal [(selectRandom _launcher), 1];
 	};
