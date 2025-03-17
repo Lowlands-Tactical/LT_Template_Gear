@@ -64,8 +64,7 @@ _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
 _launcher = ["rhs_weap_fgm148"];
-_launcher_MagAA = "";
-_launcher_MagAT = "rhs_fgm148_magazine_AT";
+_launcher_Mags = ["rhs_fgm148_magazine_AT"];
 
 _binocular = ["ACE_Vector"];
 

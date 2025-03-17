@@ -62,8 +62,7 @@ _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
 _launcher = ["gm_pzf44_2_oli"];
-_launcher_MagAA = "";
-_launcher_MagAT = "gm_1Rnd_44x537mm_heat_dm32_pzf44_2";
+_launcher_Mags = ["gm_1Rnd_44x537mm_heat_dm32_pzf44_2"];
 
 _binocular = ["gm_ferod16_oli"];
 
