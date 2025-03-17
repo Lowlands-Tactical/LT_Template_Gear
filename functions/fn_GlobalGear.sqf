@@ -23,6 +23,7 @@ params [
 ];
 
 private _check = 0;
+_message = "gear not defined";
 
 switch (side _unit) do 
 {
