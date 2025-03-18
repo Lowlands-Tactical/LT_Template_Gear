@@ -42,7 +42,7 @@ switch (_lt_wpnTMP) do
 	};
 	case 5:
 	{
-		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_Mk17_Mk16.sqf"
+		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_SCAR.sqf"
 	};
 	case 6:
 	{

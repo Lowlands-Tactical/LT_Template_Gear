@@ -36,7 +36,7 @@
 #define LT_GEAR_T "Use customGear","NATO","CSAT","AAF","Woodland","Winter","Desert","Jungle","Korps Mariniers","NFP Green","NFP Tan","NFP Winter","Special Forces Black","PMC","Marechaussee","DSI"
 
 #define LT_WEAPON_V 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14
-#define LT_WEAPON_T "Use customWeapon","NATO","CSAT","AAF","NLD Colt","Mk17 Mk16","HK416 MP5A5","M4A1","PMC","NLD MX","Marechaussee","MSBS","AK15","UNA (WS)","DSI"
+#define LT_WEAPON_T "Use customWeapon","NATO","CSAT","AAF","NLD Colt","SCAR","HK416 MP5A5","M4A1","PMC","NLD MX","Marechaussee","MSBS","AK15","UNA (WS)","DSI"
 
 class lt_Empty_02 
 {
