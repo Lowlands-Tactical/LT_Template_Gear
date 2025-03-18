@@ -12,12 +12,12 @@ Reset player weapons set from mission parameters
 //=====================================================================================
 
 // Define type of weapons to use
-_rifle = ["hlc_WP_Mk17IUR","hlc_wp_MK17IUR_camo"];
-_rifleGL = ["hlc_wp_MK17IUR_AGC","hlc_wp_MK17IUR_AGC_camo"];
-_rifle_Mags	= "hlc_20Rnd_762x51_B_SCARH_MW2";
-_rifle_Mags_Tr = "hlc_20Rnd_762x51_M_SCARH_tan";
+_rifle = ["arifle_SCAR_L_F"];
+_rifleGL = ["arifle_SCAR_L_GL_F"];
+_rifle_Mags	= "30Rnd_556x45_Stanag_Sand";
+_rifle_Mags_Tr = "30Rnd_556x45_Stanag_Sand_Tracer_Green";
 
-_rifleCrew = _rifle;
+_rifleCrew = arifle_SCAR_L_short_F;
 _rifleCrew_Mags = _rifle_Mags;
 _rifleCrew_Mags_Tr = _rifle_Mags_Tr;
 
@@ -31,8 +31,8 @@ _itemsGL = ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_
 _itemsGLNVG = ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"];
 _itemsGLAmt	= [8,6,4,4];
 
-_rifleMark = ["hlc_wp_MK17IUR_300","hlc_wp_MK17IUR_300_camo"];
-_rifleMark_Mags = "hlc_30rnd_300BLK_PMAG_S";
+_rifleMark = ["hlc_WP_SSR"];
+_rifleMark_Mags = "hlc_20Rnd_762x51_B_SCARH_Tan";
 _rifleMarkAttRailIR = _rifleAttRailIR;
 _rifleMarkAttRailFL = _rifleAttRailFL;
 _rifleMarkAttMuzzle = _rifleAttMuzzle;
