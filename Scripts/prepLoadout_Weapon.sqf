@@ -115,12 +115,12 @@ switch (_lt_loadout) do
 if (_launcher_MagAA != "") then 
 {
 	_launcher_Mags pushBack _launcher_MagAA;
-	systemChat "[LT] (Weapon) Old launcherMag detected update customWeapon.sqf";
+	["[LT] (Weapon) Old launcherMag detected update customWeapon.sqf"] remoteExec ["systemChat",0];
 };
 if (_launcher_MagAT != "") then 
 {
 	_launcher_Mags pushBack _launcher_MagAT;
-	systemChat "[LT] (Weapon) Old launcherMag detected update customWeapon.sqf";
+	["[LT] (Weapon) Old launcherMag detected update customWeapon.sqf"] remoteExec ["systemChat",0];
 };
 
 // build different arrays for the weapons
