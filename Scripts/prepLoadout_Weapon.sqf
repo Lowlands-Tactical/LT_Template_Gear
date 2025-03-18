@@ -76,6 +76,10 @@ _launcher = [""];
 _launcher_Mags = [];
 _binocular = [""];
 
+//Old Launcher Mags for backward compat
+_launcher_MagAA = "";
+_launcher_MagAT = "";
+
 // Check for GL weapon if not give normal rifle and add GL Handgun to backpack
 _hgGL = false;
 _handGunGL = "";
@@ -108,12 +112,12 @@ switch (_lt_loadout) do
 	};
 };
 
-if !(isNil "_launcher_MagAA") then 
+if (_launcher_MagAA != "") then 
 {
 	_launcher_Mags pushBack _launcher_MagAA;
 	systemChat "[LT] (Weapon) Old launcherMag detected update customGear.sqf";
 };
-if !(isNil "_launcher_MagAT") then 
+if (_launcher_MagAT != "") then 
 {
 	_launcher_Mags pushBack _launcher_MagAT;
 	systemChat "[LT] (Weapon) Old launcherMag detected update customGear.sqf";
