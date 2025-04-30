@@ -110,8 +110,9 @@ switch (side _unit) do
 Diag_Log format["[LT] (Loadout) %1",_message];
 if ("lt_debug" call bis_fnc_getParamValue == 1) then 
 {
-    systemChat ["[LT] (Loadout) %1",_message];
+    systemChat format["[LT] (Loadout) %1",_message];
 };
+
 _result = false;
 if (_check == 1) then {_result} else {_result = true;};
 _result
