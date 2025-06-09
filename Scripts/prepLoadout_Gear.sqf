@@ -224,6 +224,7 @@ if (_role IN _roleCrew) then
 			{
 				_unit forceAddUniform _unifJetPilot
 			};
+			_unit addVest "V_Rangemaster_belt";
 			_unit addHeadgear (selectRandom _helmJet);
 			_unit addBackpackGlobal _parachute;
 		};
