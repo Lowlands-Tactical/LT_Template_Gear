@@ -80,14 +80,8 @@ _binocular = [""];
 _launcher_MagAA = "";
 _launcher_MagAT = "";
 
-// Check for GL weapon if not give normal rifle and add GL Handgun to backpack
-_hgGL = false;
+//Empty handgunGL class for the switch below
 _handGunGL = "";
-if (((_rifleGL select 0) == "") OR ((_rifleGL select 0) == (_rifle select 0))) then 
-{
-	_hgGL = true;
-	_rifleGL = _rifle;
-};
 
 // Include base variable and select the gear/weapon sets
 _loadout = 0;
@@ -110,6 +104,14 @@ switch (_lt_loadout) do
 		_handGunGL = "vn_m79_p";
 		#include "\lt_template_gear\Loadout_VN\SwitchWeaponVN.sqf"
 	};
+};
+
+// Check for GL weapon if not give normal rifle and add GL Handgun to backpack
+_hgGL = false;
+if (((_rifleGL select 0) == "") OR ((_rifleGL select 0) == (_rifle select 0))) then 
+{
+	_hgGL = true;
+	_rifleGL = _rifle;
 };
 
 if (_launcher_MagAA != "") then 
