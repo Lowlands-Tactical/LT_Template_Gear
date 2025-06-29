@@ -61,7 +61,7 @@ _handGunAttMuzzle = [""];
 _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
-_launcher = ["gm_pzf84_oli"];
+_launcher = ["gm_pzf84_win_feroz2x17"];
 _launcher_Mags = ["gm_1Rnd_84x245mm_ILLUM_DM16_carlgustaf","gm_1Rnd_84x245mm_heat_t_DM32_carlgustaf"];
 
 _binocular = ["gm_ferod16_oli"];
