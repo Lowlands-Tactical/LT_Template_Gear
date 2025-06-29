@@ -34,7 +34,7 @@ _result = switch (_caseNum) do
 	case "6": {["",(_attArr #2),(_attArr #3),(_attArr #4)]};
 	case "7": {[_attIR,(_attArr #2),(_attArr #3),(_attArr #4)]};
 	case "8": {[_attFL,(_attArr #2),(_attArr #3),(_attArr #4)]};
-	case "9": {["","","",""]}; // None
+	case "9": {["","","",(_attArr #4)]}; // None unless scope is true
 };
 
 _result;
