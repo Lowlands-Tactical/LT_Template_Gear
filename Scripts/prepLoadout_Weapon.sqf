@@ -82,8 +82,12 @@ _launcher_MagAT = "";
 
 //Empty handgunGL class for the switch below
 _handGunGL = "";
-_launcherAA = "";
+_launcherAA = ["gm_fim43_oli"];
 _launcherAA_Mags = [];
+
+//Heavy machinegun
+_heavyAR = ["Aegis_MMG_FNMAG_F"];
+_heavyAR_Mags = "Aegis_200Rnd_762x51_MAG_Green_Tracer_F";
 
 // Include base variable and select the gear/weapon sets
 _loadout = 0;
@@ -92,24 +96,18 @@ switch (_lt_loadout) do
 	case "BASE":
 	{
 		_loadout = 0;
-		_launcherAA = "gm_fim43_oli";
-		_launcherAA_Mags = [];
 		#include "\lt_template_gear\Loadout_BASE\SwitchWeaponBASE.sqf"
 	};
 	case "GM":
 	{
 		_loadout = 1;
 		_handGunGL = "gm_pallad_d_brn";
-		_launcherAA = "gm_fim43_oli";
-		_launcherAA_Mags = [];
 		#include "\lt_template_gear\Loadout_GM\SwitchWeaponGM.sqf"
 	};
 	case "VN":
 	{
 		_loadout = 2;
 		_handGunGL = "vn_m79_p";
-		_launcherAA = "gm_fim43_oli";
-		_launcherAA_Mags = [];
 		#include "\lt_template_gear\Loadout_VN\SwitchWeaponVN.sqf"
 	};
 };
@@ -188,7 +186,8 @@ if (!isPlayer _unit) exitWith
 		[_handGun, _handGun_Mags],
 		[(selectRandom _launcher), _launcher_Mags],
 		(selectRandom _binocular),
-		[_launcherAA,_launcherAA_Mags]
+		[(selectRandom _launcherAA),_launcherAA_Mags],
+		[(selectRandom _heavyAR),_heavyAR_Mags]
 	];
 	[_unit,_weapons,1] call LT_fnc_GlobalGear;
 	//#include "\lt_template_gear\Reference\LT_Weapons.sqf"
