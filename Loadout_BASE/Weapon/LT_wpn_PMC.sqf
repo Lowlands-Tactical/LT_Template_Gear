@@ -64,7 +64,7 @@ _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
 _launcher = ["launch_MRAWS_green_rail_F"];
-_launcher_Mags = ["MRAWS_HEAT_F ","MRAWS_HE_F"];
+_launcher_Mags = ["MRAWS_HEAT_F","MRAWS_HE_F"];
 
 _binocular = ["ACE_Vector"];
 

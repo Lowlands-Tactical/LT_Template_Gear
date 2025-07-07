@@ -64,7 +64,7 @@ _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
 _launcher = ["launcher_RPG32_F"];
-_launcher_Mags = [];
+_launcher_Mags = ["RPG32_F","RPG32_HE_F"];
 
 _binocular = ["Rangefinder"];
 

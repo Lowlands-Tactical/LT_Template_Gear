@@ -64,7 +64,7 @@ _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
 _launcher = ["launch_NLAW_F"];
-_launcher_Mags = [];
+_launcher_Mags = ["NLAW_F"];
 
 _binocular = ["Rangefinder"];
 
