@@ -73,7 +73,7 @@ _handGunAttMuzzle = [""];
 _handGunAttBipod = [""];
 _handGunAttScope = [""];
 _launcher = [""];
-_launcher_Mags = [];
+_launcher_Mags = [""];
 _binocular = [""];
 
 //Old Launcher Mags for backward compat
@@ -82,9 +82,8 @@ _launcher_MagAT = "";
 
 //Empty handgunGL class for the switch below
 _handGunGL = "";
-_launcherAA = ["gm_fim43_oli"];
-_launcherAA_Mags = [];
-
+_launcherAA = ["rhs_weap_fim92"];
+_launcherAA_Mags = ["rhs_fim92_mag","Titan_AA"];
 //Heavy machinegun
 _heavyAR = ["Aegis_MMG_FNMAG_F"];
 _heavyAR_Mags = "Aegis_200Rnd_762x51_MAG_Green_Tracer_F";
@@ -102,12 +101,16 @@ switch (_lt_loadout) do
 	{
 		_loadout = 1;
 		_handGunGL = "gm_pallad_d_brn";
+		_launcherAA = ["gm_fim43_oli"];
+		_launcherAA_Mags = ["gm_1Rnd_70mm_he_m585_fim43"];
 		#include "\lt_template_gear\Loadout_GM\SwitchWeaponGM.sqf"
 	};
 	case "VN":
 	{
 		_loadout = 2;
 		_handGunGL = "vn_m79_p";
+		_launcherAA = ["gm_fim43_oli"];
+		_launcherAA_Mags = ["gm_1Rnd_70mm_he_m585_fim43"];
 		#include "\lt_template_gear\Loadout_VN\SwitchWeaponVN.sqf"
 	};
 };
@@ -184,7 +187,7 @@ if (!isPlayer _unit) exitWith
 		[_rifleAir, _rifleAir_Mags], 
 		[_rifleAR, _rifleAR_Mags], 
 		[_handGun, _handGun_Mags],
-		[(selectRandom _launcher), _launcher_Mags],
+		[(selectRandom _launcher),_launcher_Mags],
 		(selectRandom _binocular),
 		[(selectRandom _launcherAA),_launcherAA_Mags],
 		[(selectRandom _heavyAR),_heavyAR_Mags]
@@ -204,7 +207,6 @@ if (_role IN _roleGL OR _role IN _roleHG) then
 
 if (_roleItems == 1 && _role == "riflat") then 
 {
-	_unit addWeapon (selectRandom _launcher);
 	{
 		(backpackContainer _unit) addItemCargoGlobal [_x,2];
 	}forEach _launcher_Mags;
@@ -212,6 +214,7 @@ if (_roleItems == 1 && _role == "riflat") then
 	{
 		(backpackContainer _unit) addItemCargoGlobal [(selectRandom _launcher), 1];
 	};
+	_unit addWeapon (selectRandom _launcher);
 };
 
 // Add weapons and ammo if consumable is 1
