@@ -135,16 +135,12 @@ if (_launcher_MagAT != "") then
 };
 
 // build different arrays for the weapons
-_rifleAttTMP = [(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)];
-_rifleAttArr = [_rifleScImp,_rifleAttImp,_rifleAttTMP] call LT_fnc_weaponItems;
-_rifleMarkAttTMP = [(selectRandom _rifleMarkAttRailIR),(selectRandom _rifleMarkAttRailFL),(selectRandom _rifleMarkAttMuzzle),(selectRandom _rifleMarkAttBipod),(selectRandom _rifleMarkAttScope)];
-_rifleMarkAttArr = [_rifleScImp,_rifleAttImp,_rifleMarkAttTMP] call LT_fnc_weaponItems;
-_rifleAirAttTMP = [(selectRandom _rifleAirAttRailIR),(selectRandom _rifleAirAttRailFL),(selectRandom _rifleAirAttMuzzle),(selectRandom _rifleAirAttBipod),(selectRandom _rifleAirAttScope)];
-_rifleAirAttArr = [_rifleScImp,_rifleAttImp,_rifleAirAttTMP] call LT_fnc_weaponItems;
-_rifleARAttTMP = [(selectRandom _rifleARAttRailIR),(selectRandom _rifleARAttRailFL),(selectRandom _rifleARAttMuzzle),(selectRandom _rifleARAttBipod),(selectRandom _rifleARAttScope)];
-_rifleARAttArr = [_rifleScImp,_rifleAttImp,_rifleARAttTMP] call LT_fnc_weaponItems;
-_handGunAttTMP = [(selectRandom _handGunAttRailIR),(selectRandom _handGunAttRailFL),(selectRandom _handGunAttMuzzle),(selectRandom _handGunAttBipod),(selectRandom _handGunAttScope)];
-_handGunAttArr = [_rifleScImp,_rifleAttImp,_handGunAttTMP] call LT_fnc_weaponItems;
+_rifleAttArr = [_rifleScImp, _rifleAttImp, [(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)], "Rifle(GL)", (selectRandom _rifleGL)] call LT_fnc_weaponItems;
+_rifleCrewAttArr = [_rifleScImp, _rifleAttImp,[(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)], "Rifle(Crew)", (selectRandom _rifleCrew)] call LT_fnc_weaponItems;
+_rifleMarkAttArr = [_rifleScImp, _rifleAttImp,[(selectRandom _rifleMarkAttRailIR),(selectRandom _rifleMarkAttRailFL),(selectRandom _rifleMarkAttMuzzle),(selectRandom _rifleMarkAttBipod),(selectRandom _rifleMarkAttScope)], "DMR", (selectRandom _rifleMark)] call LT_fnc_weaponItems;
+_rifleAirAttArr = [_rifleScImp, _rifleAttImp,[(selectRandom _rifleAirAttRailIR),(selectRandom _rifleAirAttRailFL),(selectRandom _rifleAirAttMuzzle),(selectRandom _rifleAirAttBipod),(selectRandom _rifleAirAttScope)], "Air", (selectRandom _rifleAir)] call LT_fnc_weaponItems;
+_rifleARAttArr = [_rifleScImp, _rifleAttImp,[(selectRandom _rifleARAttRailIR),(selectRandom _rifleARAttRailFL),(selectRandom _rifleARAttMuzzle),(selectRandom _rifleARAttBipod),(selectRandom _rifleARAttScope)], "AR", (selectRandom _rifleAR)] call LT_fnc_weaponItems;
+_handGunAttArr = [_rifleScImp, _rifleAttImp,[(selectRandom _handGunAttRailIR),(selectRandom _handGunAttRailFL),(selectRandom _handGunAttMuzzle),(selectRandom _handGunAttBipod),(selectRandom _handGunAttScope)], "HG", (selectRandom _handGun)] call LT_fnc_weaponItems;
 
 // Define roles Main, Crew, GL and HG
 _roleMain = ["Main"] call LT_fnc_rolesArray;
@@ -154,46 +150,24 @@ _roleAir = ["Air"] call LT_fnc_rolesArray;
 _roleHG = ["HG"] call LT_fnc_rolesArray;
 _roleWpn = ["Wpn"] call LT_fnc_rolesArray;
 
-Diag_log format["[LT] (Weapon) Rifle attachments are -%1/-%2/-%3/-%4", _rifleAttArr select 0, _rifleAttArr select 1, _rifleAttArr select 2, _rifleAttArr select 3];
-Diag_log format["[LT] (Weapon) DMR attachments are -%1/-%2/-%3/-%4", _rifleMarkAttArr select 0, _rifleMarkAttArr select 1, _rifleMarkAttArr select 2, _rifleMarkAttArr select 3];
-Diag_log format["[LT] (Weapon) Air attachments are -%1/-%2/-%3/-%4", _rifleAirAttArr select 0, _rifleAirAttArr select 1, _rifleAirAttArr select 2, _rifleAirAttArr select 3];
-Diag_log format["[LT] (Weapon) AR attachments are -%1/-%2/-%3/-%4", _rifleARAttArr select 0, _rifleARAttArr select 1, _rifleARAttArr select 2, _rifleARAttArr select 3];
-Diag_log format["[LT] (Weapon) HG attachments are -%1/-%2/-%3/-%4", _handGunAttArr select 0, _handGunAttArr select 1, _handGunAttArr select 2, _handGunAttArr select 3];
-if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-{
-	systemChat format["[LT] (Weapon) Rifle attachments are -%1/-%2/-%3/-%4", _rifleAttArr select 0, _rifleAttArr select 1, _rifleAttArr select 2, _rifleAttArr select 3];
-	systemChat format["[LT] (Weapon) DMR attachments are -%1/-%2/-%3/-%4", _rifleMarkAttArr select 0, _rifleMarkAttArr select 1, _rifleMarkAttArr select 2, _rifleMarkAttArr select 3];
-	systemChat format["[LT] (Weapon) Air attachments are -%1/-%2/-%3/-%4", _rifleAirAttArr select 0, _rifleAirAttArr select 1, _rifleAirAttArr select 2, _rifleAirAttArr select 3];
-	systemChat format["[LT] (Weapon) AR attachments are -%1/-%2/-%3/-%4", _rifleARAttArr select 0, _rifleARAttArr select 1, _rifleARAttArr select 2, _rifleARAttArr select 3];
-	systemChat format["[LT] (Weapon) HG attachments are -%1/-%2/-%3/-%4", _handGunAttArr select 0, _handGunAttArr select 1, _handGunAttArr select 2, _handGunAttArr select 3];
-};
-
 if (!isPlayer _unit) exitWith 
 {
 	// Define variables for vehicle loadout
-	_rifleGL = [(selectRandom _rifleGL), _rifleAttArr select 1, _rifleAttArr select 0, _rifleAttArr select 3, [], [], _rifleAttArr select 2];
-	_rifleCrew = [(selectRandom _rifleCrew), _rifleAttArr select 1, _rifleAttArr select 0, _rifleAttArr select 3, [], [], _rifleAttArr select 2];
-	_rifleMark = [(selectRandom _rifleMark), _rifleMarkAttArr select 1, _rifleMarkAttArr select 0, _rifleMarkAttArr select 3, [], [], _rifleMarkAttArr select 2];
-	_rifleAir = [(selectRandom _rifleAir), _rifleAirAttArr select 1, _rifleAirAttArr select 0, _rifleAirAttArr select 3,[], [], _rifleAirAttArr select 2];
-	_rifleAR = [(selectRandom _rifleAR), _rifleARAttArr select 1, _rifleARAttArr select 0, _rifleARAttArr select 3, [], [], _rifleARAttArr select 2];
-	_handGun = [(selectRandom _handGun), _handGunAttArr select 1, _handGunAttArr select 0, _handGunAttArr select 3, [], [], _handGunAttArr select 2];
-
 	_weapons = 
 	[
-		[_rifleGL, _rifle_Mags, _rifle_Mags_Tr], 
-		[_rifleCrew, _rifleCrew_Mags, _rifleCrew_Mags_Tr],
-		[_rifleMark, _rifleMark_Mags],
+		[(_rifleAttArr select 0), _rifle_Mags, _rifle_Mags_Tr], 
+		[(_rifleAttArr select 0), _rifleCrew_Mags, _rifleCrew_Mags_Tr],
+		[(_rifleMarkAttArr select 0), _rifleMark_Mags],
 		[_itemsGL,_itemsGLNVG], 
-		[_rifleAir, _rifleAir_Mags], 
-		[_rifleAR, _rifleAR_Mags], 
-		[_handGun, _handGun_Mags],
+		[(_rifleAirAttArr select 0), _rifleAir_Mags], 
+		[(_rifleARAttArr select 0), _rifleAR_Mags], 
+		[(_handGunAttArr select 0), _handGun_Mags],
 		[(selectRandom _launcher),_launcher_Mags],
 		(selectRandom _binocular),
 		[(selectRandom _launcherAA),_launcherAA_Mags],
 		[(selectRandom _heavyAR),_heavyAR_Mags]
 	];
 	[_unit,_weapons,1] call LT_fnc_GlobalGear;
-	//#include "\lt_template_gear\Reference\LT_Weapons.sqf"
 };
 
 _weapons = weapons _unit;
@@ -289,35 +263,35 @@ if (_role IN _roleHG) then
 removeAllPrimaryWeaponItems _unit;
 removeAllHandgunItems _unit;
 
-if (_role IN _roleWpn) then 
+if (_role IN _roleWpn) then
 {
 	{
 		_unit addPrimaryWeaponItem _x;
-	}forEach _rifleAttArr;
+	}forEach (_rifleAttArr #1);
 };
-if (_role IN _roleAir) then 
+if (_role == "dmr") then
 {
 	{
 		_unit addPrimaryWeaponItem _x;
-	}forEach _rifleAirAttArr;
+	}forEach (_rifleMarkAttArr #1);
 };
-if (_role == "dmr") then 
+if (_role IN _roleAir) then
 {
 	{
 		_unit addPrimaryWeaponItem _x;
-	}forEach _rifleMarkAttArr;
+	}forEach (_rifleAirAttArr #1);
 };
-if (_role == "ar") then 
+if (_role == "ar") then
 {
 	{
 		_unit addPrimaryWeaponItem _x;
-	}forEach _rifleARAttArr;
+	}forEach (_rifleARAttArr #1);
 };
-if (_role IN _roleHG) then 
+if (_role IN _roleHG) then
 {
 	{
 		_unit addHandgunItem _x;
-	}forEach _handGunAttArr;
+	}forEach (_handGunAttArr #1);
 };
 
 Diag_log "[LT] (Weapon) Weapons are finished";
