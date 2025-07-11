@@ -427,12 +427,28 @@ if (_role IN _roleSpecial) then
 
 [uniformContainer _unit, 50] remoteExec ["LT_fnc_resetMaxLoad"];
 [vestContainer _unit, 200] remoteExec ["LT_fnc_resetMaxLoad"];
-if (_role in _roleSpecial OR _role == "medic") then 
+switch (_role) do 
 {
-	[backpackContainer _unit, 400] remoteExec ["LT_fnc_resetMaxLoad"];
-} else 
-{
-	[backpackContainer _unit, 300] remoteExec ["LT_fnc_resetMaxLoad"];
+	case (_role IN _roleCrew): 
+	{
+		[backpackContainer _unit, 200] remoteExec ["LT_fnc_resetMaxLoad"];
+	};
+	case "eng": 
+	{
+		[backpackContainer _unit, 400] remoteExec ["LT_fnc_resetMaxLoad"];
+	};
+	case "medic":
+	{
+		[backpackContainer _unit, 450] remoteExec ["LT_fnc_resetMaxLoad"];
+	};
+	case "riflat":
+	{
+		[backpackContainer _unit, 650] remoteExec ["LT_fnc_resetMaxLoad"];
+	};
+	default 
+	{
+		[backpackContainer _unit, 300] remoteExec ["LT_fnc_resetMaxLoad"];
+	};
 };
 
 Diag_log "[LT] (Gear) Gear is finished";
