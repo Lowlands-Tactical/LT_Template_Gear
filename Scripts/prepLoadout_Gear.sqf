@@ -297,7 +297,12 @@ if (_role IN _roleRadio) then
 	{
 		_unit linkItem (_itemsRole select 0);
 	};
+	
 	(uniformContainer _unit) addItemCargoGlobal [_itemsRadio select 1, 1];
+	if (_role == "ftl") then 
+	{
+		(backpackContainer _unit) addItemCargoGlobal [_itemsRadio select 1, 1];
+	};
 };
 if (_role IN _roleCrew) then 
 {
