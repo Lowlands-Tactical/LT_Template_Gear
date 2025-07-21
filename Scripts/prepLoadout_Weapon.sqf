@@ -75,6 +75,7 @@ _handGunAttScope = [""];
 _launcher = [""];
 _launcher_Mags = [""];
 _binocular = [""];
+_binocularPlus = "Laserdesignator_01_khk_F";
 
 //Old Launcher Mags for backward compat
 _launcher_MagAA = "";
@@ -163,7 +164,7 @@ if (!isPlayer _unit) exitWith
 		[(_rifleARAttArr select 0), _rifleAR_Mags], 
 		[(_handGunAttArr select 0), _handGun_Mags],
 		[(selectRandom _launcher),_launcher_Mags],
-		(selectRandom _binocular),
+		[(selectRandom _binocular),_binocularPlus],
 		[(selectRandom _launcherAA),_launcherAA_Mags],
 		[(selectRandom _heavyAR),_heavyAR_Mags]
 	];
@@ -176,7 +177,10 @@ _weapons = weapons _unit;
 // Add binocular to given roles
 if (_role IN _roleGL OR _role IN _roleHG) then 
 {
-	_unit addWeapon (selectRandom _binocular)
+	_unit addWeapon (selectRandom _binocular);
+}else
+{
+	_unit addWeapon (selectRandom _binocular);
 };
 
 if (_roleItems == 1 && _role == "riflat") then 
