@@ -28,7 +28,6 @@ _rifleAttScope = ["optic_erco_blk_f"];
 
 _itemsGL = ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"];
 _itemsGLNVG = ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"];
-_itemsGLAmt	= [8,6,4,4];
 
 _rifleMark = ["srifle_DMR_05_blk_F"];
 _rifleMark_Mags = "10Rnd_93x64_DMR_05_Mag";
@@ -63,7 +62,7 @@ _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
 _launcher = ["launch_RPG32_green_F"];
-_launcher_Mags = ["RPG32_HE_F"];
+_launcher_Mags = ["RPG32_HE_F","RPG32_F"];
 
 _binocular = ["Laserdesignator_01_khk_F"];
 

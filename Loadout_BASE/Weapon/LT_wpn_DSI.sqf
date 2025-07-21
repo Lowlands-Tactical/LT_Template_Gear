@@ -29,7 +29,6 @@ _rifleAttScope = ["hlc_optic_HensoldtZO_lo_Docter_2D"];
 
 _itemsGL = ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"];
 _itemsGLNVG = ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"];
-_itemsGLAmt	= [8,6,4,4];
 
 _rifleMark = ["hlc_rifle_416D20"];
 _rifleMark_Mags = _rifle_Mags_Tr;

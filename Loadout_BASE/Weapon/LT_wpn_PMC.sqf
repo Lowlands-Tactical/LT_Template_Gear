@@ -29,7 +29,6 @@ _rifleAttScope = ["optic_Yorris"];
 
 _itemsGL = ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"];
 _itemsGLNVG = ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"];
-_itemsGLAmt	= [8,6,4,4];
 
 _rifleMark = ["hlc_rifle_psg1"];
 _rifleMark_Mags = "hlc_20rnd_762x51_T_G3";

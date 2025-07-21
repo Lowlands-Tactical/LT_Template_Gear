@@ -29,7 +29,6 @@ _rifleAttScope = ["optic_aco"];
 
 _itemsGL = ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"];
 _itemsGLNVG = ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"];
-_itemsGLAmt	= [8,6,4,4];
 
 _rifleMark = ["arifle_MXM_F"];
 _rifleMark_Mags = _rifle_Mags;
