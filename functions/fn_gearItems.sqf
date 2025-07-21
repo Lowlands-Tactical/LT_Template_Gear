@@ -17,8 +17,8 @@ Parameters:
 private _period = param [0, 0, [0]];
 private _gear = param [1, "Test", ["Test"]];
 
-private _uniAmt = [5,5,2,2,2,2,1];
-private _trowAmt = [2,2,2,0,0,0];
+private _uniAmt = [6,6,6,2,2,2,1];
+private _trowAmt = [6,2,2,0,0,0];
 private _specAmt = [0,1,1,1,1,6,6];
 private _meds = ["ACE_fieldDressing","ACE_elasticBandage","ACE_quikclot","ACE_tourniquet","ACE_splint","ACE_painkillers","ACE_morphine","ACE_epinephrine","ACE_bloodIV","ACE_plasmaIV_500","ACE_salineIV_500","ACE_bodyBag","ACE_surgicalKit"];
 private _medAmt = [50,50,10,12,15,5,30,20,6,6,2,10,1];
