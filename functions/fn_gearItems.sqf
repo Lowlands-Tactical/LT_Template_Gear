@@ -111,6 +111,33 @@ switch (_period) do
 			case "Parachute":	{"vn_b_pack_t10_01"};
 		};
 	};
+	case 3:
+	{
+		private _radios = ["ACRE_PRC343","ACRE_PRC152"];
+		private _roleArr = ["ItemGPS","ACE_Flashlight_XL50","ACE_EntrenchingTool","ACE_IR_Strobe_Item","ACE_UAVBattery"];
+
+		_result = switch (_gear) do
+		{
+			case "Test":		{"Test\40K"};
+			case "Link":		{["ItemMap","ItemCompass","ItemWatch"]};
+			case "Radio":		{_radios};
+			case "Uniform":		{["FirstAidKit","ACE_CableTie"]};
+			case "UniformAmt":	{[5,2]};
+			case "Trow":		{["TIOW_ig_frag_grenade_mag","TIOW_ig_krak_grenade_mag","TIOW_ig_smoke_grenade_mag","TIOW_ig_smoke_grenade_mag","TIOW_ig_smoke_grenade_mag","TIOW_ig_smoke_grenade_mag"]};
+			case "TrowAmt":		{_trowAmt};
+			case "Role":		{_roleArr};
+			case "DMR":			{["ACE_RangeCard","ACE_SpottingScope", _radios #1, _roleArr #0, _roleArr #2]};
+			case "Special":		{["ToolKit","ACE_M26_Clacker","ACE_wirecutter","MineDetector","ACE_DefusalKit","ACE_marker_flags_red","ACE_marker_flags_green"]};
+			case "SpecialAmt":	{_specAmt};
+			case "Expl":		{["IC_CAD_CHARGE_placeable_mag","TIOW_melta_bomb_placeable_Mag"]};
+			case "ExplAmt":		{_explAmt};
+			case "Mine":		{["APERSMineDispenser_Mag","ATMine_Range_Mag","APERSBoundingMine_Range_Mag","APERSMine_Range_Mag","SLAMDirectionalMine_Wire_Mag"]};
+			case "MineAmt":		{_mineAmt};
+			case "Medic":		{["FirstAidKit"]};
+			case "MedicAmt":	{[10]};
+			case "Parachute":	{"B_Parachute"};
+		};
+	};
 };
 
 _result;

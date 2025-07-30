@@ -101,18 +101,26 @@ switch (_lt_loadout) do
 	case "GM":
 	{
 		_loadout = 1;
+		#include "\lt_template_gear\Loadout_GM\SwitchWeaponGM.sqf"
 		_handGunGL = "gm_pallad_d_brn";
 		_launcherAA = ["gm_fim43_oli"];
 		_launcherAA_Mags = ["gm_1Rnd_70mm_he_m585_fim43"];
-		#include "\lt_template_gear\Loadout_GM\SwitchWeaponGM.sqf"
 	};
 	case "VN":
 	{
 		_loadout = 2;
+		#include "\lt_template_gear\Loadout_VN\SwitchWeaponVN.sqf"
 		_handGunGL = "vn_m79_p";
 		_launcherAA = ["gm_fim43_oli"];
 		_launcherAA_Mags = ["gm_1Rnd_70mm_he_m585_fim43"];
-		#include "\lt_template_gear\Loadout_VN\SwitchWeaponVN.sqf"
+	};
+	case "40K":
+	{
+		_loadout = 3;
+		#include "\lt_template_gear\Loadout_40K\SwitchWeapon40K.sqf"
+		_handGunGL = "TIOW_IG_GL";
+		_launcherAA = ["IC_Launcher_AA_grey"];
+		_launcherAA_Mags = ["IC_Flak_Missile_mag"];
 	};
 };
 

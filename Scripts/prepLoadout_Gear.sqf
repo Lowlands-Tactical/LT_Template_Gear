@@ -70,6 +70,11 @@ switch (_lt_loadout) do
 		_loadout = 2;
 		#include "\lt_template_gear\Loadout_VN\SwitchGearVN.sqf"
 	};
+	case "40K":
+	{
+		_loadout = 3;
+		#include "\lt_template_gear\Loadout_40K\SwitchGear40K.sqf"
+	};
 };
 
 // Include base variable and select the gear/weapon sets
@@ -122,7 +127,13 @@ if (_lt_loadout == "BASE") then
 _gpsLinkOrItem = ((_itemsRole select 0) == "ACE_DAGR");
 _backpackLVDW = selectRandomWeighted ["NAF_BigDigBag_extra",0.7,"NAF_Digbag_extra",0.3];
 _lvdwTexture = "\lt_template_base\Logos\lvdwcamo.paa";
-_parachute = [_loadout, "Parachute"] call LT_fnc_gearItems;
+_parachute = if (_loadout != 3) then 
+{
+	[_loadout, "Parachute"] call LT_fnc_gearItems;
+}else
+{
+	_backpackLarge;
+};
 
 if (!isPlayer _unit) exitWith 
 {
@@ -340,7 +351,7 @@ clearAllItemsFromBackpack _unit;
 if (_nvg == "True") then 
 {
 	_buildinNVG = [(headgear _unit)] call LT_fnc_buildinNVG;
-	if (!_buildinNVG) then 
+	if (!_buildinNVG AND (_loadout != 3)) then 
 	{
 		_unit linkItem (selectRandom _nvgs);
 	};
