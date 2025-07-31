@@ -20,7 +20,7 @@ _unifMedic = _unif;
 _vestMedic = _vest;
 _helmMedic = _helm;
 
-_nvgs = ["NVGoggles_OPFOR"];
+_nvgs = ["ACE_NVG_Wide"];
 _goggles = ["G_Bandanna_khk","G_Lowprofile"];
 
 _unifCrew = ["U_O_SpecopsUniform_ocamo"];
