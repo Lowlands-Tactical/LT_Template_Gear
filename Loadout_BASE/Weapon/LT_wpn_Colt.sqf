@@ -30,13 +30,13 @@ _rifleAttScope = ["optic_NAF_Colt"];
 _itemsGL = ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"];
 _itemsGLNVG = ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"];
 
-_rifleMark = _rifle;
-_rifleMark_Mags = _rifle_Mags_Tr;
-_rifleMarkAttRailIR = _rifleAttRailIR;
-_rifleMarkAttRailFL = _rifleAttRailFL;
-_rifleMarkAttMuzzle = _rifleAttMuzzle;
-_rifleMarkAttBipod = _rifleAttBipod;
-_rifleMarkAttScope = _rifleAttScope;
+_rifleMark = ["hlc_rifle_samr2"];
+_rifleMark_Mags = _rifle_Mags;
+_rifleMarkAttRailIR = ["JCA_acc_LaserModule_sand_Pointer"];
+_rifleMarkAttRailFL = ["JCA_acc_flashlight_tactical_sand"];
+_rifleMarkAttMuzzle = ["hlc_muzzle_556NATO_OpsInc12th"];
+_rifleMarkAttBipod = ["JCA_bipod_04_sand"];
+_rifleMarkAttScope = ["optic_DMS"];
 
 _rifleAir = ["SMG_01_F"];
 _rifleAir_Mags = "30Rnd_45ACP_Mag_SMG_01_Tracer_Red";
