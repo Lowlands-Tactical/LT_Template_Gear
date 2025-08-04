@@ -185,10 +185,10 @@ _weapons = weapons _unit;
 // Add binocular to given roles
 if (_role IN _roleGL OR _role IN _roleHG) then 
 {
-	_unit addWeapon (selectRandom _binocular);
+	_unit addWeapon _binocularPlus;
 }else
 {
-	_unit addWeapon (selectRandom _binocularPlus);
+	_unit addWeapon (selectRandom _binocular);
 };
 
 if (_roleItems == 1 && _role == "riflat") then 
