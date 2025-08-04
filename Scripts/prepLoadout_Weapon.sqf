@@ -158,7 +158,7 @@ _roleGL = ["GL"] call LT_fnc_rolesArray;
 _roleAir = ["Air"] call LT_fnc_rolesArray;
 _roleHG = ["HG"] call LT_fnc_rolesArray;
 _roleWpn = ["Wpn"] call LT_fnc_rolesArray;
-_roleLaser = ["Laser"] call LT_fnc_roleArray;
+_roleLaser = ["Laser"] call LT_fnc_rolesArray;
 
 if (!isPlayer _unit) exitWith 
 {
