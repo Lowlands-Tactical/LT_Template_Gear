@@ -188,7 +188,7 @@ if (_role IN _roleGL OR _role IN _roleHG) then
 	_unit addWeapon (selectRandom _binocular);
 }else
 {
-	_unit addWeapon (selectRandom _binocular);
+	_unit addWeapon (selectRandom _binocularPlus);
 };
 
 if (_roleItems == 1 && _role == "riflat") then 
