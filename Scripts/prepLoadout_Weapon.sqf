@@ -158,6 +158,7 @@ _roleGL = ["GL"] call LT_fnc_rolesArray;
 _roleAir = ["Air"] call LT_fnc_rolesArray;
 _roleHG = ["HG"] call LT_fnc_rolesArray;
 _roleWpn = ["Wpn"] call LT_fnc_rolesArray;
+_roleLaser = ["Laser"] call LT_fnc_roleArray;
 
 if (!isPlayer _unit) exitWith 
 {
@@ -183,7 +184,7 @@ _weapons = weapons _unit;
 {_unit removeWeapon _x}forEach _weapons;
 
 // Add binocular to given roles
-if (_role IN _roleGL OR _role IN _roleHG) then 
+if (_role IN _roleLaser) then 
 {
 	_unit addWeapon _binocularPlus;
 }else
