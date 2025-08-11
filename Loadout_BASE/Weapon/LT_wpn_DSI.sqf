@@ -62,8 +62,8 @@ _handGunAttMuzzle = [""];
 _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
-_launcher = ["Atlas_Launch_Pzf3_F"];
-_launcher_Mags = ["Atlas_DM32_HEAT_MP_F","Atlas_DM22_HEAT_F"];
+_launcher = ["gm_pzf3_blk"];
+_launcher_Mags = ["gm_1Rnd_60mm_heat_dm22_pzf3","gm_1Rnd_60mm_heat_dm32_pzf3"];
 
 _binocular = ["Rangefinder"];
 

@@ -63,7 +63,7 @@ _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
 _launcher = ["gm_pzf3_blk"];
-_launcher_Mags = ["gm_1Rnd_60mm_heat_dm32_pzf3","gm_1Rnd_60mm_heat_dm22_pzf3"];
+_launcher_Mags = ["gm_1Rnd_60mm_heat_dm22_pzf3","gm_1Rnd_60mm_heat_dm32_pzf3"];
 
 _binocular = ["Laserdesignator"];
 
