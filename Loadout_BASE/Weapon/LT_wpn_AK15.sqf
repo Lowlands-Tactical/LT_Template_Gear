@@ -64,6 +64,12 @@ _handGunAttScope = [""];
 _launcher = ["launch_RPG32_green_F"];
 _launcher_Mags = ["RPG32_HE_F","RPG32_F"];
 
+_launcherAA = ["rhs_weap_fim92"];
+_launcherAA_Mags = ["rhs_fim92_mag","Titan_AA"];
+
+_heavyAR = ["Aegis_MMG_FNMAG_F"];
+_heavyAR_Mags = "Aegis_200Rnd_762x51_MAG_Green_Tracer_F";
+
 _binocular = ["Laserdesignator_01_khk_F"];
 
 //=====================================================================================

@@ -64,6 +64,12 @@ _handGunAttScope = [""];
 _launcher = ["gm_pzf3_blk"];
 _launcher_Mags = ["gm_1Rnd_60mm_heat_dm32_pzf3","gm_1Rnd_60mm_heat_dm32_pzf3"];
 
+_launcherAA = ["gm_fim43_oli"];
+_launcherAA_Mags = ["gm_1Rnd_70mm_he_m585_fim43","Titan_AA"];
+
+_heavyAR = ["gm_lmgm62_blk"];
+_heavyAR_Mags = "gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn";
+
 _binocular = ["gm_ferod16_oli"];
 
 //=====================================================================================

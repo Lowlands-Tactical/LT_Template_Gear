@@ -66,6 +66,12 @@ _handGunAttScope = [""];
 _launcher = ["vn_m20a1b1_01"];
 _launcher_Mags = ["vn_m20a1b1_wp_mag","vn_m20a1b1_heat_mag"];
 
+_launcherAA = ["vn_sa7b"];
+_launcherAA_Mags = ["vn_sa7b"];
+
+_heavyAR = ["vn_m60"];
+_heavyAR_Mags = "vn_m60_100_mag";
+
 _binocular = ["vn_m19_binocs_grn"];
 
 //=====================================================================================

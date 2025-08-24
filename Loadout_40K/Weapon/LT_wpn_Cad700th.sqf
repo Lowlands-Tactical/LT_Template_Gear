@@ -65,6 +65,12 @@ _handGunAttScope = [""];
 _launcher = ["IC_Launcher_AT_grey"];
 _launcher_Mags = ["IC_frag_Missile_mag","IC_krakk_Missile_mag"];
 
+_launcherAA = ["IC_Launcher_AA_grey"];
+_launcherAA_Mags = ["IC_Flak_Missile_mag"];
+
+_heavyAR = ["ICP_LMG_01_imp"];
+_heavyAR_Mags = "ic_100rnd_825_HP_Tracer_rifleMag";
+
 _binocular = ["ic_cad_magnoculars"];
 
 //=====================================================================================

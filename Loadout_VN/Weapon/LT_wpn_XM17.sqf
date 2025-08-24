@@ -64,7 +64,13 @@ _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
 _launcher = ["vn_m72"];
-_launcher_Mags = [];
+_launcher_Mags = ["vn_m72_mag"];
+
+_launcherAA = ["vn_sa7b"];
+_launcherAA_Mags = ["vn_sa7b"];
+
+_heavyAR = ["vn_m60"];
+_heavyAR_Mags = "vn_m60_100_mag";
 
 _binocular = ["vn_m19_binocs_grey", "vn_m19_binocs_grn"];
 
