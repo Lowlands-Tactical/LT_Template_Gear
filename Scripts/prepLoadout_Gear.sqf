@@ -324,11 +324,13 @@ if (_role IN _roleCrew) then
 	{
 		_unit linkItem (_itemsRole select 0);
 	};
-	if (_role == "vhdr") then
+	if (_role == "vhdr" OR _role == "crew" OR _role == "jet") then
 	{
 		_unit setUnitTrait ["medic", true];
+	}else
+	{
+		_unit setUnitTrait ["engineer", true];
 	};
-	_unit setUnitTrait ["engineer", true];
 	if !("NONE" IN _roleRadio) then 
 	{
 		(uniformContainer _unit) addItemCargoGlobal [_itemsRadio select 1, 1];
@@ -460,6 +462,18 @@ switch (_role) do
 	case "riflat":
 	{
 		[backpackContainer _unit, 650] remoteExec ["LT_fnc_resetMaxLoad"];
+	};
+	case "riflaa":
+	{
+		[backpackContainer _unit, 650] remoteExec ["LT_fnc_resetMaxLoad"];
+	};
+	case "aar":
+	{
+		[backpackContainer _unit, 500] remoteExec ["LT_fnc_resetMaxLoad"];
+	};
+	case "hmga":
+	{
+		[backpackContainer _unit, 500] remoteExec ["LT_fnc_resetMaxLoad"];
 	};
 	default 
 	{

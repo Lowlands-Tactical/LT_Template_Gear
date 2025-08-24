@@ -74,6 +74,10 @@ _handGunAttBipod = [""];
 _handGunAttScope = [""];
 _launcher = [""];
 _launcher_Mags = [""];
+_launcherAA = [""];
+_launcherAA_Mags = [""];
+_heavyAR = [""];
+_heavyAR_Mags = "";
 _binocular = [""];
 _binocularPlus = "Laserdesignator_01_khk_F";
 
@@ -83,11 +87,6 @@ _launcher_MagAT = "";
 
 //Empty handgunGL class for the switch below
 _handGunGL = "";
-_launcherAA = ["rhs_weap_fim92"];
-_launcherAA_Mags = ["rhs_fim92_mag","Titan_AA"];
-//Heavy machinegun
-_heavyAR = ["Aegis_MMG_FNMAG_F"];
-_heavyAR_Mags = "Aegis_200Rnd_762x51_MAG_Green_Tracer_F";
 
 // Include base variable and select the gear/weapon sets
 _loadout = 0;
@@ -103,25 +102,40 @@ switch (_lt_loadout) do
 		_loadout = 1;
 		#include "\lt_template_gear\Loadout_GM\SwitchWeaponGM.sqf"
 		_handGunGL = "gm_pallad_d_brn";
-		_launcherAA = ["gm_fim43_oli"];
-		_launcherAA_Mags = ["gm_1Rnd_70mm_he_m585_fim43"];
 	};
 	case "VN":
 	{
 		_loadout = 2;
 		#include "\lt_template_gear\Loadout_VN\SwitchWeaponVN.sqf"
 		_handGunGL = "vn_m79_p";
-		_launcherAA = ["gm_fim43_oli"];
-		_launcherAA_Mags = ["gm_1Rnd_70mm_he_m585_fim43"];
 	};
 	case "40K":
 	{
 		_loadout = 3;
 		#include "\lt_template_gear\Loadout_40K\SwitchWeapon40K.sqf"
 		_handGunGL = "TIOW_IG_GL";
-		_launcherAA = ["IC_Launcher_AA_grey"];
-		_launcherAA_Mags = ["IC_Flak_Missile_mag"];
+		
 	};
+};
+
+// Check Launcher AA
+if ((_launcherAA select 0) == "") then 
+{
+	_launcherAA = ["rhs_weap_fim92"];
+};
+if ((_launcherAA_Mags select 0) == "") then 
+{
+	_launcherAA_Mags = ["rhs_fim92_mag","Titan_AA"];
+};
+
+// Check Heavy Machine Gun
+if ((_heavyAR select 0) == "") then 
+{
+	_heavyAR = ["Aegis_MMG_FNMAG_F"];
+};
+if (_heavyAR_Mags == "") then 
+{
+	_heavyAR_Mags = "Aegis_200Rnd_762x51_MAG_Green_Tracer_F";
 };
 
 // Check for GL weapon if not give normal rifle and add GL Handgun to backpack
@@ -192,16 +206,30 @@ if (_role IN _roleLaser) then
 	_unit addWeapon (selectRandom _binocular);
 };
 
-if (_roleItems == 1 && _role == "riflat") then 
+if (_roleItems == 1) then 
 {
+	if (_role == "riflat") then
 	{
-		(backpackContainer _unit) addItemCargoGlobal [_x,2];
-	}forEach _launcher_Mags;
-	if (((_launcher_Mags select 0) == "")) then 
-	{
-		(backpackContainer _unit) addItemCargoGlobal [(selectRandom _launcher), 1];
+		{
+			(backpackContainer _unit) addItemCargoGlobal [_x,2];
+		}forEach _launcher_Mags;
+		if (((_launcher_Mags select 0) == "")) then 
+		{
+			(backpackContainer _unit) addItemCargoGlobal [(selectRandom _launcher), 1];
+		};
+		_unit addWeapon (selectRandom _launcher);
 	};
-	_unit addWeapon (selectRandom _launcher);
+	if (_role == "riflaa") then
+	{
+		{
+			(backpackContainer _unit) addItemCargoGlobal [_x,2];
+		}forEach _launcherAA_Mags;
+		if (((_launcherAA_Mags select 0) == "")) then 
+		{
+			(backpackContainer _unit) addItemCargoGlobal [(selectRandom _launcherAA), 1];
+		};
+		_unit addWeapon (selectRandom _launcherAA);
+	};
 };
 
 // Add weapons and ammo if consumable is 1
@@ -249,19 +277,6 @@ if (_role IN _roleAir) then
 	(vestContainer _unit) addItemCargoGlobal [_rifleAir_Mags, 12];
 	_unit addWeapon (selectRandom _rifleAir);
 };
-if (_role == "dmr") then 
-{
-	(vestContainer _unit) addItemCargoGlobal [_rifleMark_Mags, 12];
-	_unit addWeapon (selectRandom _rifleMark);
-};
-if (_role == "ar" OR _role == "aar") then 
-{
-	(backpackContainer _unit) addItemCargoGlobal [_rifleAR_Mags, 5];
-	if (_role == "ar") then 
-	{
-		_unit addWeapon (selectRandom _rifleAR);
-	};
-};
 if (_role IN _roleHG) then 
 {
 	(vestContainer _unit) addItemCargoGlobal [_handGun_Mags, 3];
@@ -270,6 +285,32 @@ if (_role IN _roleHG) then
 		(vestContainer _unit) addItemCargoGlobal [_handGun_Mags, 3];
 	};
 	_unit addWeapon (selectRandom _handGun);
+};
+switch (_role) do 
+{
+	case "dmr":
+	{
+		(vestContainer _unit) addItemCargoGlobal [_rifleMark_Mags, 12];
+		_unit addWeapon (selectRandom _rifleMark);
+	};
+	case "ar":
+	{
+		(backpackContainer _unit) addItemCargoGlobal [_rifleAR_Mags, 5];
+		_unit addWeapon (selectRandom _rifleAR);
+	};
+	case "aar":
+	{
+		(backpackContainer _unit) addItemCargoGlobal [_rifleAR_Mags, 5];
+	};
+	case "hmg":
+	{
+		(backpackContainer _unit) addItemCargoGlobal [_heavyAR_Mags, 5];
+		_unit addWeapon (selectRandom _heavyAR);
+	};
+	case "hmga":
+	{
+		(backpackContainer _unit) addItemCargoGlobal [_heavyAR_Mags, 5];
+	};
 };
 
 // Add weapon attachements
