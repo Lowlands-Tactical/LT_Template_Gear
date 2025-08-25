@@ -310,10 +310,10 @@ if (_role IN _roleRadio) then
 	};
 	
 	(uniformContainer _unit) addItemCargoGlobal [_itemsRadio select 1, 1];
-	if (_role == "ftl") then 
-	{
-		(backpackContainer _unit) addItemCargoGlobal [_itemsRadio select 1, 1];
-	};
+};
+if (_role == "ftl") then 
+{
+	(backpackContainer _unit) addItemCargoGlobal [_itemsRadio select 1, 1];
 };
 if (_role IN _roleCrew) then 
 {
@@ -395,6 +395,7 @@ if (_role == "jtac") then
 		{
 			(backpackContainer _unit) addItemCargoGlobal [_x, _itemTrowAmt select _forEachIndex];
 		}forEach _itemsTrow;
+		(backpackContainer _unit) addItemCargoGlobal [_itemsRadio select 2, 1];
 		_unit linkItem _uavTerminal;
 	};
 };
@@ -450,6 +451,10 @@ switch (_role) do
 	case (_role IN _roleCrew): 
 	{
 		[backpackContainer _unit, 200] remoteExec ["LT_fnc_resetMaxLoad"];
+	};
+	case "jtac": 
+	{
+		[backpackContainer _unit, 400] remoteExec ["LT_fnc_resetMaxLoad"];
 	};
 	case "eng": 
 	{
