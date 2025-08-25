@@ -32,7 +32,7 @@ switch (_period) do
 {
 	case 0:
 	{
-		private _radios = ["ACRE_PRC343","ACRE_PRC152"];
+		private _radios = ["ACRE_PRC343","ACRE_PRC152","ACRE_PRC117F"];
 		private _roleArr = ["ItemGPS","ACE_Flashlight_XL50","ACE_EntrenchingTool","ACE_IR_Strobe_Item","ACE_UAVBattery"];
 
 		_result = switch (_gear) do
@@ -113,7 +113,7 @@ switch (_period) do
 	};
 	case 3:
 	{
-		private _radios = ["ACRE_PRC343","ACRE_PRC152"];
+		private _radios = ["ACRE_PRC343","ACRE_PRC152","ACRE_PRC117F"];
 		private _roleArr = ["ItemGPS","ACE_Flashlight_XL50","ACE_EntrenchingTool","ACE_IR_Strobe_Item","ACE_UAVBattery"];
 
 		_result = switch (_gear) do
