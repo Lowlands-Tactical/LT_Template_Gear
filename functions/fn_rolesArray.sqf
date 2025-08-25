@@ -21,7 +21,7 @@ private _roles = ["com","sql","jtac","ftl","gren","comms","rifl","riflat","rifla
 private _result = switch (_roleSelect) do
 {
 	case "Test":	{"Test\Roles"};
-	case "Small":	{[_roles #0, _roles #1, _roles #2, _roles #3, _roles #4, _roles#5, _roles #6, _roles #9, _roles #10, _roles #16, _roles #17, _roles #18]};
+	case "Small":	{[_roles #0, _roles #1, _roles #2, _roles #3, _roles #4, _roles#5, _roles #6, _roles #9, _roles #10, _roles #14, _roles #16, _roles #17, _roles #18]};
 	case "Large":	{[_roles #7, _roles #8, _roles #11, _roles #13, _roles #15]};
 	case "Crew":	{[_roles #16, _roles #17, _roles #18, _roles #19, _roles #20, _roles #21]};
 	case "Special":	{[_roles #13, _roles #16, _roles #17, _roles #18, _roles #19]};
