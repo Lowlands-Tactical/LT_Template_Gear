@@ -80,6 +80,7 @@ _heavyAR = [""];
 _heavyAR_Mags = "";
 _binocular = [""];
 _binocularPlus = "Laserdesignator_01_khk_F";
+_binocularPlusBat = "Laserbatteries";
 
 //Old Launcher Mags for backward compat
 _launcher_MagAA = "";
@@ -187,7 +188,7 @@ if (!isPlayer _unit) exitWith
 		[(_rifleARAttArr select 0), _rifleAR_Mags], 
 		[(_handGunAttArr select 0), _handGun_Mags],
 		[(selectRandom _launcher),_launcher_Mags],
-		[(selectRandom _binocular),_binocularPlus],
+		[(selectRandom _binocular),_binocularPlus,_binocularPlusBat],
 		[(selectRandom _launcherAA),_launcherAA_Mags],
 		[(selectRandom _heavyAR),_heavyAR_Mags]
 	];
@@ -200,6 +201,7 @@ _weapons = weapons _unit;
 // Add binocular to given roles
 if (_role IN _roleLaser) then 
 {
+	(uniformContainer _unit) addItemCargoGlobal [_binocularPlusBat, 1];
 	_unit addWeapon _binocularPlus;
 }else
 {

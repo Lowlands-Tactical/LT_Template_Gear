@@ -17,7 +17,7 @@ Parameters:
 private _period = param [0, 0, [0]];
 private _gear = param [1, "Test", ["Test"]];
 
-private _uniAmt = [6,6,6,2,2,2,1];
+private _uniAmt = [6,6,6,2,2,2,1,1];
 private _trowAmt = [6,2,2,0,0,0];
 private _specAmt = [0,1,1,1,1,6,6];
 private _meds = ["ACE_fieldDressing","ACE_elasticBandage","ACE_quikclot","ACE_tourniquet","ACE_splint","ACE_painkillers","ACE_morphine","ACE_epinephrine","ACE_bloodIV","ACE_plasmaIV_500","ACE_salineIV_500","ACE_bodyBag","ACE_surgicalKit","ACE_personalAidKit"];
@@ -40,7 +40,7 @@ switch (_period) do
 			case "Test":		{"Test\BASE"};
 			case "Link":		{["ItemMap","ItemCompass","ItemWatch"]};
 			case "Radio":		{_radios};
-			case "Uniform":		{[_meds #0,_meds #1,_meds #2,_meds #3,_meds #4,_meds #5,"ACE_CableTie"]};
+			case "Uniform":		{[_meds #0,_meds #1,_meds #2,_meds #3,_meds #4,_meds #5,"ACE_CableTie","ItemcTabHCam"]};
 			case "UniformAmt":	{_uniAmt};
 			case "Trow":		{["HandGrenade","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellYellow","SmokeShellPurple"]};
 			case "TrowAmt":		{_trowAmt};
@@ -67,7 +67,7 @@ switch (_period) do
 			case "Test":		{"Test\GM"};
 			case "Link":		{["ItemMap","gm_ge_army_conat2","gm_watch_kosei_80"]};
 			case "Radio":		{_radios};
-			case "Uniform":		{[_meds #0,_meds #1,_meds #2,_meds #3,_meds #4,_meds #5,"ACE_CableTie"]};
+			case "Uniform":		{[_meds #0,_meds #1,_meds #2,_meds #3,_meds #4,_meds #5,"ACE_CableTie","ItemcTabHCam"]};
 			case "UniformAmt":	{_uniAmt};
 			case "Trow":		{["gm_handgrenade_frag_dm51a1","gm_smokeshell_wht_gc","gm_smokeshell_grn_gc","gm_smokeshell_red_gc","gm_smokeshell_yel_gc","gm_smokeshell_blu_gc"]};
 			case "TrowAmt":		{_trowAmt};
@@ -94,7 +94,7 @@ switch (_period) do
 			case "Test":		{"Test\VN"};
 			case "Link":		{["vn_b_item_map","vn_b_item_compass","vn_b_item_watch"]};
 			case "Radio":		{_radios};
-			case "Uniform":		{[_meds #0,_meds #1,_meds #2,_meds #3,_meds #4,_meds #5,"ACE_CableTie"]};
+			case "Uniform":		{[_meds #0,_meds #1,_meds #2,_meds #3,_meds #4,_meds #5,"ACE_CableTie","ItemcTabHCam"]};
 			case "UniformAmt":	{_uniAmt};
 			case "Trow":		{["vn_m67_grenade_mag","vn_m18_white_mag","vn_m18_green_mag","vn_m18_red_mag","vn_m18_yellow_mag","vn_m18_purple_mag"]};
 			case "TrowAmt":		{_trowAmt};
@@ -121,8 +121,8 @@ switch (_period) do
 			case "Test":		{"Test\40K"};
 			case "Link":		{["ItemMap","ItemCompass","ItemWatch"]};
 			case "Radio":		{_radios};
-			case "Uniform":		{["FirstAidKit","ACE_CableTie"]};
-			case "UniformAmt":	{[5,2]};
+			case "Uniform":		{["FirstAidKit","ACE_CableTie","ItemcTabHCam"]};
+			case "UniformAmt":	{[5,2,1]};
 			case "Trow":		{["TIOW_ig_frag_grenade_mag","TIOW_ig_krak_grenade_mag","TIOW_ig_smoke_grenade_mag","TIOW_ig_smoke_grenade_mag","TIOW_ig_smoke_grenade_mag","TIOW_ig_smoke_grenade_mag"]};
 			case "TrowAmt":		{_trowAmt};
 			case "Role":		{_roleArr};
