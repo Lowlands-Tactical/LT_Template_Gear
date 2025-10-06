@@ -311,6 +311,10 @@ if (_role IN _roleRadio) then
 	
 	(uniformContainer _unit) addItemCargoGlobal [_itemsRadio select 1, 1];
 };
+if (_role == "com") then 
+{
+	(uniformContainer _unit) addItemCargoGlobal ["ItemcTabMisc", 1];
+};
 if (_role == "ftl") then 
 {
 	(backpackContainer _unit) addItemCargoGlobal [_itemsRadio select 1, 1];
