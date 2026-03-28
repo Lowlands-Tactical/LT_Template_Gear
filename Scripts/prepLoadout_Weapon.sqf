@@ -201,17 +201,18 @@ if (!isPlayer _unit) exitWith
 _weapons = weapons _unit;
 {_unit removeWeapon _x}forEach _weapons;
 
+// Add binocular to given roles
+if (_role IN _roleLaser) then 
+{
+	(uniformContainer _unit) addItemCargoGlobal [_binocularPlusBat, 1];
+	_unit addWeapon _binocularPlus;
+}else
+{
+	_unit addWeapon (selectRandom _binocular);
+};
+
 if (_roleItems == 1) then 
 {
-	// Add binocular to given roles
-	if (_role IN _roleLaser) then 
-	{
-		(uniformContainer _unit) addItemCargoGlobal [_binocularPlusBat, 1];
-		_unit addWeapon _binocularPlus;
-	}else
-	{
-		_unit addWeapon (selectRandom _binocular);
-	};
 	if (_role == "riflat") then
 	{
 		{
