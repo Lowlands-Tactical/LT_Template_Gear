@@ -197,7 +197,7 @@ _loadRole = TabletSettings get "ROLES";
         _rifleGL = _rifle;
     };
     _ammoGL = if (MissionSettings get "NVG") then{_itemsGLNVG;}else{_itemsGL;};
-    _itemsGLAmt	= [14,6,4,4];
+    _itemsGLAmt	= [19,6,4,4];
 
     // Pre select heavy weapon types
     _periodWPN=createHashMapFromArray[
