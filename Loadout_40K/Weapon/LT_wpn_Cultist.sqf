@@ -11,7 +11,6 @@ Reset player weapons set from mission parameters
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["AgripinaaAutoChaos","AgripinaaAutoChaos2","AgripinaaAutoChaos3"];
 _rifleGL = ["AgripinaaAutoChaosgl","AgripinaaAutoChaos2gl","AgripinaaAutoChaos3gl"]; 
 _rifle_Mags	= "30Rnd_Agrip_mag";

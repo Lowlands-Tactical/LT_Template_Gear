@@ -11,7 +11,6 @@ Description:  WS UNA factions Wapons
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["arifle_VelkoR5_lxWS"];
 _rifleGL = ["arifle_VelkoR5_GL_lxWS"];
 _rifle_Mags	= "35Rnd_556x45_Velko_reload_tracer_green_lxWS";

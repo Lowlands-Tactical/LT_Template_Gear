@@ -34,7 +34,6 @@ _rifleAttScope = [""];
 
 _itemsGL = ["","","",""];
 _itemsGLNVG = ["","","",""];
-_itemsGLAmt	= [8,6,4,4];
 
 _rifleMark = [""];
 _rifleMark_Mags = "";

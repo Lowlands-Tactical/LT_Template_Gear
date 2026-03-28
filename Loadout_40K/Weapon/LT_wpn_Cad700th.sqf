@@ -11,7 +11,6 @@ Reset player weapons set from mission parameters
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["M36KantRifle700"];
 _rifleGL = ["M36KantRifle700"]; 
 _rifle_Mags	= "M36KantRifle_mag";

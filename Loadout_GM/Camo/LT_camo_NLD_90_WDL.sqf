@@ -16,9 +16,9 @@ _unif = ["NAF_U_GVT_wdl","NAF_U_GVTV_wdl","NAF_U_GVTT_wdl"];
 _vest = ["V_TacVest_oli","gm_ge_vest_sov_80_oli","gm_ge_vest_sov_armor_80_oli"];
 _helm = ["NAF_H_HelmetIA_wdl"];
 
-_unifMedic = [""];
-_vestMedic = [""];
-_helmMedic = [""];
+_unifMedic = _unif;
+_vestMedic = _vest;
+_helmMedic = _helm;
 
 _nvgs = ["gm_ferod51_oli"];
 _goggles = [""];

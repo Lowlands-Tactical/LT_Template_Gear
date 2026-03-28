@@ -11,7 +11,6 @@ Reset player weapons set from mission parameters
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["ICP_Rifle_Kantrael_green"];
 _rifleGL = ["ICP_Rifle_Kantrael_green"]; 
 _rifle_Mags	= "ic_las_powerpack";

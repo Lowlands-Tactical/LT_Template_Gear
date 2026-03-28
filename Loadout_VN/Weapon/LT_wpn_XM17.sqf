@@ -11,7 +11,6 @@ Reset player weapons set from mission parameters
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["vn_xm177_stock"];
 _rifleGL = ["vn_xm177_m203"]; 
 _rifle_Mags	= "vn_m16_30_mag";
@@ -29,7 +28,6 @@ _rifleAttScope = [""];
 
 _itemsGL = ["vn_40mm_m381_he_mag","vn_40mm_m680_smoke_w_mag","vn_40mm_m716_smoke_g_mag","vn_40mm_m715_smoke_r_mag"];
 _itemsGLNVG = ["vn_40mm_m381_he_mag","vn_40mm_m583_flare_w_mag","vn_40mm_m583_flare_g_mag","vn_40mm_m583_flare_r_mag"];
-_itemsGLAmt	= [8,6,4,4];
 
 _rifleMark = ["vn_m16"];
 _rifleMark_Mags = "vn_m16_20_t_mag";

@@ -9,7 +9,6 @@ Description:
 
 //=====================================================================================
 
-// Default Weapon(GL) and ammo(tracer)
 _rifle = ["gm_sg542_oli"];
 _rifleGL = [""];
 _rifle_Mags	= "gm_20Rnd_762x51mm_AP_DM151_sg542_blk";
@@ -27,7 +26,6 @@ _rifleAttScope = [""];
 
 _itemsGL = ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"];
 _itemsGLNVG = ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"];
-_itemsGLAmt	= [8,6,4,4];
 
 _rifleMark = ["gm_g8a1_blk"];
 _rifleMark_Mags = "gm_20Rnd_762x51mm_B_T_DM21_g3_blk";

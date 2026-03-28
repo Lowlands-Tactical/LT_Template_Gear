@@ -11,7 +11,6 @@
 
 //=====================================================================================
 
-
 _rifle = ["vn_m16_camo"];
 _rifleGL = ["vn_m16_m203_camo"];
 _rifle_Mags	= "vn_m16_20_mag";
@@ -29,7 +28,6 @@ _rifleAttScope = ["vn_o_4x_m16"];
 
 _itemsGL = ["vn_40mm_m381_he_mag","vn_40mm_m680_smoke_w_mag","vn_40mm_m715_smoke_g_mag","vn_40mm_m682_smoke_r_mag"];
 _itemsGLNVG = ["vn_40mm_m381_he_mag","vn_40mm_m583_flare_w_mag","vn_40mm_m661_flare_g_mag","vn_40mm_m662_flare_r_mag"];
-_itemsGLAmt    = [8,6,4,4];
 
 _rifleMark = ["vn_m21"];
 _rifleMark_Mags = "vn_m14_mag";

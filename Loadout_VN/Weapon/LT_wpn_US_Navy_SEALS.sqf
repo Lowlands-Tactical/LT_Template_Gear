@@ -9,7 +9,6 @@ Description: US_Navy_SEALS_Stoner
 
 //=====================================================================================
 
-
 _rifle = ["vn_m63a"];
 _rifleGL = [""];
 _rifle_Mags	= "vn_m63a_30_mag";
@@ -27,7 +26,6 @@ _rifleAttScope = [""];
 
 _itemsGL = ["vn_40mm_m381_he_mag","vn_40mm_m583_flare_w_mag","vn_40mm_m680_smoke_w_mag","vn_40mm_m715_smoke_g_mag"];
 _itemsGLNVG = ["vn_40mm_m381_he_mag","vn_40mm_m583_flare_w_mag","vn_40mm_m680_smoke_w_mag","vn_40mm_m715_smoke_g_mag"];
-_itemsGLAmt	= [8,6,4,4];
 
 _rifleMark = ["vn_m14_camo"];
 _rifleMark_Mags = "vn_m14_t_mag";

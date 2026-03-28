@@ -11,7 +11,6 @@ Reset player weapons set from mission parameters
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["Ork_Shoota_1","Ork_Shoota_2","Ork_Shoota_3","Shoota2"];
 _rifleGL = ["Shoota1_A"]; 
 _rifle_Mags	= "ShootaMag";

@@ -10,7 +10,6 @@ Reset player weapons set from mission parameters
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["arifle_AK12_F"];
 _rifleGL = ["arifle_AK12_GL_F"]; 
 _rifle_Mags	= "30Rnd_762x39_AK12_Mag_F";

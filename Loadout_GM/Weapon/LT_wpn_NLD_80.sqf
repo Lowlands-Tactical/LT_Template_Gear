@@ -11,7 +11,6 @@ Reset player weapons set from mission parameters
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["arifle_SLR_lxWS"];
 _rifleGL = ["arifle_SLR_GL_lxWS"]; 
 _rifle_Mags	= "20Rnd_762x51_slr_lxWS";
@@ -29,7 +28,6 @@ _rifleAttScope = [""];
 
 _itemsGL = ["1Rnd_40mm_HE_lxWS","1Rnd_58mm_AT_lxWS","1Rnd_50mm_Smoke_lxWS"];
 _itemsGLNVG = ["1Rnd_40mm_HE_lxWS","1Rnd_58mm_AT_lxWS","1Rnd_50mm_Smoke_lxWS"];
-_itemsGLAmt	= [8,8,6];
 
 _rifleMark = ["arifle_SLR_V_lxWS"];
 _rifleMark_Mags = "20Rnd_762x51_slr_lxWS";
