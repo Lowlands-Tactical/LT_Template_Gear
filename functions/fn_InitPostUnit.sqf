@@ -30,6 +30,21 @@ _unitItems = _unit getVariable ["LT_unit_item", true]; //PersMedic Nades
 _unitWeapon = _unit getVariable ["LT_unit_weapon", true]; //Wapens Munitie
 _unitGear = _unit getVariable ["LT_unit_gear", true]; //role items
 
+//Backward compatible for older missions
+_unitVars = [_unitLink,_unitItems,_unitWeapon,_unitGear];
+_unitNewVars = [];
+{ 
+	_newValue = switch (typeName _x) do
+	{
+		case "BOOL":{_x};
+		case "SCALAR":{if (_x == 0) then {false} else {true};};
+	};
+	_unitNewVars pushBack _newValue;
+}forEach _unitVars;
+_unitLink = (_unitNewVars #0);
+_unitItems = (_unitNewVars #1);
+_unitWeapon = (_unitNewVars #2);
+_unitGear = (_unitNewVars #3);
 
 // Eject incorrect
 if ((_unitRole == "custom") OR (_unitSide == "CIV")) exitWith 
