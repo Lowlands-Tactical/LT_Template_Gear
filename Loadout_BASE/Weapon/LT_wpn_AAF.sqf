@@ -62,7 +62,7 @@ _handGunAttMuzzle = ["muzzle_snds_acp"];
 _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
-_launcher = ["launcher_NLAW_F"];
+_launcher = ["launch_NLAW_F"];
 _launcher_Mags = ["NLAW_F"];
 
 _launcherAA = ["rhs_weap_fim92"];
@@ -70,6 +70,9 @@ _launcherAA_Mags = ["rhs_fim92_mag","Titan_AA"];
 
 _heavyAR = ["Aegis_MMG_FNMAG_F"];
 _heavyAR_Mags = "Aegis_200Rnd_762x51_MAG_Green_Tracer_F";
+
+_heavyAT = ["ace_spike_launcher_olive"];
+_heavyAT_Mags = "ace_spike_lr";
 
 _binocular = ["Rangefinder"];
 
