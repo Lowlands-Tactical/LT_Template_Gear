@@ -504,6 +504,21 @@ gearCrates = createHashMapFromArray[
             ["Amount",      []],
             ["Backpack",    [true,[(westGear get "UAV")#1,2,"none"],[(westGear get "Backpack")#2,2,"medic"],[(westGear get "Backpack")#0,2,"eng"]]]
         ]],
+        [_loadName #6 /*Crate Explosives*/,createHashMapFromArray[
+            [_missionPeriod,[]],
+            ["Amount",      []],
+            ["Backpack",    [true,[(westGear get "Backpack")#0,1,"eng"]]]
+        ]],
+        [_loadName #7 /*Crate Mines*/,createHashMapFromArray[
+            [_missionPeriod,[]],
+            ["Amount",      []],
+            ["Backpack",    [true,[(westGear get "Backpack")#0,1,"eng"]]]
+        ]],
+        [_loadName #8 /*Crate Medical*/,createHashMapFromArray[
+            [_missionPeriod,[]],
+            ["Amount",      []],
+            ["Backpack",    [true,[(westGear get "Backpack")#2,1,"medic"]]]
+        ]],
         [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
             [_missionPeriod,[selectRandom ((westGear get "NVG")#1)]],
             ["Amount",      [20]],
@@ -536,6 +551,21 @@ gearCrates = createHashMapFromArray[
             ["Amount",      []],
             ["Backpack",    [true,[(eastGear get "UAV")#1,2,"none"],[(eastGear get "Backpack")#2,2,"medic"],[(eastGear get "Backpack")#0,2,"eng"]]]
         ]],
+        [_loadName #6 /*Crate Explosives*/,createHashMapFromArray[
+            [_missionPeriod,[]],
+            ["Amount",      []],
+            ["Backpack",    [true,[(eastGear get "Backpack")#0,1,"eng"]]]
+        ]],
+        [_loadName #7 /*Crate Mines*/,createHashMapFromArray[
+            [_missionPeriod,[]],
+            ["Amount",      []],
+            ["Backpack",    [true,[(eastGear get "Backpack")#0,1,"eng"]]]
+        ]],
+        [_loadName #8 /*Crate Medical*/,createHashMapFromArray[
+            [_missionPeriod,[]],
+            ["Amount",      []],
+            ["Backpack",    [true,[(eastGear get "Backpack")#2,1,"medic"]]]
+        ]],
         [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
             [_missionPeriod,[selectRandom ((eastGear get "NVG")#1)]],
             ["Amount",      [20]],
@@ -567,6 +597,21 @@ gearCrates = createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
             ["Backpack",    [true,[(guerGear get "UAV")#1,2,"none"],[(guerGear get "Backpack")#2,2,"medic"],[(guerGear get "Backpack")#0,2,"eng"]]]
+        ]],
+        [_loadName #6 /*Crate Explosives*/,createHashMapFromArray[
+            [_missionPeriod,[]],
+            ["Amount",      []],
+            ["Backpack",    [true,[(guerGear get "Backpack")#0,1,"eng"]]]
+        ]],
+        [_loadName #7 /*Crate Mines*/,createHashMapFromArray[
+            [_missionPeriod,[]],
+            ["Amount",      []],
+            ["Backpack",    [true,[(guerGear get "Backpack")#0,1,"eng"]]]
+        ]],
+        [_loadName #8 /*Crate Medical*/,createHashMapFromArray[
+            [_missionPeriod,[]],
+            ["Amount",      []],
+            ["Backpack",    [true,[(guerGear get "Backpack")#2,1,"medic"]]]
         ]],
         [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
             [_missionPeriod,[selectRandom ((guerGear get "NVG")#1)]],
