@@ -28,7 +28,15 @@ _items=
     "ACE_EntrenchingTool",          // _items #13
     "ACE_IR_Strobe_Item",           // _items #14
     "ACE_UAVBattery",               // _items #15
-    "FirstAidKit"                   // _items #16
+    "FirstAidKit",                  // _items #16
+    "ACE_SpraypaintBlack",          // _items #17
+    "ACE_SpraypaintBlue",           // _items #18
+    "ACE_SpraypaintGreen",          // _items #19
+    "ACE_SpraypaintRed",            // _items #20
+    "Chemlight_green",              // _items #21
+    "ACE_Chemlight_IR",             // _items #22
+    "ACE_HandFlare_Green",          // _items #23
+    "ACE_HandFlare_Red"             // _items #24
 ];
 _itemsLink=[
     ["ItemMap","ItemCompass","ItemWatch","ItemGPS"],                    // (_itemsLink #0)
@@ -84,7 +92,7 @@ _medicAmt=[
     [50,50,10,12,15,5,30,20,6,6,2,10,1,10],     // (_medicAmt #1)
     [25,25,5,6,8,3,15,10,3,3,1,5,1,5],          // (_medicAmt #2)
     [13,13,3,3,4,2,8,5,2,2,1,3,1,3],            // (_medicAmt #3)
-    [6,6,6,2,2,2,2,1,1]                         // (_medicAmt #4)
+    [6,6,6,2,2,2,2,2,1]                         // (_medicAmt #4)
 ];
 
 _itemsExpl=[
@@ -280,18 +288,18 @@ ItemsGear= createHashMapFromArray [
         ["Amount",  []]
     ]],
     ["NVG",createHashMapFromArray[
-        ["BASE",    [_items #12,_items #14]],
-        ["GM",      [_items #12,""]],
-        ["VN",      [_items #12,""]],
-        ["40K",     [_items #12,_items #14]],
-        ["Amount",  [1,4]]
+        ["BASE",    [_items #12,_items #14,_items #21,_items #22]],
+        ["GM",      [_items #12,"",_items #21,_items #22]],
+        ["VN",      [_items #12,"",_items #21,_items #22]],
+        ["40K",     [_items #12,_items #14,_items #21,_items #22]],
+        ["Amount",  [1,4,2,2]]
     ]],
     [_loadRole #0 /*com*/,createHashMapFromArray[
-        ["BASE",    [_items #2]],
-        ["GM",      [""]],
-        ["VN",      [""]],
-        ["40K",     [_items #2]],
-        ["Amount",  [1]]
+        ["BASE",    [_items #2,_items #17,_items #18,_items #19,_items #20,_items #23,_items #24]],
+        ["GM",      ["",_items #17,_items #18,_items #19,_items #20,_items #23,_items #24]],
+        ["VN",      ["",_items #17,_items #18,_items #19,_items #20,_items #23,_items #24]],
+        ["40K",     [_items #2,_items #17,_items #18,_items #19,_items #20,_items #23,_items #24]],
+        ["Amount",  [1,2,2,2,2,4,4]]
     ]],
     [_loadRole #2 /*jtac*/,createHashMapFromArray[
         ["BASE",    [_items #13]],
@@ -329,11 +337,11 @@ ItemsGear= createHashMapFromArray [
         ["Amount",  (_medicAmt #1)]
     ]],
     [_loadRole #13 /*eng*/,createHashMapFromArray[
-        ["BASE",    [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11]],
-        ["GM",      [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11]],
-        ["VN",      [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11]],
-        ["40K",     [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11]],
-        ["Amount",  [1,1,1,1,6,6]]
+        ["BASE",    [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11,_items #17,_items #18,_items #19,_items #20]],
+        ["GM",      [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11,_items #17,_items #18,_items #19,_items #20]],
+        ["VN",      [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11,_items #17,_items #18,_items #19,_items #20]],
+        ["40K",     [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11,_items #17,_items #18,_items #19,_items #20]],
+        ["Amount",  [1,1,1,1,6,6,2,2,2,2]]
     ]]
 ];
 publicVariable "ItemsGear";
@@ -412,11 +420,11 @@ itemsCrates=createHashMapFromArray[
         ["Amount",  [10,5] +[10,10,10] +[10,10]]
     ]],
     [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
-        ["BASE",    [_items #12,_items #14]],
-        ["GM",      [_items #12,_items #14]],
-        ["VN",      [_items #12,_items #14]],
-        ["40K",     [_items #12,_items #14]],
-        ["Amount",  [20,40]]
+        ["BASE",    [_items #12,_items #14,_items #21,_items #22]],
+        ["GM",      [_items #12,_items #14,_items #21,_items #22]],
+        ["VN",      [_items #12,_items #14,_items #21,_items #22]],
+        ["40K",     [_items #12,_items #14,_items #21,_items #22]],
+        ["Amount",  [20,40,20,20]]
     ]],
     [_loadName #13 /*Crate UAV*/,createHashMapFromArray[
         ["BASE",    [_items #12,_items #14,_items #15] +((UnitWeapons get "LASER") get "BASE")],
