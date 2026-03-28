@@ -78,6 +78,8 @@ _launcherAA = [""];
 _launcherAA_Mags = [""];
 _heavyAR = [""];
 _heavyAR_Mags = "";
+_heavyAT = ["ace_spike_launcher_olive"];
+_heavyAT_Mags = "ace_spike_lr";
 _binocular = [""];
 _binocularPlus = "Laserdesignator_01_khk_F";
 _binocularPlusBat = "Laserbatteries";
@@ -190,7 +192,8 @@ if (!isPlayer _unit) exitWith
 		[(selectRandom _launcher),_launcher_Mags],
 		[(selectRandom _binocular),_binocularPlus,_binocularPlusBat],
 		[(selectRandom _launcherAA),_launcherAA_Mags],
-		[(selectRandom _heavyAR),_heavyAR_Mags]
+		[(selectRandom _heavyAR),_heavyAR_Mags],
+		[(selectRandom _heavyAT),_heavyAT_Mags]
 	];
 	[_unit,_weapons,1] call LT_fnc_GlobalGear;
 };
@@ -198,18 +201,17 @@ if (!isPlayer _unit) exitWith
 _weapons = weapons _unit;
 {_unit removeWeapon _x}forEach _weapons;
 
-// Add binocular to given roles
-if (_role IN _roleLaser) then 
-{
-	(uniformContainer _unit) addItemCargoGlobal [_binocularPlusBat, 1];
-	_unit addWeapon _binocularPlus;
-}else
-{
-	_unit addWeapon (selectRandom _binocular);
-};
-
 if (_roleItems == 1) then 
 {
+	// Add binocular to given roles
+	if (_role IN _roleLaser) then 
+	{
+		(uniformContainer _unit) addItemCargoGlobal [_binocularPlusBat, 1];
+		_unit addWeapon _binocularPlus;
+	}else
+	{
+		_unit addWeapon (selectRandom _binocular);
+	};
 	if (_role == "riflat") then
 	{
 		{
@@ -309,9 +311,10 @@ switch (_role) do
 		(backpackContainer _unit) addItemCargoGlobal [_heavyAR_Mags, 5];
 		_unit addWeapon (selectRandom _heavyAR);
 	};
-	case "hmga":
+	case "hat":
 	{
-		(backpackContainer _unit) addItemCargoGlobal [_heavyAR_Mags, 5];
+		(backpackContainer _unit) addItemCargoGlobal [_heavyAT_Mags, 3];
+		player addWeapon (selectRandom _heavyAT);
 	};
 };
 

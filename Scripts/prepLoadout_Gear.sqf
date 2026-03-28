@@ -139,7 +139,7 @@ if (!isPlayer _unit) exitWith
 {
 	// Define variables for vehicle loadout
 	_itemsNVG = [(selectRandom _nvgs),_itemsRole #1,_itemsRole #3];
-	_itemsRole = [_itemsRole #0,_uavTerminal,_itemsRole #2,_itemsRole #4,_backpackJTAC];
+	_itemsRole = [_itemsRole #0,_uavTerminal,_itemsRole #2,_itemsRole #4,_backpackJTAC,_backpackMedic];
 	_items = 
 	[
 		_itemsNVG,
@@ -313,7 +313,10 @@ if (_role IN _roleRadio) then
 };
 if (_role == "com") then 
 {
-	(uniformContainer _unit) addItemCargoGlobal ["ItemcTabMisc", 1];
+	if (_roleItems == 1) then
+	{
+		(uniformContainer _unit) addItemCargoGlobal ["ItemcTabMisc", 1];
+	};
 };
 if (_role == "ftl") then 
 {
@@ -434,7 +437,12 @@ if (_role == "dmr") then
 if (_role IN _roleSpecial) then 
 {
 	_unit setUnitTrait ["engineer", true];
-	(backpackContainer _unit) addItemCargoGlobal [(_itemsSpecial select 0), 1];
+	//(backpackContainer _unit) addItemCargoGlobal [(_itemsSpecial select 0), 1]; //NoMoreToolkit
+	if (_role == "gren" OR _role == "riflat") then 
+	{
+		(backpackContainer _unit) addItemCargoGlobal [(_itemsSpecial select 1), 1];
+		(backpackContainer _unit) addItemCargoGlobal [(_itemsSpecial select 2), 1];
+	};
 	if (_role == "eng") then 
 	{
 		_unit setUnitTrait ["explosiveSpecialist", true];
@@ -448,47 +456,9 @@ if (_role IN _roleSpecial) then
 	};
 };
 
-[uniformContainer _unit, 50] remoteExec ["LT_fnc_resetMaxLoad"];
-[vestContainer _unit, 200] remoteExec ["LT_fnc_resetMaxLoad"];
-switch (_role) do 
-{
-	case (_role IN _roleCrew): 
-	{
-		[backpackContainer _unit, 200] remoteExec ["LT_fnc_resetMaxLoad"];
-	};
-	case "jtac": 
-	{
-		[backpackContainer _unit, 400] remoteExec ["LT_fnc_resetMaxLoad"];
-	};
-	case "eng": 
-	{
-		[backpackContainer _unit, 400] remoteExec ["LT_fnc_resetMaxLoad"];
-	};
-	case "medic":
-	{
-		[backpackContainer _unit, 450] remoteExec ["LT_fnc_resetMaxLoad"];
-	};
-	case "riflat":
-	{
-		[backpackContainer _unit, 650] remoteExec ["LT_fnc_resetMaxLoad"];
-	};
-	case "riflaa":
-	{
-		[backpackContainer _unit, 650] remoteExec ["LT_fnc_resetMaxLoad"];
-	};
-	case "aar":
-	{
-		[backpackContainer _unit, 500] remoteExec ["LT_fnc_resetMaxLoad"];
-	};
-	case "hmga":
-	{
-		[backpackContainer _unit, 500] remoteExec ["LT_fnc_resetMaxLoad"];
-	};
-	default 
-	{
-		[backpackContainer _unit, 300] remoteExec ["LT_fnc_resetMaxLoad"];
-	};
-};
+[uniformContainer _unit, ((ceil(loadabs uniformContainer _unit)) + 50)] remoteExec ["LT_fnc_resetMaxLoad"];
+[vestContainer _unit, ((ceil(loadabs vestContainer _unit)) + 100)] remoteExec ["LT_fnc_resetMaxLoad"];
+[backpackContainer _unit, ((ceil(loadabs backpackContainer _unit)) + 200)] remoteExec ["LT_fnc_resetMaxLoad"];
 
 Diag_log "[LT] (Gear) Gear is finished";
 if ("lt_debug" call bis_fnc_getParamValue == 1) then 
