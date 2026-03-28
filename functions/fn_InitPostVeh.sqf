@@ -54,7 +54,7 @@ if (lt_vehicleGearIsSet == 1) then
 					_x setVariable ["LT_veh_setRepawn", 1];
 					_delay = _x getVariable ["LT_veh_respawn_delay",15];
 					if (_delay < 15) then {_delay = 15;};
-					[_x, _delay] remoteExec ["FRED_fnc_vehicleRespawn",2];
+					[_x, _delay] call FRED_fnc_vehicleRespawn;
 				};
 			};
 		};
