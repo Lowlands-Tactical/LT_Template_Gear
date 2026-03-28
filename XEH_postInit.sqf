@@ -115,7 +115,10 @@ LT_fnc_weaponItems={
     if !(isClass (configFile >> "cfgWeapons" >> _weapon)) exitWith 
     {
         Diag_log format["[LT] (Weapon) Wrong weapon classname: -%1", _weapon];
-        systemChat format["[LT] (Weapon) Wrong weapon classname: -%1", _weapon];
+        if ("lt_debug" call bis_fnc_getParamValue == 1) then 
+        {
+            systemChat format["[LT] (Weapon) Wrong weapon classname: -%1", _weapon];
+        };
     };
 
     if !(_missionScope) then {_attArr set [4,""]};
@@ -460,6 +463,13 @@ _loadRole = TabletSettings get "ROLES";
             publicVariable "guerGear";
             publicVariable "guerWeapons";
         };
+    };
+    Diag_log format["[LT] (XEH) Gear set for side:%1 ",_x];
+    Diag_log format["[LT] (XEH) Weapon set for side:%1 ",_x];
+    if ("lt_debug" call bis_fnc_getParamValue == 1) then 
+    {
+        systemChat format["[LT] (XEH) Gear set for side:%1 ",_x];
+        systemChat format["[LT] (XEH) Weapon set for side:%1 ",_x];
     };
 }forEach _sides;
 
