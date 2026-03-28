@@ -23,24 +23,13 @@ _return = false;
 _unit = param [0, objNull, [objNull]];
 if (isNull _unit OR (!local _unit) OR (!isPlayer _unit)) exitWith {_return};
 
-_sideCheck = str(side _unit);
+_unitSide = str(side _unit);
 _unitRole = _unit getVariable ["LT_unit_role","custom"];
 _unitLink = _unit getVariable ["LT_unit_link", true]; // map/gps/bino
 _unitItems = _unit getVariable ["LT_unit_item", true]; //PersMedic Nades
 _unitWeapon = _unit getVariable ["LT_unit_weapon", true]; //Wapens Munitie
 _unitGear = _unit getVariable ["LT_unit_gear", true]; //role items
 
-// Checks resets variables
-_unitSide = switch (_sideCheck) do {
-	case "WEST";
-	case west:{"WEST"};
-	case "EAST";
-	case east:{"EAST"};
-	case "GUER";
-	case resistance:{"GUER"};
-	case "CIV";
-	case civilian:{"CIV"};
-};
 
 // Eject incorrect
 if ((_unitRole == "custom") OR (_unitSide == "CIV")) exitWith 
