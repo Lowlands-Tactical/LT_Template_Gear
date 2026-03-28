@@ -8,8 +8,6 @@ Defines global variables and hashmaps used in the template.
 
 */
 
-#include "script_component.hpp"
-
 lt_vehicleGearIsSet = 0;
 
 _items=

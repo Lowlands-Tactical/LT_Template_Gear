@@ -8,8 +8,6 @@ Defines gear/weapon settings to be used in initPosts
 
 */
 
-#include "script_component.hpp"
-
 _ltMission = getMissionConfigValue "LT_Loadout_ID";
 if (isNil "_ltMission") exitWith
 {
