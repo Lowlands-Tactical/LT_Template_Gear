@@ -123,6 +123,7 @@ if (_lt_loadout == "BASE") then
 		};
 	};
 };
+_backpackMedic = if ((_backpackMedic select 0) == "") then {_backpackSmall} else {_backpackMedic};
 
 _gpsLinkOrItem = ((_itemsRole select 0) == "ACE_DAGR");
 _backpackLVDW = selectRandomWeighted ["NAF_BigDigBag_extra",0.7,"NAF_Digbag_extra",0.3];
@@ -139,7 +140,7 @@ if (!isPlayer _unit) exitWith
 {
 	// Define variables for vehicle loadout
 	_itemsNVG = [(selectRandom _nvgs),_itemsRole #1,_itemsRole #3];
-	_itemsRole = [_itemsRole #0,_uavTerminal,_itemsRole #2,_itemsRole #4,_backpackJTAC,_backpackMedic];
+	_itemsRole = [_itemsRole #0,_uavTerminal,_itemsRole #2,_itemsRole #4,_backpackJTAC,selectRandom _backpackMedic];
 	_items = 
 	[
 		_itemsNVG,
