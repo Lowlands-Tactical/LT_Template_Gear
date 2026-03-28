@@ -43,6 +43,7 @@ if !(isClass (configFile >> "cfgWeapons" >> _weapon)) exitWith
 	{
 		systemChat format["[LT] (Weapon) Wrong weapon classname: -%1", _weapon];
 	};
+	_result = [[],[]];
 };
 
 _result = [];
