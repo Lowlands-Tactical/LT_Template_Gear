@@ -406,17 +406,17 @@ itemsCrates=createHashMapFromArray[
         ["Amount",  (_medicAmt #0)]
     ]],
     [_loadName #10 /*Crate Air*/,createHashMapFromArray[
-        ["BASE",    [(_itemsLink #0 #0),_items #13] +(_itemsTrow #0) +_medic +[(UnitWeapons get "BINO") get "BASE"]],
-        ["GM",      [(_itemsLink #1 #0),_items #13] +(_itemsTrow #1) +_medic +[(UnitWeapons get "BINO") get "GM"]],
-        ["VN",      [(_itemsLink #2 #0),_items #13] +(_itemsTrow #2) +_medic +[(UnitWeapons get "BINO") get "VN"]],
-        ["40K",     [(_itemsLink #3 #0),_items #13] +(_itemsTrow #3) +_medic +[(UnitWeapons get "BINO") get "40K"]],
+        ["BASE",    [(_itemsLink #0 #3),_items #13] +(_itemsTrow #0) +_medic +[(UnitWeapons get "BINO") get "BASE"]],
+        ["GM",      [(_itemsLink #1 #3),_items #13] +(_itemsTrow #1) +_medic +[(UnitWeapons get "BINO") get "GM"]],
+        ["VN",      [(_itemsLink #2 #3),_items #13] +(_itemsTrow #2) +_medic +[(UnitWeapons get "BINO") get "VN"]],
+        ["40K",     [(_itemsLink #3 #3),_items #13] +(_itemsTrow #3) +_medic +[(UnitWeapons get "BINO") get "40K"]],
         ["Amount",  [4,4] +(_itemsTrowAmt #2) +(_medicAmt #3) +[4]]
     ]],
     [_loadName #11 /*Crate Comms*/,createHashMapFromArray[
-        ["BASE",    [(_itemsLink #0 #0),_items #12] +(_itemsRadio #0) +((UnitWeapons get "LASER") get "BASE")],
-        ["GM",      [(_itemsLink #1 #0),_items #12] +(_itemsRadio #1) +((UnitWeapons get "LASER") get "GM")],
-        ["VN",      [(_itemsLink #2 #0),_items #12] +(_itemsRadio #2) +((UnitWeapons get "LASER") get "VN")],
-        ["40K",     [(_itemsLink #3 #0),_items #12] +(_itemsRadio #3) +((UnitWeapons get "LASER") get "40K")],
+        ["BASE",    [(_itemsLink #0 #3),_items #12] +(_itemsRadio #0) +((UnitWeapons get "LASER") get "BASE")],
+        ["GM",      [(_itemsLink #1 #3),_items #12] +(_itemsRadio #1) +((UnitWeapons get "LASER") get "GM")],
+        ["VN",      [(_itemsLink #2 #3),_items #12] +(_itemsRadio #2) +((UnitWeapons get "LASER") get "VN")],
+        ["40K",     [(_itemsLink #3 #3),_items #12] +(_itemsRadio #3) +((UnitWeapons get "LASER") get "40K")],
         ["Amount",  [10,5] +[10,10,10] +[10,10]]
     ]],
     [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
