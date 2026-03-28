@@ -23,7 +23,7 @@ if (!isServer) exitWith {_return};
 _vehicle = param [0, objNull, [objNull]];
 _vehSide = param [1, _vehicle getVariable ["LT_veh_side","CIV"],[_vehicle getVariable ["LT_veh_side","CIV"]]];
 _loadout = param [2, _vehicle getVariable["LT_veh_role","Custom"],[_vehicle getVariable["LT_veh_role","Custom"]]];
-_setRespawn = _vehicle getVariable ["LT_veh_setRepawn", 1];
+_setRespawn = _vehicle getVariable ["LT_veh_setRepawn", 0];
 
 // Eject vaulty variables
 if (_vehSide == "CIV") exitWith
