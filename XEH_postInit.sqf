@@ -118,7 +118,6 @@ LT_fnc_weaponItems={
         systemChat format["[LT] (Weapon) Wrong weapon classname: -%1", _weapon];
     };
 
-    _result = [];
     if !(_missionScope) then {_attArr set [4,""]};
     _attIR = (_attArr #0);
     _attFL = (_attArr #1);
@@ -464,7 +463,8 @@ _loadRole = TabletSettings get "ROLES";
     };
 }forEach _sides;
 
-/*  
+/*
+Explenation GearCrate Hash
     SIDE
         CRATENAME
             Period      = STRING
@@ -573,6 +573,7 @@ gearCrates = createHashMapFromArray[
 publicVariable "gearCrates";
 
 /*
+Explanation weaponCrates array
     SIDE
         CRATENAME
             WEAPON      = HASHMAP Weapon
