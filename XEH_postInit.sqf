@@ -500,8 +500,8 @@ gearCrates = createHashMapFromArray[
             ["Backpack",    [false,["",0,""]]]
         ]],
         [_loadName #13 /*Crate UAV*/,createHashMapFromArray[
-            [_missionPeriod,[]],
-            ["Amount",      []],
+            [_missionPeriod,[(westGear get "UAV")#0]],
+            ["Amount",      [5]],
             ["Backpack",    [true,[(westGear get "UAV")#1,5,"none"]]]
         ]]
     ]],
@@ -532,8 +532,8 @@ gearCrates = createHashMapFromArray[
             ["Backpack",    [false,["",0,""]]]
         ]],
         [_loadName #13 /*Crate UAV*/,createHashMapFromArray[
-            [_missionPeriod,[]],
-            ["Amount",      []],
+            [_missionPeriod,[(eastGear get "UAV")#0]],
+            ["Amount",      [5]],
             ["Backpack",    [true,[(eastGear get "UAV")#1,5,"none"]]]
         ]]
     ]],
@@ -564,8 +564,8 @@ gearCrates = createHashMapFromArray[
             ["Backpack",    [false,["",0,""]]]
         ]],
         [_loadName #13 /*Crate UAV*/,createHashMapFromArray[
-            [_missionPeriod,[]],
-            ["Amount",      []],
+            [_missionPeriod,[(guerGear get "UAV")#0]],
+            ["Amount",      [5]],
             ["Backpack",    [true,[(guerGear get "UAV")#1,5,"none"]]]
         ]]
     ]]
