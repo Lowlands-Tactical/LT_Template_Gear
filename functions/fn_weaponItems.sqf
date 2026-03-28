@@ -38,7 +38,11 @@ _weapon = param [4, "", [""]];
 
 if !(isClass (configFile >> "cfgWeapons" >> _weapon)) exitWith 
 {
-	systemChat format["[LT] (Weapon) Wrong weapon classname: -%1", _weapon];
+	Diag_log format["[LT] (Weapon) Wrong weapon classname: -%1", _weapon];
+	if ("lt_debug" call bis_fnc_getParamValue == 1) then 
+	{
+		systemChat format["[LT] (Weapon) Wrong weapon classname: -%1", _weapon];
+	};
 };
 
 _result = [];
