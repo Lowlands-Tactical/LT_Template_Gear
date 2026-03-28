@@ -51,11 +51,6 @@ _missionRadioLong = switch (typeName (MissionSettings get "RadioLong")) do
 	case "STRING":{false};
 };
 
-if (typeName (MissionSettings get "RadioLong") == typeName true) then
-{
-	MissionSettings get "RadioLong"
-}else {false};
-
 // Define gear/weapon/items
 _gearUnits = switch (_unitSide) do {
 	case "WEST":{westGear};
