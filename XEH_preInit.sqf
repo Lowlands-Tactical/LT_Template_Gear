@@ -302,11 +302,11 @@ ItemsGear= createHashMapFromArray [
         ["Amount",  [1,2,2,2,2,4,4]]
     ]],
     [_loadRole #2 /*jtac*/,createHashMapFromArray[
-        ["BASE",    [_items #13]],
-        ["GM",      [_items #13]],
-        ["VN",      [_items #13]],
-        ["40K",     [_items #13]],
-        ["Amount",  [1]]
+        ["BASE",    [_items #13,(_itemsRadio #0) #2]],
+        ["GM",      [_items #13,(_itemsRadio #1) #2]],
+        ["VN",      [_items #13,(_itemsRadio #2) #2]],
+        ["40K",     [_items #13,(_itemsRadio #3) #2]],
+        ["Amount",  [1,1]]
     ]],
     [_loadRole #4 /*gren*/,createHashMapFromArray[
         ["BASE",    [_items #6]],
