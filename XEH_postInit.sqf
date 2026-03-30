@@ -668,6 +668,7 @@ weaponCrates = createHashMapFromArray[
         ]],
         [_loadName #2 /*Crate Peleton*/,createHashMapFromArray[
             [_loadRole #7,  [westWeapons get (_loadRole #7),true,1,false,[6]]],
+            [_loadRole #8,  [westWeapons get (_loadRole #8),true,1,false,[6]]],
             [_loadRole #14, [westWeapons get (_loadRole #14),false,1,false,[6]]],
             [_loadRole #15, [westWeapons get (_loadRole #15),true,1,false,[4]]]
         ]],
@@ -676,6 +677,7 @@ weaponCrates = createHashMapFromArray[
             ["RifleGL",     [westWeapons get "RifleGL",false,0,true,[10,5,0,0]]],
             ["Crew",        [westWeapons get "Crew",false,0,true,[8,8]]],
             ["HG",          [westWeapons get "HG",false,0,true,[8]]],
+            [_loadRole #8,  [westWeapons get (_loadRole #8),true,0,true,[2]]],
             [_loadRole #9,  [westWeapons get (_loadRole #9),false,0,true,[4]]],
             [_loadRole #10, [westWeapons get (_loadRole #10),false,0,true,[3]]],
             [_loadRole #14, [westWeapons get (_loadRole #14),false,0,true,[3]]]
@@ -737,6 +739,7 @@ weaponCrates = createHashMapFromArray[
         ]],
         [_loadName #2 /*Crate Peleton*/,createHashMapFromArray[
             [_loadRole #7,  [eastWeapons get (_loadRole #7),true,1,false,[6]]],
+            [_loadRole #8,  [eastWeapons get (_loadRole #8),true,1,false,[6]]],
             [_loadRole #14, [eastWeapons get (_loadRole #14),false,1,false,[6]]],
             [_loadRole #15, [eastWeapons get (_loadRole #15),true,1,false,[4]]]
         ]],
@@ -745,6 +748,7 @@ weaponCrates = createHashMapFromArray[
             ["RifleGL",     [eastWeapons get "RifleGL",false,0,true,[10,5,0,0]]],
             ["Crew",        [eastWeapons get "Crew",false,0,true,[8,8]]],
             ["HG",          [eastWeapons get "HG",false,0,true,[8]]],
+            [_loadRole #8,  [eastWeapons get (_loadRole #8),true,0,true,[2]]],
             [_loadRole #9,  [eastWeapons get (_loadRole #9),false,0,true,[4]]],
             [_loadRole #10, [eastWeapons get (_loadRole #10),false,0,true,[3]]],
             [_loadRole #14, [eastWeapons get (_loadRole #14),false,0,true,[3]]]
@@ -806,6 +810,7 @@ weaponCrates = createHashMapFromArray[
         ]],
         [_loadName #2 /*Crate Peleton*/,createHashMapFromArray[
             [_loadRole #7,  [guerWeapons get (_loadRole #7),true,1,false,[6]]],
+            [_loadRole #8,  [guerWeapons get (_loadRole #8),true,1,false,[6]]],
             [_loadRole #14, [guerWeapons get (_loadRole #14),false,1,false,[6]]],
             [_loadRole #15, [guerWeapons get (_loadRole #15),true,1,false,[4]]]
         ]],
@@ -814,6 +819,7 @@ weaponCrates = createHashMapFromArray[
             ["RifleGL",     [guerWeapons get "RifleGL",false,0,true,[10,5,0,0]]],
             ["Crew",        [guerWeapons get "Crew",false,0,true,[8,8]]],
             ["HG",          [guerWeapons get "HG",false,0,true,[8]]],
+            [_loadRole #8,  [guerWeapons get (_loadRole #8),true,0,true,[2]]],
             [_loadRole #9,  [guerWeapons get (_loadRole #9),false,0,true,[4]]],
             [_loadRole #10, [guerWeapons get (_loadRole #10),false,0,true,[3]]],
             [_loadRole #14, [guerWeapons get (_loadRole #14),false,0,true,[3]]]
