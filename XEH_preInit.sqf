@@ -190,9 +190,9 @@ UnitWeapons = createHashMapFromArray[
     ]],
     [_roles #15,createHashMapFromArray[
         ["BASE",createHashMapFromArray[
-            [_sides #0,[["ace_spike_lr"],"ace_spike_launcher_olive"]],
+            [_sides #0,[["Titan_AT"],"launch_B_Titan_short_tna_F"]],
             [_sides #1,[["ace_spike_lr"],"ace_spike_launcher"]],
-            [_sides #2,[["Titan_AT"],"launch_B_Titan_short_tna_F"]]
+            [_sides #2,[["ace_spike_lr"],"ace_spike_launcher_olive"]]
         ]],
         ["GM",createHashMapFromArray[
             [_sides #0,[["gm_1Rnd_84x245mm_heat_t_DM12_carlgustaf","gm_1Rnd_84x245mm_heat_t_DM12a1_carlgustaf","gm_1Rnd_84x245mm_heat_t_DM22_carlgustaf","gm_1Rnd_84x245mm_heat_t_DM32_carlgustaf"],"gm_pzf84_oli"]],
