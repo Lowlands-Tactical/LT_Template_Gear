@@ -361,7 +361,7 @@ itemsCrates=createHashMapFromArray[
         ["GM",      [_items #13,"",(_itemsExpl #2 #0)] +(_itemsTrow #1) +_medic],
         ["VN",      [_items #13,"",(_itemsExpl #3 #0)] +(_itemsTrow #2) +_medic],
         ["40K",     [_items #13,_items #14,(_itemsExpl #4 #0)] +(_itemsTrow #3) +_medic],
-        ["Amount",  [2,8,8] +(_itemsTrowAmt #1) +(_medicAmt #3)]
+        ["Amount",  [2,8,8] +(_itemsTrowAmt #1) +(_medicAmt #2)]
     ]],
     [_loadName #2 /*Crate Peleton*/,createHashMapFromArray[
         ["BASE",    [_items #13,_items #14,_items #15,(_itemsRadio #0 #1)]],
@@ -417,28 +417,28 @@ itemsCrates=createHashMapFromArray[
         ["GM",      [(_itemsLink #1 #3),_items #13] +(_itemsTrow #1) +_medic +[(UnitWeapons get "BINO") get "GM"]],
         ["VN",      [(_itemsLink #2 #3),_items #13] +(_itemsTrow #2) +_medic +[(UnitWeapons get "BINO") get "VN"]],
         ["40K",     [(_itemsLink #3 #3),_items #13] +(_itemsTrow #3) +_medic +[(UnitWeapons get "BINO") get "40K"]],
-        ["Amount",  [4,4] +(_itemsTrowAmt #2) +(_medicAmt #3) +[4]]
+        ["Amount",  [2,2] +(_itemsTrowAmt #2) +(_medicAmt #3) +[2]]
     ]],
     [_loadName #11 /*Crate Comms*/,createHashMapFromArray[
-        ["BASE",    [(_itemsLink #0 #3),_items #12] +(_itemsRadio #0) +((UnitWeapons get "LASER") get "BASE")],
-        ["GM",      [(_itemsLink #1 #3),_items #12] +(_itemsRadio #1) +((UnitWeapons get "LASER") get "GM")],
-        ["VN",      [(_itemsLink #2 #3),_items #12] +(_itemsRadio #2) +((UnitWeapons get "LASER") get "VN")],
-        ["40K",     [(_itemsLink #3 #3),_items #12] +(_itemsRadio #3) +((UnitWeapons get "LASER") get "40K")],
-        ["Amount",  [10,5] +[10,10,10] +[10,10]]
+        ["BASE",    [_itemsLink #0] +(_itemsRadio #0) +((UnitWeapons get "LASER") get "BASE")],
+        ["GM",      [_itemsLink #1] +(_itemsRadio #1) +((UnitWeapons get "LASER") get "GM")],
+        ["VN",      [_itemsLink #2] +(_itemsRadio #2) +((UnitWeapons get "LASER") get "VN")],
+        ["40K",     [_itemsLink #3] +(_itemsRadio #3) +((UnitWeapons get "LASER") get "40K")],
+        ["Amount",  [8,8,8,2] +[8,2,0] +[2,2]]
     ]],
     [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
         ["BASE",    [_items #12,_items #14,_items #21,_items #22]],
         ["GM",      [_items #12,_items #14,_items #21,_items #22]],
         ["VN",      [_items #12,_items #14,_items #21,_items #22]],
         ["40K",     [_items #12,_items #14,_items #21,_items #22]],
-        ["Amount",  [20,40,20,20]]
+        ["Amount",  [8,16,16,16]]
     ]],
     [_loadName #13 /*Crate UAV*/,createHashMapFromArray[
-        ["BASE",    [_items #12,_items #14,_items #15] +((UnitWeapons get "LASER") get "BASE")],
-        ["GM",      [_items #12,_items #14,_items #15] +((UnitWeapons get "LASER") get "GM")],
-        ["VN",      [_items #12,_items #14,_items #15] +((UnitWeapons get "LASER") get "VN")],
-        ["40K",     [_items #12,_items #14,_items #15] +((UnitWeapons get "LASER") get "40K")],
-        ["Amount",  [4,8,4] +[8,8]]
+        ["BASE",    [_items #15,(_itemsRadio #0)#2] +((UnitWeapons get "LASER") get "BASE")],
+        ["GM",      [_items #15,(_itemsRadio #1)#2] +((UnitWeapons get "LASER") get "GM")],
+        ["VN",      [_items #15,(_itemsRadio #2)#2] +((UnitWeapons get "LASER") get "VN")],
+        ["40K",     [_items #15,(_itemsRadio #3)#2] +((UnitWeapons get "LASER") get "40K")],
+        ["Amount",  [10,1] +[1,1]]
     ]]
 ];
 publicVariable "itemsCrates";
