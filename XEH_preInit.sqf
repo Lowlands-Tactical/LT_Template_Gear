@@ -301,6 +301,13 @@ ItemsGear= createHashMapFromArray [
         ["40K",     [_items #2,_items #17,_items #18,_items #19,_items #20,_items #23,_items #24]],
         ["Amount",  [1,2,2,2,2,4,4]]
     ]],
+    //[_loadRole #1 /*sql*/,createHashMapFromArray[
+    //    ["BASE",    [_items #17,_items #18,_items #19,_items #20]],
+    //    ["GM",      [_items #17,_items #18,_items #19,_items #20]],
+    //    ["VN",      [_items #17,_items #18,_items #19,_items #20]],
+    //    ["40K",     [_items #17,_items #18,_items #19,_items #20]],
+    //    ["Amount",  [2,2,2,2]]
+    //]],
     [_loadRole #2 /*jtac*/,createHashMapFromArray[
         ["BASE",    [_items #13,(_itemsRadio #0) #2]],
         ["GM",      [_items #13,(_itemsRadio #1) #2]],
@@ -308,6 +315,13 @@ ItemsGear= createHashMapFromArray [
         ["40K",     [_items #13,(_itemsRadio #3) #2]],
         ["Amount",  [1,1]]
     ]],
+    //[_loadRole #3 /*ftl*/,createHashMapFromArray[
+    //    ["BASE",    [_items #17,_items #18,_items #19,_items #20]],
+    //    ["GM",      [_items #17,_items #18,_items #19,_items #20]],
+    //    ["VN",      [_items #17,_items #18,_items #19,_items #20]],
+    //    ["40K",     [_items #17,_items #18,_items #19,_items #20]],
+    //    ["Amount",  [2,2,2,2]]
+    //]],
     [_loadRole #4 /*gren*/,createHashMapFromArray[
         ["BASE",    [_items #6]],
         ["GM",      [_items #6]],
