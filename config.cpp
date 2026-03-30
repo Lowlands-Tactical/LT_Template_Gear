@@ -46,14 +46,14 @@ class Extended_PreInit_EventHandlers
 {
 	class LT_Template_Gear_Pre
 	{
-		serverinit="call compile preprocessFileLineNumbers '\lt_template_gear\XEH_PreInit.sqf'";
+		init="call compile preprocessFileLineNumbers '\lt_template_gear\XEH_PreInit.sqf'";
 	};
 };
 class Extended_PostInit_EventHandlers
 {
 	class LT_Template_Gear_Post
 	{
-		serverinit="call compile preprocessFileLineNumbers '\lt_template_gear\XEH_PostInit.sqf'";
+		init="call compile preprocessFileLineNumbers '\lt_template_gear\XEH_PostInit.sqf'";
 	};
 };
 class Extended_InitPost_EventHandlers
