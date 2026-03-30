@@ -103,11 +103,11 @@ _itemsExpl=[
     ["IC_CAD_CHARGE_placeable_mag","TIOW_melta_bomb_placeable_Mag"] // (_itemsExpl #4)
 ];
 _itemsMines=[
-    [20,10,10,10,5],                                                                                                                    // (_itemsMines #0)
-    ["APERSMineDispenser_Mag","ATMine_Range_Mag","APERSBoundingMine_Range_Mag","APERSMine_Range_Mag","SLAMDirectionalMine_Wire_Mag"],   // (_itemsMines #1)
+    [20,5,10,10,10],                                                                                                                    // (_itemsMines #0)
+    ["APERSMine_Range_Mag","APERSMineDispenser_Mag","ATMine_Range_Mag","APERSBoundingMine_Range_Mag","SLAMDirectionalMine_Wire_Mag"],   // (_itemsMines #1)
     ["","gm_mine_at_tm46","gm_mine_at_dm21","gm_mine_ap_dm31",""],                                                                      // (_itemsMines #2)
     ["","","","",""],                                                                                                                   // (_itemsMines #3)
-    ["APERSMineDispenser_Mag","ATMine_Range_Mag","APERSBoundingMine_Range_Mag","APERSMine_Range_Mag","SLAMDirectionalMine_Wire_Mag"]    // (_itemsMines #4)
+    ["APERSMine_Range_Mag","APERSMineDispenser_Mag","ATMine_Range_Mag","APERSBoundingMine_Range_Mag","SLAMDirectionalMine_Wire_Mag"]    // (_itemsMines #4)
 ];
 
 /*
