@@ -434,15 +434,16 @@ if (_unitWeapon) then
 	}forEach _weaponAtt;
 };
 
+// Reset unit gear load with extra space
+[(uniformContainer _unit), (ceil(loadabs (uniformContainer _unit))) +50] remoteExec ["LT_fnc_resetMaxLoad"];
+[(vestContainer _unit), (ceil(loadabs (vestContainer _unit))) +200] remoteExec ["LT_fnc_resetMaxLoad"];
+[(backpackContainer _unit), (ceil(loadabs (backpackContainer _unit))) +500] remoteExec ["LT_fnc_resetMaxLoad"];
+
 //setUnitTrait per role
-_unit setUnitTrait ["audibleCoef", 0.4];
-_unit setUnitTrait ["camouflageCoef", 0.4];
-_unit setUnitTrait ["loadCoef", 0.2];
 switch (_unitRole) do
 {
 	case "com";
 	case "comms";
-	case "vhco";
 	case "jtac":
 	{
 		_unit setUnitTrait ["UAVHacker", true];
@@ -467,10 +468,8 @@ switch (_unitRole) do
 		_unit setUnitTrait ["explosiveSpecialist", true];
 	};
 };
-
-// Reset unit gear load with extra space
-[(uniformContainer _unit), (ceil(loadabs (uniformContainer _unit))) +50] remoteExec ["LT_fnc_resetMaxLoad"];
-[(vestContainer _unit), (ceil(loadabs (vestContainer _unit))) +200] remoteExec ["LT_fnc_resetMaxLoad"];
-[(backpackContainer _unit), (ceil(loadabs (backpackContainer _unit))) +500] remoteExec ["LT_fnc_resetMaxLoad"];
+_unit setUnitTrait ["audibleCoef", 0.4];
+_unit setUnitTrait ["camouflageCoef", 0.4];
+_unit setUnitTrait ["LoadCoef", 0.2];
 
 _return
