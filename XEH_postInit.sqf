@@ -687,9 +687,9 @@ weaponCrates = createHashMapFromArray[
             ["RifleGL",     [westWeapons get "RifleGL",false,0,true,[20,10,4,4]]],
             ["Crew",        [westWeapons get "Crew",false,0,true,[16,16]]],
             ["HG",          [westWeapons get "HG",false,0,true,[16]]],
-            [_loadRole #9,  [westWeapons get (_loadRole #9),false,0,true,[10]]],
             [_loadRole #7,  [westWeapons get (_loadRole #7),true,6,true,[6]]],
             [_loadRole #8,  [westWeapons get (_loadRole #8),true,6,true,[6]]],
+            [_loadRole #9,  [westWeapons get (_loadRole #9),false,0,true,[10]]],
             [_loadRole #10, [westWeapons get (_loadRole #10),false,0,true,[6]]],
             [_loadRole #14, [westWeapons get (_loadRole #14),false,0,true,[6]]],
             [_loadRole #15, [westWeapons get (_loadRole #15),true,0,true,[4]]]
