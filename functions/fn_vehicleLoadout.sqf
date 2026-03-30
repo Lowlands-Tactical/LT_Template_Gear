@@ -159,7 +159,7 @@ if (_check) then
 						_vehicle addWeaponWithAttachmentsCargoGlobal [_loadWeaponAtt,_loadWeaponAmt];
 					}else
 					{
-						_vehicle addWeaponWithAttachmentsCargoGlobal [_loadWeaponAtt,1];
+						_vehicle addWeaponWithAttachmentsCargoGlobal [_loadWeaponAtt,_loadWeaponAmt];
 						{
 							_vehicle addItemCargoGlobal [_x, _loadAmmoAmt select _forEachIndex];
 						}forEach _loadAmmo;
