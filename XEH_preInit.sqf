@@ -337,11 +337,18 @@ ItemsGear= createHashMapFromArray [
         ["Amount",  (_medicAmt #1)]
     ]],
     [_loadRole #13 /*eng*/,createHashMapFromArray[
-        ["BASE",    [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11,_items #17,_items #18,_items #19,_items #20]],
-        ["GM",      [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11,_items #17,_items #18,_items #19,_items #20]],
-        ["VN",      [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11,_items #17,_items #18,_items #19,_items #20]],
-        ["40K",     [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11,_items #17,_items #18,_items #19,_items #20]],
-        ["Amount",  [1,1,1,1,6,6,2,2,2,2]]
+        ["BASE",    [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11]],
+        ["GM",      [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11]],
+        ["VN",      [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11]],
+        ["40K",     [_items #6,_items #7,_items #8,_items #9,_items #10,_items #11]],
+        ["Amount",  [1,1,1,1,6,6]]
+    ]],
+    [_loadRole #19 /*pilot*/,createHashMapFromArray[
+        ["BASE",    []],
+        ["GM",      []],
+        ["VN",      []],
+        ["40K",     []],
+        ["Amount",  []]
     ]]
 ];
 publicVariable "ItemsGear";
