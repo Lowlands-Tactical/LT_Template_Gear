@@ -263,7 +263,7 @@ if (_unitItems) then
 		(vestContainer _unit) addItemCargoGlobal [_x, _vestAmt select _forEachIndex];
 	}forEach _vestItems;
 
-	if ((_unitRole IN _roleWpnGL) OR (_unitRole == "dmr")) then
+	if ((_unitRole IN _packRadioRole) OR (_unitRole == "dmr")) then
 	{
 		_itemsVest = ItemsGear get "VestExtra";
 		_vestItems = _itemsVest get _missionPeriod;
