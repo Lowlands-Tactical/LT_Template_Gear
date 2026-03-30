@@ -571,6 +571,11 @@ gearCrates = createHashMapFromArray[
             ["Amount",      []],
             ["Backpack",    [true,[(eastGear get "Backpack")#2,1,"medic"]]]
         ]],
+        [_loadName #10 /*Crate Air*/,createHashMapFromArray[
+            [_missionPeriod,[]],
+            ["Amount",      []],
+            ["Backpack",    [true,[(eastGear get "Backpack")#0,2,"pilot"]]]
+        ]],
         [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
             [_missionPeriod,[selectRandom ((eastGear get "NVG")#1)]],
             ["Amount",      [8]],
@@ -617,6 +622,11 @@ gearCrates = createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
             ["Backpack",    [true,[(guerGear get "Backpack")#2,1,"medic"]]]
+        ]],
+        [_loadName #10 /*Crate Air*/,createHashMapFromArray[
+            [_missionPeriod,[]],
+            ["Amount",      []],
+            ["Backpack",    [true,[(guerGear get "Backpack")#0,2,"pilot"]]]
         ]],
         [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
             [_missionPeriod,[selectRandom ((guerGear get "NVG")#1)]],
