@@ -517,7 +517,7 @@ gearCrates = createHashMapFromArray[
         [_loadName #8 /*Crate Medical*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(westGear get "Backpack")#2,1,"medic"]]]
+            ["Backpack",    [true,[(westGear get "Backpack")#2,3,"medic"]]]
         ]],
         [_loadName #10 /*Crate Air*/,createHashMapFromArray[
             [_missionPeriod,[]],
@@ -526,12 +526,12 @@ gearCrates = createHashMapFromArray[
         ]],
         [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
             [_missionPeriod,[selectRandom ((westGear get "NVG")#1)]],
-            ["Amount",      [20]],
+            ["Amount",      [8]],
             ["Backpack",    [false,["",0,""]]]
         ]],
         [_loadName #13 /*Crate UAV*/,createHashMapFromArray[
             [_missionPeriod,[(westGear get "UAV")#0]],
-            ["Amount",      [5]],
+            ["Amount",      [1]],
             ["Backpack",    [true,[(westGear get "UAV")#1,5,"none"]]]
         ]]
     ]],
@@ -573,12 +573,12 @@ gearCrates = createHashMapFromArray[
         ]],
         [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
             [_missionPeriod,[selectRandom ((eastGear get "NVG")#1)]],
-            ["Amount",      [20]],
+            ["Amount",      [8]],
             ["Backpack",    [false,["",0,""]]]
         ]],
         [_loadName #13 /*Crate UAV*/,createHashMapFromArray[
             [_missionPeriod,[(eastGear get "UAV")#0]],
-            ["Amount",      [5]],
+            ["Amount",      [1]],
             ["Backpack",    [true,[(eastGear get "UAV")#1,5,"none"]]]
         ]]
     ]],
@@ -620,12 +620,12 @@ gearCrates = createHashMapFromArray[
         ]],
         [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
             [_missionPeriod,[selectRandom ((guerGear get "NVG")#1)]],
-            ["Amount",      [20]],
+            ["Amount",      [8]],
             ["Backpack",    [false,["",0,""]]]
         ]],
         [_loadName #13 /*Crate UAV*/,createHashMapFromArray[
             [_missionPeriod,[(guerGear get "UAV")#0]],
-            ["Amount",      [5]],
+            ["Amount",      [1]],
             ["Backpack",    [true,[(guerGear get "UAV")#1,5,"none"]]]
         ]]
     ]]
