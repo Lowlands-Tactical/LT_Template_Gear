@@ -58,7 +58,7 @@ _itemsTrow=[
 ];
 _itemsTrowAmt=[
     [6,2,2],                // (_itemsTrowAmt #0)
-    [16,8,8,8,8,8],         // (_itemsTrowAmt #1)
+    [16,16,8,8,8,8],        // (_itemsTrowAmt #1)
     [10,5,5,5,5,5],         // (_itemsTrowAmt #2)
     [20,10,10,10,10,10],    // (_itemsTrowAmt #3)
     [30,20,20,20,20,20],    // (_itemsTrowAmt #4)
