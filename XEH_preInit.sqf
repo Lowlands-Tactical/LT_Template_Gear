@@ -358,11 +358,11 @@ ItemsGear= createHashMapFromArray [
         ["Amount",  [1,1,1,1,6,6]]
     ]],
     [_loadRole #19 /*pilot*/,createHashMapFromArray[
-        ["BASE",    []],
-        ["GM",      []],
-        ["VN",      []],
-        ["40K",     []],
-        ["Amount",  []]
+        ["BASE",    [(_itemsLink #0 #3),_items #13] +(_itemsTrow #0) +_medic +[(UnitWeapons get "BINO") get "BASE"]],
+        ["GM",      [(_itemsLink #1 #3),_items #13] +(_itemsTrow #1) +_medic +[(UnitWeapons get "BINO") get "GM"]],
+        ["VN",      [(_itemsLink #2 #3),_items #13] +(_itemsTrow #2) +_medic +[(UnitWeapons get "BINO") get "VN"]],
+        ["40K",     [(_itemsLink #3 #3),_items #13] +(_itemsTrow #3) +_medic +[(UnitWeapons get "BINO") get "40K"]],
+        ["Amount",  [1,1] +(_itemsTrowAmt #2) +(_medicAmt #3) +[1]]
     ]]
 ];
 publicVariable "ItemsGear";
@@ -425,13 +425,6 @@ itemsCrates=createHashMapFromArray[
         ["VN",      _medic],
         ["40K",     [_items #16,"","","","","","","","","","","","",""]],
         ["Amount",  (_medicAmt #0)]
-    ]],
-    [_loadName #10 /*Crate Air*/,createHashMapFromArray[
-        ["BASE",    [(_itemsLink #0 #3),_items #13] +(_itemsTrow #0) +_medic +[(UnitWeapons get "BINO") get "BASE"]],
-        ["GM",      [(_itemsLink #1 #3),_items #13] +(_itemsTrow #1) +_medic +[(UnitWeapons get "BINO") get "GM"]],
-        ["VN",      [(_itemsLink #2 #3),_items #13] +(_itemsTrow #2) +_medic +[(UnitWeapons get "BINO") get "VN"]],
-        ["40K",     [(_itemsLink #3 #3),_items #13] +(_itemsTrow #3) +_medic +[(UnitWeapons get "BINO") get "40K"]],
-        ["Amount",  [2,2] +(_itemsTrowAmt #2) +(_medicAmt #3) +[2]]
     ]],
     [_loadName #11 /*Crate Comms*/,createHashMapFromArray[
         ["BASE",    [_itemsLink #0] +(_itemsRadio #0) +((UnitWeapons get "LASER") get "BASE")],

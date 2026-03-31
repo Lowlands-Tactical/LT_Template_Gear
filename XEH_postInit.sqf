@@ -718,10 +718,6 @@ weaponCrates = createHashMapFromArray[
             [_loadRole #10, [westWeapons get (_loadRole #10),false,2,false,[0]]],
             [_loadRole #14, [westWeapons get (_loadRole #14),false,1,false,[0]]],
             [_loadRole #15, [westWeapons get (_loadRole #15),true,2,false,[0]]]
-        ]],
-        [_loadName #10 /*Crate Air*/,createHashMapFromArray[
-            ["AIR",         [westWeapons get "AIR",false,0,true,[20]]],
-            ["HG",          [westWeapons get "HG",false,0,true,[10]]]
         ]]
     ]],
     [_sides #1,createHashMapFromArray[
@@ -789,10 +785,6 @@ weaponCrates = createHashMapFromArray[
             [_loadRole #10, [eastWeapons get (_loadRole #10),false,2,false,[0]]],
             [_loadRole #14, [eastWeapons get (_loadRole #14),false,1,false,[0]]],
             [_loadRole #15, [eastWeapons get (_loadRole #15),true,2,false,[0]]]
-        ]],
-        [_loadName #10 /*Crate Air*/,createHashMapFromArray[
-            ["AIR",         [eastWeapons get "AIR",false,0,true,[20]]],
-            ["HG",          [eastWeapons get "HG",false,0,true,[10]]]
         ]]
     ]],
     [_sides #2,createHashMapFromArray[
@@ -860,10 +852,6 @@ weaponCrates = createHashMapFromArray[
             [_loadRole #10, [guerWeapons get (_loadRole #10),false,2,false,[0]]],
             [_loadRole #14, [guerWeapons get (_loadRole #14),false,1,false,[0]]],
             [_loadRole #15, [guerWeapons get (_loadRole #15),true,2,false,[0]]]
-        ]],
-        [_loadName #10 /*Crate Air*/,createHashMapFromArray[
-            ["AIR",         [guerWeapons get "AIR",false,0,true,[20]]],
-            ["HG",          [guerWeapons get "HG",false,0,true,[10]]]
         ]]
     ]]
 ];
