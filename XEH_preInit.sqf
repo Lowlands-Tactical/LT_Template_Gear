@@ -144,7 +144,7 @@ publicVariable "RoleSettings";
 _sides = TabletSettings get "SIDES";
 // Unit weapons and magazines - Build arrays like this: Type >> Period >> Side >>["magazine","weapon"]
 UnitWeapons = createHashMapFromArray[
-    [_roles #8,createHashMapFromArray[
+    [_roles #8 /*riflaa*/,createHashMapFromArray[
         ["BASE",createHashMapFromArray[
             [_sides #0,["rhs_fim92_mag","rhs_weap_fim92"]],
             [_sides #1,["rhs_mag_9k38_rocket","rhs_weap_igla"]],
@@ -166,7 +166,7 @@ UnitWeapons = createHashMapFromArray[
             [_sides #2,["IC_Flak_Missile_mag","IC_Launcher_AA_grey"]]
         ]]
     ]],
-    [_roles #14,createHashMapFromArray[
+    [_roles #14 /*mmg*/,createHashMapFromArray[
         ["BASE",createHashMapFromArray[
             [_sides #0,["Aegis_200Rnd_762x51_MAG_Green_Tracer_F","Aegis_MMG_FNMAG_F"]],
             [_sides #1,["100Rnd_762x51_S77_Red_lxWS","LMG_S77_lxWS"]],
@@ -188,7 +188,7 @@ UnitWeapons = createHashMapFromArray[
             [_sides #2,["ic_100rnd_825_HP_Tracer_rifleMag","ICP_LMG_01_imp"]]
         ]]
     ]],
-    [_roles #15,createHashMapFromArray[
+    [_roles #15 /*mat*/,createHashMapFromArray[
         ["BASE",createHashMapFromArray[
             [_sides #0,[["Titan_AT"],"launch_B_Titan_short_tna_F"]],
             [_sides #1,[["ace_spike_lr"],"ace_spike_launcher"]],
