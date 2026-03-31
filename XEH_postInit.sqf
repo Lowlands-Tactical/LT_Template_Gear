@@ -487,156 +487,186 @@ gearCrates = createHashMapFromArray[
         [_loadName #1 /*Crate Squad*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(westGear get "Backpack")#2,2,"medic"],[(westGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(westGear get "Backpack")#2,2,"medic"],[(westGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #2 /*Crate Peleton*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(westGear get "UAV")#1,1,"none"],[(westGear get "Backpack")#2,1,"medic"],[(westGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(westGear get "UAV")#1,1,"none"],[(westGear get "Backpack")#2,1,"medic"],[(westGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #4 /*Crate Medium*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(westGear get "UAV")#1,1,"none"],[(westGear get "Backpack")#2,1,"medic"],[(westGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(westGear get "UAV")#1,1,"none"],[(westGear get "Backpack")#2,1,"medic"],[(westGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #5 /*Crate Large*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(westGear get "UAV")#1,2,"none"],[(westGear get "Backpack")#2,2,"medic"],[(westGear get "Backpack")#0,2,"eng"]]]
+            ["Backpack",    [true,[(westGear get "UAV")#1,2,"none"],[(westGear get "Backpack")#2,2,"medic"],[(westGear get "Backpack")#0,2,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #6 /*Crate Explosives*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(westGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(westGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #7 /*Crate Mines*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(westGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(westGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #8 /*Crate Medical*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(westGear get "Backpack")#2,3,"medic"]]]
+            ["Backpack",    [true,[(westGear get "Backpack")#2,3,"medic"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #10 /*Crate Air*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(westGear get "Backpack")#0,2,"pilot"]]]
+            ["Backpack",    [true,[(westGear get "Backpack")#0,2,"pilot"]]],
+            ["addToBP",     [true,[((westWeapons get "AIR") get "Ammo")#0,((westWeapons get "HG") get "Ammo")#0],[10,5]]]
         ]],
         [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
             [_missionPeriod,[selectRandom ((westGear get "NVG")#1)]],
             ["Amount",      [8]],
-            ["Backpack",    [false,["",0,""]]]
+            ["Backpack",    [false,["",0,""]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #13 /*Crate UAV*/,createHashMapFromArray[
             [_missionPeriod,[(westGear get "UAV")#0]],
             ["Amount",      [1]],
-            ["Backpack",    [true,[(westGear get "UAV")#1,5,"none"]]]
+            ["Backpack",    [true,[(westGear get "UAV")#1,5,"none"]]],
+            ["addToBP",     [false,[],[]]]
         ]]
     ]],
     [_sides #1,createHashMapFromArray[
         [_loadName #1 /*Crate Squad*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(eastGear get "Backpack")#2,2,"medic"],[(eastGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(eastGear get "Backpack")#2,2,"medic"],[(eastGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #2 /*Crate Peleton*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(eastGear get "UAV")#1,1,"none"],[(eastGear get "Backpack")#2,1,"medic"],[(eastGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(eastGear get "UAV")#1,1,"none"],[(eastGear get "Backpack")#2,1,"medic"],[(eastGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #4 /*Crate Medium*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(eastGear get "UAV")#1,1,"none"],[(eastGear get "Backpack")#2,1,"medic"],[(eastGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(eastGear get "UAV")#1,1,"none"],[(eastGear get "Backpack")#2,1,"medic"],[(eastGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #5 /*Crate Large*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(eastGear get "UAV")#1,2,"none"],[(eastGear get "Backpack")#2,2,"medic"],[(eastGear get "Backpack")#0,2,"eng"]]]
+            ["Backpack",    [true,[(eastGear get "UAV")#1,2,"none"],[(eastGear get "Backpack")#2,2,"medic"],[(eastGear get "Backpack")#0,2,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #6 /*Crate Explosives*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(eastGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(eastGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #7 /*Crate Mines*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(eastGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(eastGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #8 /*Crate Medical*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(eastGear get "Backpack")#2,1,"medic"]]]
+            ["Backpack",    [true,[(eastGear get "Backpack")#2,1,"medic"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #10 /*Crate Air*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(eastGear get "Backpack")#0,2,"pilot"]]]
+            ["Backpack",    [true,[(eastGear get "Backpack")#0,2,"pilot"]]],
+            ["addToBP",     [true,[((eastWeapons get "AIR") get "Ammo")#0,((eastWeapons get "HG") get "Ammo")#0],[10,5]]]
         ]],
         [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
             [_missionPeriod,[selectRandom ((eastGear get "NVG")#1)]],
             ["Amount",      [8]],
-            ["Backpack",    [false,["",0,""]]]
+            ["Backpack",    [false,["",0,""]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #13 /*Crate UAV*/,createHashMapFromArray[
             [_missionPeriod,[(eastGear get "UAV")#0]],
             ["Amount",      [1]],
-            ["Backpack",    [true,[(eastGear get "UAV")#1,5,"none"]]]
+            ["Backpack",    [true,[(eastGear get "UAV")#1,5,"none"]]],
+            ["addToBP",     [false,[],[]]]
         ]]
     ]],
     [_sides #2,createHashMapFromArray[
         [_loadName #1 /*Crate Squad*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(guerGear get "Backpack")#2,2,"medic"],[(guerGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(guerGear get "Backpack")#2,2,"medic"],[(guerGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #2 /*Crate Peleton*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(guerGear get "UAV")#1,1,"none"],[(guerGear get "Backpack")#2,1,"medic"],[(guerGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(guerGear get "UAV")#1,1,"none"],[(guerGear get "Backpack")#2,1,"medic"],[(guerGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #4 /*Crate Medium*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(guerGear get "UAV")#1,1,"none"],[(guerGear get "Backpack")#2,1,"medic"],[(guerGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(guerGear get "UAV")#1,1,"none"],[(guerGear get "Backpack")#2,1,"medic"],[(guerGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #5 /*Crate Large*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(guerGear get "UAV")#1,2,"none"],[(guerGear get "Backpack")#2,2,"medic"],[(guerGear get "Backpack")#0,2,"eng"]]]
+            ["Backpack",    [true,[(guerGear get "UAV")#1,2,"none"],[(guerGear get "Backpack")#2,2,"medic"],[(guerGear get "Backpack")#0,2,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #6 /*Crate Explosives*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(guerGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(guerGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #7 /*Crate Mines*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(guerGear get "Backpack")#0,1,"eng"]]]
+            ["Backpack",    [true,[(guerGear get "Backpack")#0,1,"eng"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #8 /*Crate Medical*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(guerGear get "Backpack")#2,1,"medic"]]]
+            ["Backpack",    [true,[(guerGear get "Backpack")#2,1,"medic"]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #10 /*Crate Air*/,createHashMapFromArray[
             [_missionPeriod,[]],
             ["Amount",      []],
-            ["Backpack",    [true,[(guerGear get "Backpack")#0,2,"pilot"]]]
+            ["Backpack",    [true,[(guerGear get "Backpack")#0,2,"pilot"]]],
+            ["addToBP",     [true,[((guerWeapons get "AIR") get "Ammo")#0,((guerWeapons get "HG") get "Ammo")#0],[10,5]]]
         ]],
         [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
             [_missionPeriod,[selectRandom ((guerGear get "NVG")#1)]],
             ["Amount",      [8]],
-            ["Backpack",    [false,["",0,""]]]
+            ["Backpack",    [false,["",0,""]]],
+            ["addToBP",     [false,[],[]]]
         ]],
         [_loadName #13 /*Crate UAV*/,createHashMapFromArray[
             [_missionPeriod,[(guerGear get "UAV")#0]],
             ["Amount",      [1]],
-            ["Backpack",    [true,[(guerGear get "UAV")#1,5,"none"]]]
+            ["Backpack",    [true,[(guerGear get "UAV")#1,5,"none"]]],
+            ["addToBP",     [false,[],[]]]
         ]]
     ]]
 ];

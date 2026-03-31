@@ -121,6 +121,16 @@ if (_check) then
 								{
 									_pack addItemCargoGlobal [_x, _itemsAmt select _forEachIndex];
 								}forEach _items;
+
+								_addToBP = _loadGearCrate get "addToBP";
+								if (_addToBP #0) then
+								{
+									_ammoAdd = _addToBP #1;
+									_amtAdd = _addToBP #2;
+									{
+										_pack addItemCargoGlobal [_x, _amtAdd select _forEachIndex];
+									}forEach _ammoAdd;
+								};
 								[_pack, ((ceil(loadabs _pack)) + 100)] remoteExec ["LT_fnc_resetMaxLoad"];
 							};
 						};
