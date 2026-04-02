@@ -35,7 +35,7 @@ _attArr = param [2, [], [[]]];
 _wpnName = param [3, "Error", ["Error"]];
 _weapon = param [4, "", [""]];
 */
-
+_result = [[],[]];
 if !(isClass (configFile >> "cfgWeapons" >> _weapon)) exitWith 
 {
 	Diag_log format["[LT] (Weapon) Wrong weapon classname: -%1 Failed on-%2", _weapon,_wpnName];
@@ -43,10 +43,9 @@ if !(isClass (configFile >> "cfgWeapons" >> _weapon)) exitWith
 	{
 		systemChat format["[LT] (Weapon) Wrong weapon classname: -%1 Failed on-%2", _weapon,_wpnName];
 	};
-	_result = [[],[]];
+	_result;
 };
 
-_result = [];
 if (_scope == "False") then {_attArr set [4,""]};
 _attIR = (_attArr #0);
 _attFL = (_attArr #1);
