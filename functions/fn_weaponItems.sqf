@@ -14,7 +14,7 @@ Parameters:
 	4: STRING - String className weapon
 
 Example:
-	["True","8",[(IR),(FLASH),(MUZZLE),(BIPOD),(SCOPE)]] remoteExec ["LT_fnc_weaponItems"]
+	["True","8",[(IR),(FLASH),(MUZZLE),(BIPOD),(SCOPE)],"Name",(WeaponClass)] remoteExec ["LT_fnc_weaponItems"]
 	Result:
 	array of weapon with attachments and attachments [[],[Rail,Muzzle,Bipod,Scope]]
 
