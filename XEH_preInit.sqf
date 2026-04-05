@@ -295,11 +295,11 @@ ItemsGear= createHashMapFromArray [
         ["Amount",  [1,4,2,2]]
     ]],
     [_loadRole #0 /*com*/,createHashMapFromArray[
-        ["BASE",    [_items #2,_items #17,_items #18,_items #19,_items #20,_items #23,_items #24]],
-        ["GM",      ["",_items #17,_items #18,_items #19,_items #20,_items #23,_items #24]],
-        ["VN",      ["",_items #17,_items #18,_items #19,_items #20,_items #23,_items #24]],
-        ["40K",     [_items #2,_items #17,_items #18,_items #19,_items #20,_items #23,_items #24]],
-        ["Amount",  [1,2,2,2,2,4,4]]
+        ["BASE",    [_items #2,_items #23,_items #24]],
+        ["GM",      ["",_items #23,_items #24]],
+        ["VN",      ["",_items #23,_items #24]],
+        ["40K",     [_items #2,_items #23,_items #24]],
+        ["Amount",  [1,4,4]]
     ]],
     //[_loadRole #1 /*sql*/,createHashMapFromArray[
     //    ["BASE",    [_items #17,_items #18,_items #19,_items #20]],
