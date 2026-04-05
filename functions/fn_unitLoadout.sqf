@@ -314,6 +314,14 @@ if (_unitSpecial) then
 			case "medic";
 			case "eng":{backpackContainer _unit};
 		};
+		if (typeName _roleCont == typeName true) exitWith
+		{
+			Diag_log format["[LT] (initPostUnit) role:%1 does not get role items",_unitRole];
+			if ("lt_debug" call bis_fnc_getParamValue == 1) then 
+			{
+				systemChat format["[LT] (initPostUnit) role:%1 does not get role items",_unitRole];
+			};
+		};
 		{
 			_roleCont addItemCargoGlobal [_x, _roleAmt select _forEachIndex];
 		}forEach _roleItems;
