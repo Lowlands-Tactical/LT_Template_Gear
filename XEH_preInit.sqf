@@ -427,10 +427,10 @@ itemsCrates=createHashMapFromArray[
         ["Amount",  (_medicAmt #0)]
     ]],
     [_loadName #11 /*Crate Comms*/,createHashMapFromArray[
-        ["BASE",    [_itemsLink #0] +(_itemsRadio #0) +((UnitWeapons get "LASER") get "BASE")],
-        ["GM",      [_itemsLink #1] +(_itemsRadio #1) +((UnitWeapons get "LASER") get "GM")],
-        ["VN",      [_itemsLink #2] +(_itemsRadio #2) +((UnitWeapons get "LASER") get "VN")],
-        ["40K",     [_itemsLink #3] +(_itemsRadio #3) +((UnitWeapons get "LASER") get "40K")],
+        ["BASE",    (_itemsLink #0) +(_itemsRadio #0) +((UnitWeapons get "LASER") get "BASE")],
+        ["GM",      (_itemsLink #1) +(_itemsRadio #1) +((UnitWeapons get "LASER") get "GM")],
+        ["VN",      (_itemsLink #2) +(_itemsRadio #2) +((UnitWeapons get "LASER") get "VN")],
+        ["40K",     (_itemsLink #3) +(_itemsRadio #3) +((UnitWeapons get "LASER") get "40K")],
         ["Amount",  [8,8,8,2] +[8,2,0] +[2,2]]
     ]],
     [_loadName #12 /*Crate NVG*/,createHashMapFromArray[
