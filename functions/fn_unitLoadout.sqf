@@ -288,7 +288,7 @@ if (_unitItems) then
 	{
 		(uniformContainer _unit) addItemCargoGlobal [_itemsRadios #0,1];
 	};
-	if (_unitRole IN _packRadioRole) then
+	if ((_unitRole IN _packRadioRole) OR (_unitRole IN _roleWpnAir)) then
 	{
 		if (_missionRadioLong OR (_unitRole == "comms")) then
 		{
