@@ -62,8 +62,8 @@ _handGunAttMuzzle = ["muzzle_snds_L"];
 _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
-_launcher = ["launch_NLAW_F"];
-_launcher_Mags = ["NLAW_F"];
+_launcher = ["gm_pzf3_blk"];
+_launcher_Mags = ["gm_1Rnd_60mm_heat_dm22_pzf3","gm_1Rnd_60mm_heat_dm32_pzf3"];
 
 _launcherAA = ["rhs_weap_fim92"];
 _launcherAA_Mags = ["rhs_fim92_mag","Titan_AA"];
