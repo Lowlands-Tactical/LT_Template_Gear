@@ -11,7 +11,6 @@ Reset player weapons set from mission parameters
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["arifle_SLR_lxWS"];
 _rifleGL = ["arifle_SLR_GL_lxWS"]; 
 _rifle_Mags	= "20Rnd_762x51_slr_lxWS";
@@ -29,7 +28,6 @@ _rifleAttScope = [""];
 
 _itemsGL = ["1Rnd_40mm_HE_lxWS","1Rnd_58mm_AT_lxWS","1Rnd_50mm_Smoke_lxWS"];
 _itemsGLNVG = ["1Rnd_40mm_HE_lxWS","1Rnd_58mm_AT_lxWS","1Rnd_50mm_Smoke_lxWS"];
-_itemsGLAmt	= [8,8,6];
 
 _rifleMark = ["arifle_SLR_V_lxWS"];
 _rifleMark_Mags = "20Rnd_762x51_slr_lxWS";
@@ -65,13 +63,5 @@ _handGunAttScope = [""];
 
 _launcher = ["gm_pzf44_2_oli_feroz2x17"];
 _launcher_Mags = ["gm_1Rnd_44x537mm_heat_dm32_pzf44_2"];
-
-_launcherAA = ["gm_fim43_oli"];
-_launcherAA_Mags = ["gm_1Rnd_70mm_he_m585_fim43","Titan_AA"];
-
-_heavyAR = ["gm_lmgm62_blk"];
-_heavyAR_Mags = "gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn";
-
-_binocular = ["gm_ferod16_oli"];
 
 //=====================================================================================

@@ -11,7 +11,6 @@ Reset player weapons set from mission parameters
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["hlc_rifle_hk33a2RIS"];
 _rifleGL = ["hlc_rifle_hk33a2RIS_GL"];
 _rifle_Mags	= "hlc_30rnd_556x45_M_HK33";
@@ -64,16 +63,5 @@ _handGunAttScope = [""];
 
 _launcher = ["launch_MRAWS_green_rail_F"];
 _launcher_Mags = ["MRAWS_HEAT_F","MRAWS_HE_F"];
-
-_launcherAA = ["rhs_weap_fim92"];
-_launcherAA_Mags = ["rhs_fim92_mag","Titan_AA"];
-
-_heavyAR = ["Aegis_MMG_FNMAG_F"];
-_heavyAR_Mags = "Aegis_200Rnd_762x51_MAG_Green_Tracer_F";
-
-_heavyAT = ["ace_spike_launcher_olive"];
-_heavyAT_Mags = "ace_spike_lr";
-
-_binocular = ["ACE_Vector"];
 
 //=====================================================================================

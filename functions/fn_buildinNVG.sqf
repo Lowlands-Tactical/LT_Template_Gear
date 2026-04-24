@@ -38,13 +38,11 @@ if (_helmet == "") exitWith
 	{
 		systemchat "[LT] (buildinNVG) helmet does not exist";
 	};
+	_result
 };
 if (_helmet IN _helmetsBuildinNVG) then 
 {
 	_result = true;
-} else 
-{
-	_result = false;
 };
 
 _result;

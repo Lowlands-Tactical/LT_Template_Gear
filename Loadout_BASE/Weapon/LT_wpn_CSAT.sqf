@@ -11,7 +11,6 @@ Reset player weapons set from mission parameters
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["arifle_Katiba_F"];
 _rifleGL = ["arifle_Katiba_GL_F"]; 
 _rifle_Mags	= "30Rnd_65x39_caseless_green";
@@ -64,16 +63,5 @@ _handGunAttScope = [""];
 
 _launcher = ["launch_RPG32_F"];
 _launcher_Mags = ["RPG32_F","RPG32_HE_F"];
-
-_launcherAA = ["rhs_weap_fim92"];
-_launcherAA_Mags = ["rhs_fim92_mag","Titan_AA"];
-
-_heavyAR = ["Aegis_MMG_FNMAG_F"];
-_heavyAR_Mags = "Aegis_200Rnd_762x51_MAG_Green_Tracer_F";
-
-_heavyAT = ["ace_spike_launcher"];
-_heavyAT_Mags = "ace_spike_lr";
-
-_binocular = ["Rangefinder"];
 
 //=====================================================================================

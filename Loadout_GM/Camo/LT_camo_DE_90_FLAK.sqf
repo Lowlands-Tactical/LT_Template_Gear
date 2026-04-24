@@ -15,9 +15,9 @@ _unif = ["gm_ge_uniform_soldier_90_flk","gm_ge_uniform_soldier_rolled_90_flk"];
 _vest = ["gm_ge_vest_armor_90_rifleman_flk","gm_ge_vest_armor_90_flk","gm_ge_vest_armor_90_demolition_flk"];
 _helm = ["gm_ge_headgear_m92_flk","gm_ge_headgear_m92_glasses_flk"];
 
-_unifMedic = [""];
+_unifMedic = _unif;
 _vestMedic = ["gm_ge_vest_armor_90_medic_flk"];
-_helmMedic = [""];
+_helmMedic = _helm;
 
 _nvgs = ["gm_ferod51_oli"];
 _goggles = ["gm_xx_facewear_scarf_01_flk","gm_ge_facewear_dustglasses"];

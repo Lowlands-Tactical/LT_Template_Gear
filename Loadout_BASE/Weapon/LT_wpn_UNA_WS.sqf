@@ -11,7 +11,6 @@ Description:  WS UNA factions Wapons
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["arifle_VelkoR5_lxWS"];
 _rifleGL = ["arifle_VelkoR5_GL_lxWS"];
 _rifle_Mags	= "35Rnd_556x45_Velko_reload_tracer_green_lxWS";
@@ -64,16 +63,5 @@ _handGunAttScope = [""];
 
 _launcher = ["gm_pzf3_blk"];
 _launcher_Mags = ["gm_1Rnd_60mm_heat_dm22_pzf3","gm_1Rnd_60mm_heat_dm32_pzf3"];
-
-_launcherAA = ["rhs_weap_fim92"];
-_launcherAA_Mags = ["rhs_fim92_mag","Titan_AA"];
-
-_heavyAR = ["Aegis_MMG_FNMAG_F"];
-_heavyAR_Mags = "Aegis_200Rnd_762x51_MAG_Green_Tracer_F";
-
-_heavyAT = ["ace_spike_launcher_olive"];
-_heavyAT_Mags = "ace_spike_lr";
-
-_binocular = ["Laserdesignator"];
 
 //=====================================================================================

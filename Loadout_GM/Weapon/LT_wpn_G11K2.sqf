@@ -9,7 +9,6 @@ Description:
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["gm_g11k2_blk"];
 _rifleGL = [""];
 _rifle_Mags	= "gm_50Rnd_473x33mm_B_DM11_g11_blk";
@@ -27,7 +26,6 @@ _rifleAttScope = ["gm_g11_lps_prism11mm_blk"];
 
 _itemsGL = ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"];
 _itemsGLNVG = ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"];
-_itemsGLAmt	= [8,6,4,4];
 
 _rifleMark = ["gm_g8a2_blk"];
 _rifleMark_Mags = "gm_20Rnd_762x51mm_AP_DM151_g3_blk";
@@ -63,13 +61,5 @@ _handGunAttScope = [""];
 
 _launcher = ["gm_pzf3_blk"];
 _launcher_Mags = ["gm_1Rnd_60mm_heat_dm32_pzf3","gm_1Rnd_60mm_heat_dm32_pzf3"];
-
-_launcherAA = ["gm_fim43_oli"];
-_launcherAA_Mags = ["gm_1Rnd_70mm_he_m585_fim43","Titan_AA"];
-
-_heavyAR = ["gm_lmgm62_blk"];
-_heavyAR_Mags = "gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn";
-
-_binocular = ["gm_ferod16_oli"];
 
 //=====================================================================================

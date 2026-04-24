@@ -11,7 +11,6 @@ Reset player weapons set from mission parameters
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["ICP_Rifle_Kantrael_green"];
 _rifleGL = ["ICP_Rifle_Kantrael_green"]; 
 _rifle_Mags	= "ic_las_powerpack";
@@ -64,13 +63,5 @@ _handGunAttScope = [""];
 
 _launcher = ["IC_CAD_Rocketlauncher_base"];
 _launcher_Mags = ["IC_Frag_rocket_mag","IC_Krak_rocket_mag"];
-
-_launcherAA = ["IC_Launcher_AA_grey"];
-_launcherAA_Mags = ["IC_Flak_Missile_mag"];
-
-_heavyAR = ["ICP_LMG_01_imp"];
-_heavyAR_Mags = "ic_100rnd_825_HP_Tracer_rifleMag";
-
-_binocular = ["ic_cad_magnoculars"];
 
 //=====================================================================================

@@ -11,7 +11,6 @@ Reset player weapons set from mission parameters
 
 //=====================================================================================
 
-// Define type of weapons to use
 _rifle = ["Ork_Shoota_1","Ork_Shoota_2","Ork_Shoota_3","Shoota2"];
 _rifleGL = ["Shoota1_A"]; 
 _rifle_Mags	= "ShootaMag";
@@ -64,13 +63,5 @@ _handGunAttScope = [""];
 
 _launcher = ["DKOK_Mole_Launcher_1"];
 _launcher_Mags = ["Mol_AT_Mag","Mol_HE_Mag"];
-
-_launcherAA = ["IC_Launcher_AA_grey"];
-_launcherAA_Mags = ["IC_Flak_Missile_mag"];
-
-_heavyAR = ["ICP_LMG_01_imp"];
-_heavyAR_Mags = "ic_100rnd_825_HP_Tracer_rifleMag";
-
-_binocular = [""];
 
 //=====================================================================================
