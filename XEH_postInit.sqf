@@ -99,6 +99,15 @@ if (isNil "_ltMission") exitWith
     _launcher = [""];
     _launcher_Mags = [""];
 
+    _launcherAA = "";
+    _launcherAA_Mags = "";
+
+    _mmg = "";
+    _mmg_Mag = "";
+
+    _mat = "";
+    _mat_Mags = [""];
+
 _missionPeriod = MissionSettings get "Period";
 _missionScope = MissionSettings get "SCOPE";
 _missionAtt = MissionSettings get "ATT";
@@ -203,12 +212,25 @@ _loadRole = TabletSettings get "ROLES";
     _itemsGLAmt	= [19,6,4,4];
 
     // Pre select heavy weapon types
+    if (_launcherAA isNotEqualTo "") then
+    {
+        ((UnitWeapons get (_loadRole #8)) get _missionPeriod) set [_x, [_launcherAA_Mags,_launcherAA]];
+    };
+    if (_mmg isNotEqualTo "") then
+    {
+        ((UnitWeapons get (_loadRole #14)) get _missionPeriod) set [_x, [_mmg_Mag,_mmg]];
+    };
+    if (_mat isNotEqualTo "") then
+    {
+        ((UnitWeapons get (_loadRole #15)) get _missionPeriod) set [_x, [_mat_Mags,_mat]];
+    };
     _periodWPN=createHashMapFromArray[
         [_loadRole #7,[_launcher_Mags,_launcher]],
         [_loadRole #8,((UnitWeapons get (_loadRole #8)) get _missionPeriod) get _x],
         [_loadRole #14,((UnitWeapons get (_loadRole #14)) get _missionPeriod) get _x],
         [_loadRole #15,((UnitWeapons get (_loadRole #15)) get _missionPeriod) get _x]
     ];
+    
     _rifleAtt = [_missionScope,_missionAtt,[(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)],"Rifle", (selectRandom _rifle)] call LT_fnc_weaponItems;
     _rifleGLAtt = [_missionScope,_missionAtt,[(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)],"Rifle(GL)", (selectRandom _rifleGL)] call LT_fnc_weaponItems;
     _rifleCrewAtt = [_missionScope,_missionAtt,[(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)],"Rifle(Crew)", (selectRandom _rifleCrew)] call LT_fnc_weaponItems;
