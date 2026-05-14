@@ -435,7 +435,7 @@ if (_unitWeapon) then
 	_ammo = _weaponHash get "Ammo";
 	_weaponAtt = _weaponHash get "Att";
 	(vestContainer _unit) addItemCargoGlobal [_ammo #0,3];
-	_unit addWeapon _weapon;
+	_unit addWeapon (selectRandom _weapon);
 	removeAllHandgunItems _unit;
 	{
 		_unit addHandgunItem _x;
