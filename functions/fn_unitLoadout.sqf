@@ -412,7 +412,7 @@ if (_unitWeapon) then
 		}forEach _glAmmo;
 		if (_glHG #0) then
 		{
-			(backpackContainer _unit) addWeaponCargoGlobal (_glHG #1);
+			(backpackContainer _unit) addWeaponCargoGlobal [(_glHG #1), 1];
 		};
 	};
 	if (typeName _weaponHash != typeName true) then
