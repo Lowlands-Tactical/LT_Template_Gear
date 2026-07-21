@@ -12,7 +12,7 @@ _this select 1 = side unit
 _this select 2 = unit role
 
 Example:
-[this, "WEST"] call LT_fnc_unitLoadout
+[this, "WEST",""] call LT_fnc_unitLoadout
 
 */
 
