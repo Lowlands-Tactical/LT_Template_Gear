@@ -211,7 +211,7 @@ UnitWeapons = createHashMapFromArray[
         ]]
     ]],
     ["GLHG",createHashMapFromArray[
-        ["BASE",""],
+        ["BASE","glaunch_GLX_lxWS"],
         ["GM","gm_pallad_d_brn"],
         ["VN","vn_m79_p"],
         ["40K","TIOW_IG_GL"]
