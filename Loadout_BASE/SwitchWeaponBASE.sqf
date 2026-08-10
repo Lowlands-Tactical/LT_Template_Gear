@@ -80,4 +80,12 @@ switch (_sideWpn) do
 	{
 		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_DSI.sqf"
 	};
+	case 15:
+	{
+		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_Remington.sqf"
+	};
+	case 16:
+	{
+		#include "\lt_template_gear\Loadout_BASE\Weapon\LT_wpn_G36K.sqf"
+	};
 };
