@@ -28,26 +28,26 @@ _setRespawn = _vehicle getVariable ["LT_veh_setRepawn", 0];
 // Eject vaulty variables
 if (_vehSide == "CIV") exitWith
 {
-	Diag_Log format["[LT] (Loadout) Side is civilian for Vehicle: %1", typeOf _vehicle];
+	Diag_Log format["[LT] (InitPostVehicle) Side is civilian for Vehicle: %1", typeOf _vehicle];
 	if ("lt_debug" call bis_fnc_getParamValue == 1) then 
 	{
-		systemChat format["[LT] (Loadout) Side is civilian for Vehicle: %1", typeOf _vehicle];
+		systemChat format["[LT] (InitPostVehicle) Side is civilian for Vehicle: %1", typeOf _vehicle];
 	};
 	_return
 };
 if !(_loadout isEqualType "") exitWith 
 {
-	Diag_Log format["[LT] (Loadout) Loadout is not STRING: %1 for Vehicle: %2", _loadout,typeOf _vehicle];
+	Diag_Log format["[LT] (InitPostVehicle) Loadout is not STRING: %1 for Vehicle: %2", _loadout,typeOf _vehicle];
 	if ("lt_debug" call bis_fnc_getParamValue == 1) then 
 	{
-		systemChat format["[LT] (Loadout) Loadout is not STRING: %1 for Vehicle: %2", _loadout,typeOf _vehicle];
+		systemChat format["[LT] (InitPostVehicle) Loadout is not STRING: %1 for Vehicle: %2", _loadout,typeOf _vehicle];
 	};
 	_return
 };
-Diag_Log format["[LT] (Loadout) Vehicle %1 has side %2 and Loadout: %3",typeOf _vehicle, _vehSide, _loadout];
+Diag_Log format["[LT] (InitPostVehicle) Vehicle %1 has side %2 and Loadout: %3",typeOf _vehicle, _vehSide, _loadout];
 if ("lt_debug" call bis_fnc_getParamValue == 1) then 
 {
-	systemChat format["[LT] (Loadout) Vehicle %1 has side %2 and Loadout: %3",typeOf _vehicle,  _vehSide, _loadout];
+	systemChat format["[LT] (InitPostVehicle) Vehicle %1 has side %2 and Loadout: %3",typeOf _vehicle,  _vehSide, _loadout];
 };
 
 _check = true;
@@ -198,7 +198,11 @@ if (_setRespawn == 0) then
 	if (_vehicle isKindOf "LandVehicle" OR _vehicle isKindOf "Air" OR _vehicle isKindOf "Ship") then 
 	{
 		_vehRespawn = _vehicle getVariable ["LT_veh_respawn", 0];
-		Diag_Log format["[LT] (prepLoadout) Vehicle: %1 has Respawn: %2", _vehicle, _vehRespawn];
+		Diag_Log format["[LT] (InitPostVehicle) Vehicle: %1 has Respawn: %2", _vehicle, _vehRespawn];
+		if ("lt_debug" call bis_fnc_getParamValue == 1) then 
+		{
+			systemChat format["[LT] (InitPostVehicle) Vehicle: %1 has Respawn: %2", _vehicle, _vehRespawn];
+		};
 		if (_vehRespawn != 0) then 
 		{
 			_vehicle setVariable ["LT_veh_setRepawn", 1];

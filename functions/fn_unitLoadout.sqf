@@ -33,6 +33,11 @@ if ((_unitRole == "custom") OR (_unitSide == "CIV")) exitWith
 
     _return
 };
+Diag_Log format["[LT] (initPostUnit) Unit %1 has Side %2 and Role: %3",name _unit, _unitSide, _unitRole];
+if ("lt_debug" call bis_fnc_getParamValue == 1) then 
+{
+	systemChat format["[LT] (initPostUnit) Unit %1 has Side %2 and Role: %3",name _unit, _unitSide, _unitRole];
+};
 _return = true;
 
 // Map/GPS/Bino

@@ -149,10 +149,10 @@ LT_fnc_weaponItems={
     };
     _result = [[_weapon,_attachments #1,_attachments #0,_attachments #3,[],[],_attachments #2],_attachments];
 
-    Diag_log format["[LT] (Weapon) WeaponWithAttachments: %1", _result #0];
+    Diag_log format["[LT] (XEH) WeaponWithAttachments: %1", _result #0];
     if ("lt_debug" call bis_fnc_getParamValue == 1) then 
     {
-        systemChat format["[LT] (Weapon) WeaponWithAttachments: %1", _result #0];
+        systemChat format["[LT] (XEH) WeaponWithAttachments: %1", _result #0];
     };
     _result;
 };
