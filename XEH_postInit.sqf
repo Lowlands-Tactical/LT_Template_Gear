@@ -63,6 +63,7 @@ if (isNil "_ltMission") exitWith
 
     _itemsGL = ["","","",""];
     _itemsGLNVG = ["","","",""];
+    _itemsGLAmt = [];
 
     _rifleMark = [""];
     _rifleMark_Mags = "";
@@ -208,8 +209,9 @@ _loadRole = TabletSettings get "ROLES";
         _glBool = true;
         _rifleGL = _rifle;
     };
-    _ammoGL = if (MissionSettings get "NVG") then{_itemsGLNVG;}else{_itemsGL;};
-    _itemsGLAmt	= [19,6,4,4];
+    _ammoGL = if ((MissionSettings get "NVG")) then{_itemsGLNVG;}else{_itemsGL;};
+    _itemsGLAmt = if (_itemsGLAmt isEqualTo []) then {((ItemsGear get "GL") get "Amount")} else {_itemsGLAmt};
+
 
     // Pre select heavy weapon types
     if (_launcherAA isNotEqualTo "") then

@@ -285,7 +285,7 @@ ItemsGear= createHashMapFromArray [
         ["GM",      (_itemsGL #1)],
         ["VN",      (_itemsGL #2)],
         ["40K",     (_itemsGL #3)],
-        ["Amount",  []]
+        ["Amount",  [19,6,4,4]]
     ]],
     ["NVG",createHashMapFromArray[
         ["BASE",    [_items #12,_items #14,_items #21,_items #22]],
