@@ -157,9 +157,19 @@ if (_check) then
 			_loadWeaponAmt = (_loadWeaponCrate get _x) #2;		//SCALAR
 			_loadAmmoOnly = (_loadWeaponCrate get _x) #3;		//BOOL
 			_loadAmmoAmt = (_loadWeaponCrate get _x) #4;		//ARRAY
-			_loadAmmoAmt resize [(count _loadAmmo),(_loadAmmoAmt #0)];
+
+			//Resize ammo amount arrays
+			if (((count _loadAmmoAmt) != (count _loadAmmo))) then
+			{
+				_loadAmmoAmt resize [(count _loadAmmo),(_loadAmmoAmt #0)];
+			};
+			
 			if (_loadAmmoOnly) then
 			{
+					if ((count _loadGLAmmoAmt) != (count _loadGLAmmo)) then
+					{
+						_loadGLAmmoAmt resize [(count _loadGLAmmo),(_loadGLAmmoAmt #0)];
+					};
 				{
 					_vehicle addItemCargoGlobal [_x, _loadAmmoAmt select _forEachIndex];
 				}forEach _loadAmmo;
