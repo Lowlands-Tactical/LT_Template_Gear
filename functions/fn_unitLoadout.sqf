@@ -40,6 +40,7 @@ if ("lt_debug" call bis_fnc_getParamValue == 1) then
 };
 _return = true;
 
+
 // Map/GPS/Bino
 _unitLink = _unit getVariable ["LT_unit_link", true];
 //PersMedic Nades

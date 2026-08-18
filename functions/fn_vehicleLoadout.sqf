@@ -51,19 +51,23 @@ if ("lt_debug" call bis_fnc_getParamValue == 1) then
 };
 
 _check = true;
-switch (_loadout) do {
+switch (_loadout) do
+{
 	case "None";
-	case "Empty":{
+	case "Empty":
+	{
 		clearWeaponCargoGlobal _vehicle;
 		clearMagazineCargoGlobal _vehicle;
 		clearItemCargoGlobal _vehicle;
 		clearBackpackCargoGlobal _vehicle;
 		_check = false;
 	};
-	case "Custom":{
+	case "Custom":
+	{
 		_check = false;
 	};
-	default{
+	default
+	{
 		clearWeaponCargoGlobal _vehicle;
 		clearMagazineCargoGlobal _vehicle;
 		clearItemCargoGlobal _vehicle;
@@ -139,6 +143,7 @@ if (_check) then
 			}forEach _loadGearPack;
 		};
 	};
+
 	_loadWeaponSide = weaponCrates get _vehSide;
 	_loadWeaponCrate = _loadWeaponSide get _loadout;
 	if !(isNil "_loadWeaponCrate") then
