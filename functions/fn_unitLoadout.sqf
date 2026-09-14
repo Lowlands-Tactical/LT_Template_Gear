@@ -41,8 +41,8 @@ if ("lt_debug" call bis_fnc_getParamValue == 1) then
 _return = true;
 
 //Apply ACE Drag/Carry to apply ignore weight
-[_unit,true,[0,1.5,0],0,true,true] call ace_dragging_fnc_setDraggable;
-[_unit,true,[0,1,1],0,true,true] call ace_dragging_fnc_setCarryable;
+[_unit,true,[0,1.2,0],180,true,true] call ace_dragging_fnc_setDraggable;
+[_unit,true,[.35,-.1,-1.2],180,true,true] call ace_dragging_fnc_setCarryable;
 
 // Map/GPS/Bino
 _unitLink = _unit getVariable ["LT_unit_link", true];
