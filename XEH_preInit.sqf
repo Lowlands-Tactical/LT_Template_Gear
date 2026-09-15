@@ -170,22 +170,26 @@ UnitWeapons = createHashMapFromArray[
         ["BASE",createHashMapFromArray[
             [_sides #0,["Aegis_200Rnd_762x51_MAG_Green_Tracer_F","Aegis_MMG_FNMAG_F"]],
             [_sides #1,["100Rnd_762x51_S77_Red_lxWS","LMG_S77_lxWS"]],
-            [_sides #2,["hlc_200Rnd_762x51_M_M60E4","hlc_lmg_m60"]]
+            [_sides #2,["hlc_200Rnd_762x51_M_M60E4","hlc_lmg_m60"]],
+            ["SCOPE","JCA_optic_IHO_black_magnifier"]
         ]],
         ["GM",createHashMapFromArray[
             [_sides #0,["gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn","gm_lmgm62_blk"]],
             [_sides #1,["gm_100Rnd_762x54mmR_B_T_7t2_pk_grn","gm_hmgpkm_prp"]],
-            [_sides #2,["hlc_200Rnd_762x51_M_M60E4","hlc_lmg_m60"]]
+            [_sides #2,["hlc_200Rnd_762x51_M_M60E4","hlc_lmg_m60"]],
+            ["SCOPE","gm_c79a1_blk"]
         ]],
         ["VN",createHashMapFromArray[
             [_sides #0,["vn_m60_100_mag","vn_m60"]],
             [_sides #1,["vn_m60_100_mag","vn_m60"]],
-            [_sides #2,["vn_m60_100_mag","vn_m60"]]
+            [_sides #2,["vn_m60_100_mag","vn_m60"]],
+            ["SCOPE",""]
         ]],
         ["40K",createHashMapFromArray[
             [_sides #0,["ic_100rnd_825_HP_Tracer_rifleMag","ICP_LMG_01_imp"]],
             [_sides #1,["ic_100rnd_825_HP_Tracer_rifleMag","ICP_LMG_01_imp"]],
-            [_sides #2,["ic_100rnd_825_HP_Tracer_rifleMag","ICP_LMG_01_imp"]]
+            [_sides #2,["ic_100rnd_825_HP_Tracer_rifleMag","ICP_LMG_01_imp"]],
+            ["SCOPE",""]
         ]]
     ]],
     [_roles #15 /*mat*/,createHashMapFromArray[

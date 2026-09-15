@@ -384,12 +384,9 @@ if (_unitSpecial) then
 					(backpackContainer _unit) addItemCargoGlobal [_x, 6];
 				}forEach _ammoSP;
 				_unit addWeapon (selectRandom _weaponSP);
-				if (_unitRole == "ar") then
 				{
-					{
-						_unit addPrimaryWeaponItem _x;
-					}forEach (_weaponHash get "Att");
-				};
+					_unit addPrimaryWeaponItem _x;
+				}forEach (_weaponHash get "Att");
 			};
 		};
 	};

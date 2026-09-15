@@ -105,6 +105,7 @@ if (isNil "_ltMission") exitWith
 
     _mmg = "";
     _mmg_Mag = "";
+    _mmg_Scope = "";
 
     _mat = "";
     _mat_Mags = [""];
@@ -200,6 +201,7 @@ _loadRole = TabletSettings get "ROLES";
     if ((_helmJet select 0) == "") then {_helmJet = _helmHeli};
     if ((_itemsGL select 0) == "") then {_itemsGL = ((ItemsGear get "GL") get _missionPeriod)#0};
     if ((_itemsGLNVG select 0) == "") then {_itemsGLNVG = ((ItemsGear get "GL") get _missionPeriod)#1};
+    if (_mmg_Scope == "" AND _missionScope) then {_mmg_Scope = (((UnitWeapons get (_loadRole #14)) get _missionPeriod) get "SCOPE")};
 
     // Check GL Weapon and define GL Ammo
     _glBool = false;
