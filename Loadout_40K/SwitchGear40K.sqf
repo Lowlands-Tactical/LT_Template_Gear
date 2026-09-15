@@ -12,7 +12,7 @@ case 00: {
 };
 */
 
-switch (_lt_camoTMP) do 
+switch (_sideGear) do 
 {
 	case 0:
 	{
