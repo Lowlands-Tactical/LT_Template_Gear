@@ -226,12 +226,10 @@ _loadRole = TabletSettings get "ROLES";
     {
         ((UnitWeapons get (_loadRole #15)) get _missionPeriod) set [_x, [_mat_Mags,_mat]];
     };
-    _periodWPN=createHashMapFromArray[
-        [_loadRole #7,[_launcher_Mags,_launcher]],
-        [_loadRole #8,((UnitWeapons get (_loadRole #8)) get _missionPeriod) get _x],
-        [_loadRole #14,((UnitWeapons get (_loadRole #14)) get _missionPeriod) get _x],
-        [_loadRole #15,((UnitWeapons get (_loadRole #15)) get _missionPeriod) get _x]
-    ];
+    _weaponAT = [_launcher_Mags,_launcher];
+    _weaponAA = ((UnitWeapons get (_loadRole #8)) get _missionPeriod) get _x;
+    _weaponMMG = ((UnitWeapons get (_loadRole #14)) get _missionPeriod) get _x;
+    _weaponMAT = ((UnitWeapons get (_loadRole #15)) get _missionPeriod) get _x;
     
     _rifleAtt = [_missionScope,_missionAtt,[(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)],"Rifle", (selectRandom _rifle)] call LT_fnc_weaponItems;
     _rifleGLAtt = [_missionScope,_missionAtt,[(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)],"Rifle(GL)", (selectRandom _rifleGL)] call LT_fnc_weaponItems;
@@ -288,14 +286,14 @@ _loadRole = TabletSettings get "ROLES";
                     ["Att",     _rifleHGAtt #1]
                 ]],
                 [_loadRole #7,/*riflat*/ createHashMapFromArray[
-                    ["Weapon",  (_periodWPN get (_loadRole #7))#1],
-                    ["Ammo",    (_periodWPN get (_loadRole #7))#0],
-                    ["WithAtt", [((_periodWPN get (_loadRole #7))#1)#0,"","","",[((_periodWPN get (_loadRole #7))#0)#0,1],[],""]]
+                    ["Weapon",  (_weaponAT #1)],
+                    ["Ammo",    (_weaponAT #0)],
+                    ["WithAtt", [((_weaponAT #1)#0),"","","",[((_weaponAT #0)#0),1],[],""]]
                 ]],
                 [_loadRole #8,/*riflaa*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #8))#1]],
-                    ["Ammo",    [(_periodWPN get (_loadRole #8))#0]],
-                    ["WithAtt", [(_periodWPN get (_loadRole #8))#1,"","","",[(_periodWPN get (_loadRole #8))#0,1],[],""]]
+                    ["Weapon",  [(_weaponAA #1)]],
+                    ["Ammo",    [(_weaponAA #0)]],
+                    ["WithAtt", [(_weaponAA #1),"","","",[(_weaponAA #0),1],[],""]]
                 ]],
                 [_loadRole #9,/*dmr*/ createHashMapFromArray[
                     ["Weapon",  _rifleMark],
@@ -310,14 +308,15 @@ _loadRole = TabletSettings get "ROLES";
                     ["Att",     _rifleARAtt #1]
                 ]],
                 [_loadRole #14,/*mmg*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #14))#1]],
-                    ["Ammo",    [(_periodWPN get (_loadRole #14))#0]],
-                    ["WithAtt", [(_periodWPN get (_loadRole #14))#1,"","","",[(_periodWPN get (_loadRole #14))#0,1],[],""]]
+                    ["Weapon",  [(_weaponMMG #1)]],
+                    ["Ammo",    [(_weaponMMG #0)]],
+                    ["WithAtt", [(_weaponMMG #1),"","",_mmg_Scope,[(_weaponMMG #0),1],[],""]],
+                    ["Att",     [_mmg_Scope]]
                 ]],
                 [_loadRole #15,/*mat*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #15))#1]],
-                    ["Ammo",    (_periodWPN get (_loadRole #15))#0],
-                    ["WithAtt", [(_periodWPN get (_loadRole #15))#1,"","","",[((_periodWPN get (_loadRole #15))#0)#0,1],[],""]]
+                    ["Weapon",  [(_weaponMAT #1)]],
+                    ["Ammo",    (_weaponMAT #0)],
+                    ["WithAtt", [(_weaponMAT #1),"","","",[((_weaponMAT #0)#0),1],[],""]]
                 ]]
             ];
             publicVariable "westGear";
@@ -370,14 +369,14 @@ _loadRole = TabletSettings get "ROLES";
                     ["Att",     _rifleHGAtt #1]
                 ]],
                 [_loadRole #7,/*riflat*/ createHashMapFromArray[
-                    ["Weapon",  (_periodWPN get (_loadRole #7))#1],
-                    ["Ammo",    (_periodWPN get (_loadRole #7))#0],
-                    ["WithAtt", [((_periodWPN get (_loadRole #7))#1)#0,"","","",[((_periodWPN get (_loadRole #7))#0)#0,1],[],""]]
+                    ["Weapon",  (_weaponAT #1)],
+                    ["Ammo",    (_weaponAT #0)],
+                    ["WithAtt", [((_weaponAT #1)#0),"","","",[((_weaponAT #0)#0),1],[],""]]
                 ]],
                 [_loadRole #8,/*riflaa*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #8))#1]],
-                    ["Ammo",    [(_periodWPN get (_loadRole #8))#0]],
-                    ["WithAtt", [(_periodWPN get (_loadRole #8))#1,"","","",[(_periodWPN get (_loadRole #8))#0,1],[],""]]
+                    ["Weapon",  [(_weaponAA #1)]],
+                    ["Ammo",    [(_weaponAA #0)]],
+                    ["WithAtt", [(_weaponAA #1),"","","",[(_weaponAA #0),1],[],""]]
                 ]],
                 [_loadRole #9,/*dmr*/ createHashMapFromArray[
                     ["Weapon",  _rifleMark],
@@ -392,14 +391,15 @@ _loadRole = TabletSettings get "ROLES";
                     ["Att",     _rifleARAtt #1]
                 ]],
                 [_loadRole #14,/*mmg*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #14))#1]],
-                    ["Ammo",    [(_periodWPN get (_loadRole #14))#0]],
-                    ["WithAtt", [(_periodWPN get (_loadRole #14))#1,"","","",[(_periodWPN get (_loadRole #14))#0,1],[],""]]
+                    ["Weapon",  [(_weaponMMG #1)]],
+                    ["Ammo",    [(_weaponMMG #0)]],
+                    ["WithAtt", [(_weaponMMG #1),"","",_mmg_Scope,[(_weaponMMG #0),1],[],""]],
+                    ["Att",     [_mmg_Scope]]
                 ]],
                 [_loadRole #15,/*mat*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #15))#1]],
-                    ["Ammo",    (_periodWPN get (_loadRole #15))#0],
-                    ["WithAtt", [(_periodWPN get (_loadRole #15))#1,"","","",[((_periodWPN get (_loadRole #15))#0)#0,1],[],""]]
+                    ["Weapon",  [(_weaponMAT #1)]],
+                    ["Ammo",    (_weaponMAT #0)],
+                    ["WithAtt", [(_weaponMAT #1),"","","",[((_weaponMAT #0)#0),1],[],""]]
                 ]]
             ];
             publicVariable "eastGear";
@@ -452,14 +452,14 @@ _loadRole = TabletSettings get "ROLES";
                     ["Att",     _rifleHGAtt #1]
                 ]],
                 [_loadRole #7,/*riflat*/ createHashMapFromArray[
-                    ["Weapon",  (_periodWPN get (_loadRole #7))#1],
-                    ["Ammo",    (_periodWPN get (_loadRole #7))#0],
-                    ["WithAtt", [((_periodWPN get (_loadRole #7))#1)#0,"","","",[((_periodWPN get (_loadRole #7))#0)#0,1],[],""]]
+                    ["Weapon",  (_weaponAT #1)],
+                    ["Ammo",    (_weaponAT #0)],
+                    ["WithAtt", [((_weaponAT #1)#0),"","","",[((_weaponAT #0)#0),1],[],""]]
                 ]],
                 [_loadRole #8,/*riflaa*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #8))#1]],
-                    ["Ammo",    [(_periodWPN get (_loadRole #8))#0]],
-                    ["WithAtt", [(_periodWPN get (_loadRole #8))#1,"","","",[(_periodWPN get (_loadRole #8))#0,1],[],""]]
+                    ["Weapon",  [(_weaponAA #1)]],
+                    ["Ammo",    [(_weaponAA #0)]],
+                    ["WithAtt", [(_weaponAA #1),"","","",[(_weaponAA #0),1],[],""]]
                 ]],
                 [_loadRole #9,/*dmr*/ createHashMapFromArray[
                     ["Weapon",  _rifleMark],
@@ -474,14 +474,15 @@ _loadRole = TabletSettings get "ROLES";
                     ["Att",     _rifleARAtt #1]
                 ]],
                 [_loadRole #14,/*mmg*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #14))#1]],
-                    ["Ammo",    [(_periodWPN get (_loadRole #14))#0]],
-                    ["WithAtt", [(_periodWPN get (_loadRole #14))#1,"","","",[(_periodWPN get (_loadRole #14))#0,1],[],""]]
+                    ["Weapon",  [(_weaponMMG #1)]],
+                    ["Ammo",    [(_weaponMMG #0)]],
+                    ["WithAtt", [(_weaponMMG #1),"","",_mmg_Scope,[(_weaponMMG #0),1],[],""]],
+                    ["Att",     [_mmg_Scope]]
                 ]],
                 [_loadRole #15,/*mat*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #15))#1]],
-                    ["Ammo",    (_periodWPN get (_loadRole #15))#0],
-                    ["WithAtt", [(_periodWPN get (_loadRole #15))#1,"","","",[((_periodWPN get (_loadRole #15))#0)#0,1],[],""]]
+                    ["Weapon",  [(_weaponMAT #1)]],
+                    ["Ammo",    (_weaponMAT #0)],
+                    ["WithAtt", [(_weaponMAT #1),"","","",[((_weaponMAT #0)#0),1],[],""]]
                 ]]
             ];
             publicVariable "guerGear";
