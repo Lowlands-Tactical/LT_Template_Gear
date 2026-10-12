@@ -36,7 +36,9 @@ _items=
     "Chemlight_green",              // _items #21
     "ACE_Chemlight_IR",             // _items #22
     "ACE_HandFlare_Green",          // _items #23
-    "ACE_HandFlare_Red"             // _items #24
+    "ACE_HandFlare_Red",            // _items #24
+    "ACE_SpraypaintWhite",          // _items #25
+    "ACE_SpraypaintYellow"          // _items #26
 ];
 _itemsLink=[
     ["ItemMap","ItemCompass","ItemWatch","ItemGPS"],                    // (_itemsLink #0)
@@ -305,13 +307,6 @@ ItemsGear= createHashMapFromArray [
         ["40K",     [_items #2,_items #23,_items #24]],
         ["Amount",  [1,4,4]]
     ]],
-    //[_loadRole #1 /*sql*/,createHashMapFromArray[
-    //    ["BASE",    [_items #17,_items #18,_items #19,_items #20]],
-    //    ["GM",      [_items #17,_items #18,_items #19,_items #20]],
-    //    ["VN",      [_items #17,_items #18,_items #19,_items #20]],
-    //    ["40K",     [_items #17,_items #18,_items #19,_items #20]],
-    //    ["Amount",  [2,2,2,2]]
-    //]],
     [_loadRole #2 /*jtac*/,createHashMapFromArray[
         ["BASE",    [_items #13,(_itemsRadio #0) #2]],
         ["GM",      [_items #13,(_itemsRadio #1) #2]],
@@ -319,13 +314,6 @@ ItemsGear= createHashMapFromArray [
         ["40K",     [_items #13,(_itemsRadio #3) #2]],
         ["Amount",  [1,1]]
     ]],
-    //[_loadRole #3 /*ftl*/,createHashMapFromArray[
-    //    ["BASE",    [_items #17,_items #18,_items #19,_items #20]],
-    //    ["GM",      [_items #17,_items #18,_items #19,_items #20]],
-    //    ["VN",      [_items #17,_items #18,_items #19,_items #20]],
-    //    ["40K",     [_items #17,_items #18,_items #19,_items #20]],
-    //    ["Amount",  [2,2,2,2]]
-    //]],
     [_loadRole #4 /*gren*/,createHashMapFromArray[
         ["BASE",    [_items #6]],
         ["GM",      [_items #6]],
@@ -382,11 +370,11 @@ itemsCrates=createHashMapFromArray[
         ["Amount",  [2,8,8] +(_itemsTrowAmt #1) +(_medicAmt #2)]
     ]],
     [_loadName #2 /*Crate Peleton*/,createHashMapFromArray[
-        ["BASE",    [_items #13,_items #14,_items #15,(_itemsRadio #0 #1)]],
-        ["GM",      [_items #13,"","",(_itemsRadio #1 #1)]],
-        ["VN",      [_items #13,"","",(_itemsRadio #2 #1)]],
-        ["40K",     [_items #13,_items #14,_items #15,(_itemsRadio #3 #1)]],
-        ["Amount",  [6,16,4,3]]
+        ["BASE",    [_items #17,_items #18,_items #19,_items #20,_items #25,_items #26,_items #13,_items #14,_items #15,(_itemsRadio #0 #1)]],
+        ["GM",      [_items #17,_items #18,_items #19,_items #20,_items #25,_items #26,_items #13,"","",(_itemsRadio #1 #1)]],
+        ["VN",      [_items #17,_items #18,_items #19,_items #20,_items #25,_items #26,_items #13,"","",(_itemsRadio #2 #1)]],
+        ["40K",     [_items #17,_items #18,_items #19,_items #20,_items #25,_items #26,_items #13,_items #14,_items #15,(_itemsRadio #3 #1)]],
+        ["Amount",  [10,10,10,10,10,10,6,16,4,3]]
     ]],
     [_loadName #3 /*Crate Small*/,createHashMapFromArray[
         ["BASE",    [_items #3,_items #15] +(_itemsTrow #0) +_medic],
