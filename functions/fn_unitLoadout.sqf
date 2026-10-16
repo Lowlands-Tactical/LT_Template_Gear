@@ -1,6 +1,6 @@
 /*
 
-File: fn_unitLoadout.sqf
+File: fn_initPostUnit.sqf
 Author: Brainless_Ben
 
 Description:
@@ -12,7 +12,7 @@ _this select 1 = side unit
 _this select 2 = unit role
 
 Example:
-[this, "WEST",""] call LT_fnc_unitLoadout
+[this, "WEST",""] call LT_fnc_initPostUnit
 
 */
 
@@ -436,9 +436,9 @@ if (_unitWeapon) then
 };
 
 // Reset unit gear load with extra space
-[(uniformContainer _unit), (ceil(loadabs (uniformContainer _unit))) +50] remoteExec ["LT_fnc_resetMaxLoad"];
-[(vestContainer _unit), (ceil(loadabs (vestContainer _unit))) +200] remoteExec ["LT_fnc_resetMaxLoad"];
-[(backpackContainer _unit), (ceil(loadabs (backpackContainer _unit))) +500] remoteExec ["LT_fnc_resetMaxLoad"];
+[(uniformContainer _unit), (ceil(loadabs (uniformContainer _unit))) +50] call LT_fnc_resetMaxLoad;
+[(vestContainer _unit), (ceil(loadabs (vestContainer _unit))) +200] call LT_fnc_resetMaxLoad;
+[(backpackContainer _unit), (ceil(loadabs (backpackContainer _unit))) +500] call LT_fnc_resetMaxLoad;
 
 //setUnitTrait per role
 switch (_unitRole) do
