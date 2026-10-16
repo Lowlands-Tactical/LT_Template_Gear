@@ -33,11 +33,7 @@ _helmetsBuildinNVG = [
 _result = false;
 if (_helmet == "") exitWith 
 {
-	Diag_log "[LT] (buildinNVG) helmet does not exist";
-	if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-	{
-		systemchat "[LT] (buildinNVG) helmet does not exist";
-	};
+	["buildinNVG","Helmet does not exist",3] call LT_fnc_log;
 	_result
 };
 if (_helmet IN _helmetsBuildinNVG) then 

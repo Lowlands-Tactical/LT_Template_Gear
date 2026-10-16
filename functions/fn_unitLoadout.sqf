@@ -25,19 +25,10 @@ if !(local _unit) exitWith {_return};
 // Eject incorrect
 if ((_unitRole == "custom") OR (_unitSide == "CIV")) exitWith 
 {
-	Diag_log format["[LT] (initPostUnit) role:%1 of side:%2 is incorrect no gear is set for unit:%3",_unitRole,_unitSide, name _unit];
-	if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-	{
-		systemChat format["[LT] (initPostUnit) role:%1 of side:%2 is incorrect no gear is set for unit:%3",_unitRole,_unitSide, name _unit];
-	};
-
+	["initPostUnit",format ["Role:%1 of Side:%2 is incorrect no gear is set for Unit:%3",_unitRole,_unitSide, name _unit],3] call LT_fnc_log;
     _return
 };
-Diag_Log format["[LT] (initPostUnit) Unit %1 has Side %2 and Role: %3",name _unit, _unitSide, _unitRole];
-if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-{
-	systemChat format["[LT] (initPostUnit) Unit %1 has Side %2 and Role: %3",name _unit, _unitSide, _unitRole];
-};
+["initPostUnit",format ["Unit %1 has Side %2 and Role: %3",name _unit, _unitSide, _unitRole],3] call LT_fnc_log;
 _return = true;
 
 //Apply ACE Drag/Carry to apply ignore weight
@@ -325,11 +316,7 @@ if (_unitSpecial) then
 		};
 		if (typeName _roleCont == typeName true) exitWith
 		{
-			Diag_log format["[LT] (initPostUnit) role:%1 does not get role items",_unitRole];
-			if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-			{
-				systemChat format["[LT] (initPostUnit) role:%1 does not get role items",_unitRole];
-			};
+			["initPostUnit",["Role:%1 does not get role items",_unitRole],3] call LT_fnc_log;
 		};
 		{
 			_roleCont addItemCargoGlobal [_x, _roleAmt select _forEachIndex];
