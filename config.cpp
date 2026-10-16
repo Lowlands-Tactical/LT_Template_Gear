@@ -77,7 +77,6 @@ class cfgFunctions
             file="\lt_template_gear\functions";
 			class buildInNVG {};
             class initPostUnit {};
-            class initPostVeh {};
             class resetMaxLoad {};
 			class unitLoadout {};
             class vehicleLoadout {};
@@ -95,10 +94,8 @@ class cfgRemoteExec
         jip=1;
 		class LT_fnc_buildinNVG		{allowedTargets=0;};
         class LT_fnc_InitPostUnit	{allowedTargets=0;};
-        class LT_fnc_InitPostVeh	{allowedTargets=2;};
 		class LT_fnc_resetMaxLoad	{allowedTargets=2;};
 		class LT_fnc_unitLoadout	{allowedTargets=2;};
         class LT_fnc_VehicleLoadout	{allowedTargets=2;};
-		class FRED_fnc_vehicleRespawn{allowedTargets=2;};
     };
 };
