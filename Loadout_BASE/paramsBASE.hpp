@@ -20,7 +20,7 @@
     #define SHORT_RADIO 1
 #endif
 #ifndef LONG_RADIO
-    #define LONG_RADIO 3
+    #define LONG_RADIO 2
 #endif
 #ifndef GEAR_NVG
     #define GEAR_NVG 0
