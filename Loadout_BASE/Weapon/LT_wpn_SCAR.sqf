@@ -45,13 +45,13 @@ _rifleAirAttMuzzle = ["muzzle_snds_acp"];
 _rifleAirAttBipod = [""];
 _rifleAirAttScope = ["JCA_optic_ARO_black"];
 
-_rifleAR = ["hlc_lmg_minimipara_railed"];
+_rifleAR = ["LMG_03_F"];
 _rifleAR_Mags = "hlc_200rnd_556x45_M_SAW";
 _rifleARAttRailIR = [""];
 _rifleARAttRailFL = [""];
 _rifleARAttMuzzle = ["hlc_muzzle_A1_FlashHider"];
 _rifleARAttBipod = [""];
-_rifleARAttScope = ["optic_Yorris"];
+_rifleARAttScope = ["JCA_optic_ARO_black"];
 
 _handGun = ["hgun_G17_black_F"];
 _handGun_Mags = "17Rnd_9x21_Mag";
@@ -61,7 +61,7 @@ _handGunAttMuzzle = ["muzzle_snds_L"];
 _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
-_launcher = ["launch_NLAW_F"];
-_launcher_Mags = ["NLAW_F"];
+_launcher = ["gm_pzf3_blk"];
+_launcher_Mags = ["gm_1Rnd_60mm_heat_dm22_pzf3","gm_1Rnd_60mm_heat_dm32_pzf3"];
 
 //=====================================================================================

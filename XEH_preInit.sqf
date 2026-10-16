@@ -36,7 +36,9 @@ _items=
     "Chemlight_green",              // _items #21
     "ACE_Chemlight_IR",             // _items #22
     "ACE_HandFlare_Green",          // _items #23
-    "ACE_HandFlare_Red"             // _items #24
+    "ACE_HandFlare_Red",            // _items #24
+    "ACE_SpraypaintWhite",          // _items #25
+    "ACE_SpraypaintYellow"          // _items #26
 ];
 _itemsLink=[
     ["ItemMap","ItemCompass","ItemWatch","ItemGPS"],                    // (_itemsLink #0)
@@ -170,22 +172,26 @@ UnitWeapons = createHashMapFromArray[
         ["BASE",createHashMapFromArray[
             [_sides #0,["Aegis_200Rnd_762x51_MAG_Green_Tracer_F","Aegis_MMG_FNMAG_F"]],
             [_sides #1,["100Rnd_762x51_S77_Red_lxWS","LMG_S77_lxWS"]],
-            [_sides #2,["hlc_200Rnd_762x51_M_M60E4","hlc_lmg_m60"]]
+            [_sides #2,["hlc_200Rnd_762x51_M_M60E4","hlc_lmg_m60"]],
+            ["SCOPE","JCA_optic_IHO_black_magnifier"]
         ]],
         ["GM",createHashMapFromArray[
             [_sides #0,["gm_120Rnd_762x51mm_B_T_DM21A2_mg3_grn","gm_lmgm62_blk"]],
             [_sides #1,["gm_100Rnd_762x54mmR_B_T_7t2_pk_grn","gm_hmgpkm_prp"]],
-            [_sides #2,["hlc_200Rnd_762x51_M_M60E4","hlc_lmg_m60"]]
+            [_sides #2,["hlc_200Rnd_762x51_M_M60E4","hlc_lmg_m60"]],
+            ["SCOPE","gm_c79a1_blk"]
         ]],
         ["VN",createHashMapFromArray[
             [_sides #0,["vn_m60_100_mag","vn_m60"]],
             [_sides #1,["vn_m60_100_mag","vn_m60"]],
-            [_sides #2,["vn_m60_100_mag","vn_m60"]]
+            [_sides #2,["vn_m60_100_mag","vn_m60"]],
+            ["SCOPE",""]
         ]],
         ["40K",createHashMapFromArray[
             [_sides #0,["ic_100rnd_825_HP_Tracer_rifleMag","ICP_LMG_01_imp"]],
             [_sides #1,["ic_100rnd_825_HP_Tracer_rifleMag","ICP_LMG_01_imp"]],
-            [_sides #2,["ic_100rnd_825_HP_Tracer_rifleMag","ICP_LMG_01_imp"]]
+            [_sides #2,["ic_100rnd_825_HP_Tracer_rifleMag","ICP_LMG_01_imp"]],
+            ["SCOPE",""]
         ]]
     ]],
     [_roles #15 /*mat*/,createHashMapFromArray[
@@ -211,7 +217,7 @@ UnitWeapons = createHashMapFromArray[
         ]]
     ]],
     ["GLHG",createHashMapFromArray[
-        ["BASE",""],
+        ["BASE","glaunch_GLX_lxWS"],
         ["GM","gm_pallad_d_brn"],
         ["VN","vn_m79_p"],
         ["40K","TIOW_IG_GL"]
@@ -285,7 +291,7 @@ ItemsGear= createHashMapFromArray [
         ["GM",      (_itemsGL #1)],
         ["VN",      (_itemsGL #2)],
         ["40K",     (_itemsGL #3)],
-        ["Amount",  []]
+        ["Amount",  [19,6,4,4]]
     ]],
     ["NVG",createHashMapFromArray[
         ["BASE",    [_items #12,_items #14,_items #21,_items #22]],
@@ -301,13 +307,6 @@ ItemsGear= createHashMapFromArray [
         ["40K",     [_items #2,_items #23,_items #24]],
         ["Amount",  [1,4,4]]
     ]],
-    //[_loadRole #1 /*sql*/,createHashMapFromArray[
-    //    ["BASE",    [_items #17,_items #18,_items #19,_items #20]],
-    //    ["GM",      [_items #17,_items #18,_items #19,_items #20]],
-    //    ["VN",      [_items #17,_items #18,_items #19,_items #20]],
-    //    ["40K",     [_items #17,_items #18,_items #19,_items #20]],
-    //    ["Amount",  [2,2,2,2]]
-    //]],
     [_loadRole #2 /*jtac*/,createHashMapFromArray[
         ["BASE",    [_items #13,(_itemsRadio #0) #2]],
         ["GM",      [_items #13,(_itemsRadio #1) #2]],
@@ -315,13 +314,6 @@ ItemsGear= createHashMapFromArray [
         ["40K",     [_items #13,(_itemsRadio #3) #2]],
         ["Amount",  [1,1]]
     ]],
-    //[_loadRole #3 /*ftl*/,createHashMapFromArray[
-    //    ["BASE",    [_items #17,_items #18,_items #19,_items #20]],
-    //    ["GM",      [_items #17,_items #18,_items #19,_items #20]],
-    //    ["VN",      [_items #17,_items #18,_items #19,_items #20]],
-    //    ["40K",     [_items #17,_items #18,_items #19,_items #20]],
-    //    ["Amount",  [2,2,2,2]]
-    //]],
     [_loadRole #4 /*gren*/,createHashMapFromArray[
         ["BASE",    [_items #6]],
         ["GM",      [_items #6]],
@@ -378,11 +370,11 @@ itemsCrates=createHashMapFromArray[
         ["Amount",  [2,8,8] +(_itemsTrowAmt #1) +(_medicAmt #2)]
     ]],
     [_loadName #2 /*Crate Peleton*/,createHashMapFromArray[
-        ["BASE",    [_items #13,_items #14,_items #15,(_itemsRadio #0 #1)]],
-        ["GM",      [_items #13,"","",(_itemsRadio #1 #1)]],
-        ["VN",      [_items #13,"","",(_itemsRadio #2 #1)]],
-        ["40K",     [_items #13,_items #14,_items #15,(_itemsRadio #3 #1)]],
-        ["Amount",  [6,16,4,3]]
+        ["BASE",    [_items #17,_items #18,_items #19,_items #20,_items #25,_items #26,_items #13,_items #14,_items #15,(_itemsRadio #0 #1)]],
+        ["GM",      [_items #17,_items #18,_items #19,_items #20,_items #25,_items #26,_items #13,"","",(_itemsRadio #1 #1)]],
+        ["VN",      [_items #17,_items #18,_items #19,_items #20,_items #25,_items #26,_items #13,"","",(_itemsRadio #2 #1)]],
+        ["40K",     [_items #17,_items #18,_items #19,_items #20,_items #25,_items #26,_items #13,_items #14,_items #15,(_itemsRadio #3 #1)]],
+        ["Amount",  [10,10,10,10,10,10,6,16,4,3]]
     ]],
     [_loadName #3 /*Crate Small*/,createHashMapFromArray[
         ["BASE",    [_items #3,_items #15] +(_itemsTrow #0) +_medic],

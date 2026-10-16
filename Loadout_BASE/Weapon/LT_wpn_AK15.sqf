@@ -60,7 +60,7 @@ _handGunAttMuzzle = ["muzzle_snds_l"];
 _handGunAttBipod = [""];
 _handGunAttScope = [""];
 
-_launcher = ["launch_RPG32_green_F"];
-_launcher_Mags = ["RPG32_HE_F","RPG32_F"];
+_launcher = ["gm_pzf3_blk"];
+_launcher_Mags = ["gm_1Rnd_60mm_heat_dm22_pzf3","gm_1Rnd_60mm_heat_dm32_pzf3"];
 
 //=====================================================================================

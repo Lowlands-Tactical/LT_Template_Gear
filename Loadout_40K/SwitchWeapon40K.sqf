@@ -12,7 +12,7 @@ case 00: {
 };
 */
 
-switch (_lt_wpnTMP) do 
+switch (_sideWpn) do 
 {
 	case 0:
 	{

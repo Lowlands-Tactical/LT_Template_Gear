@@ -28,42 +28,46 @@ _setRespawn = _vehicle getVariable ["LT_veh_setRepawn", 0];
 // Eject vaulty variables
 if (_vehSide == "CIV") exitWith
 {
-	Diag_Log format["[LT] (Loadout) Side is civilian for Vehicle: %1", typeOf _vehicle];
+	Diag_Log format["[LT] (InitPostVehicle) Side is civilian for Vehicle: %1", typeOf _vehicle];
 	if ("lt_debug" call bis_fnc_getParamValue == 1) then 
 	{
-		systemChat format["[LT] (Loadout) Side is civilian for Vehicle: %1", typeOf _vehicle];
+		systemChat format["[LT] (InitPostVehicle) Side is civilian for Vehicle: %1", typeOf _vehicle];
 	};
 	_return
 };
 if !(_loadout isEqualType "") exitWith 
 {
-	Diag_Log format["[LT] (Loadout) Loadout is not STRING: %1 for Vehicle: %2", _loadout,typeOf _vehicle];
+	Diag_Log format["[LT] (InitPostVehicle) Loadout is not STRING: %1 for Vehicle: %2", _loadout,typeOf _vehicle];
 	if ("lt_debug" call bis_fnc_getParamValue == 1) then 
 	{
-		systemChat format["[LT] (Loadout) Loadout is not STRING: %1 for Vehicle: %2", _loadout,typeOf _vehicle];
+		systemChat format["[LT] (InitPostVehicle) Loadout is not STRING: %1 for Vehicle: %2", _loadout,typeOf _vehicle];
 	};
 	_return
 };
-Diag_Log format["[LT] (Loadout) Vehicle %1 has side %2 and Loadout: %3",typeOf _vehicle, _vehSide, _loadout];
+Diag_Log format["[LT] (InitPostVehicle) Vehicle %1 has side %2 and Loadout: %3",typeOf _vehicle, _vehSide, _loadout];
 if ("lt_debug" call bis_fnc_getParamValue == 1) then 
 {
-	systemChat format["[LT] (Loadout) Vehicle %1 has side %2 and Loadout: %3",typeOf _vehicle,  _vehSide, _loadout];
+	systemChat format["[LT] (InitPostVehicle) Vehicle %1 has side %2 and Loadout: %3",typeOf _vehicle,  _vehSide, _loadout];
 };
 
 _check = true;
-switch (_loadout) do {
+switch (_loadout) do
+{
 	case "None";
-	case "Empty":{
+	case "Empty":
+	{
 		clearWeaponCargoGlobal _vehicle;
 		clearMagazineCargoGlobal _vehicle;
 		clearItemCargoGlobal _vehicle;
 		clearBackpackCargoGlobal _vehicle;
 		_check = false;
 	};
-	case "Custom":{
+	case "Custom":
+	{
 		_check = false;
 	};
-	default{
+	default
+	{
 		clearWeaponCargoGlobal _vehicle;
 		clearMagazineCargoGlobal _vehicle;
 		clearItemCargoGlobal _vehicle;
@@ -139,6 +143,7 @@ if (_check) then
 			}forEach _loadGearPack;
 		};
 	};
+
 	_loadWeaponSide = weaponCrates get _vehSide;
 	_loadWeaponCrate = _loadWeaponSide get _loadout;
 	if !(isNil "_loadWeaponCrate") then
@@ -152,14 +157,42 @@ if (_check) then
 			_loadWeaponAmt = (_loadWeaponCrate get _x) #2;		//SCALAR
 			_loadAmmoOnly = (_loadWeaponCrate get _x) #3;		//BOOL
 			_loadAmmoAmt = (_loadWeaponCrate get _x) #4;		//ARRAY
-			_loadAmmoAmt resize [(count _loadAmmo),(_loadAmmoAmt #0)];
+			_loadGLAmmo = (_loadWeaponHash get "GLAmmo") #0;	//ARRAY
+			_loadGLAmmoAmt = (_loadWeaponCrate get _x) #4;		//ARRAY
+			_loadGLWpn = (_loadWeaponHash get "GLWeapon");		//ARRAY
+
+			//Resize ammo amount arrays
+			if (((count _loadAmmoAmt) != (count _loadAmmo))) then
+			{
+				_loadAmmoAmt resize [(count _loadAmmo),(_loadAmmoAmt #0)];
+			};
+			
 			if (_loadAmmoOnly) then
 			{
+				if !(isNil "_loadGLAmmo") then
+				{
+					if ((count _loadGLAmmoAmt) != (count _loadGLAmmo)) then
+					{
+						_loadGLAmmoAmt resize [(count _loadGLAmmo),(_loadGLAmmoAmt #0)];
+					};
+					{
+						_vehicle addItemCargoGlobal [_x, _loadGLAmmoAmt select _forEachIndex];
+					}forEach _loadGLAmmo;
+				};
+				
 				{
 					_vehicle addItemCargoGlobal [_x, _loadAmmoAmt select _forEachIndex];
 				}forEach _loadAmmo;
 			}else
 			{
+				if !(isNil "_loadGLWpn") then
+				{
+					if (_loadGLWpn #0) then
+					{
+						_vehicle addWeaponWithAttachmentsCargoGlobal [_loadGLWpn #1,2];
+					};
+				};
+				
 				if (_loadWeaponLaunch) then
 				{
 					_loadWeapon = selectRandom _loadWeapon;
@@ -198,7 +231,11 @@ if (_setRespawn == 0) then
 	if (_vehicle isKindOf "LandVehicle" OR _vehicle isKindOf "Air" OR _vehicle isKindOf "Ship") then 
 	{
 		_vehRespawn = _vehicle getVariable ["LT_veh_respawn", 0];
-		Diag_Log format["[LT] (prepLoadout) Vehicle: %1 has Respawn: %2", _vehicle, _vehRespawn];
+		Diag_Log format["[LT] (InitPostVehicle) Vehicle: %1 has Respawn: %2", _vehicle, _vehRespawn];
+		if ("lt_debug" call bis_fnc_getParamValue == 1) then 
+		{
+			systemChat format["[LT] (InitPostVehicle) Vehicle: %1 has Respawn: %2", _vehicle, _vehRespawn];
+		};
 		if (_vehRespawn != 0) then 
 		{
 			_vehicle setVariable ["LT_veh_setRepawn", 1];

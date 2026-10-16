@@ -12,9 +12,10 @@ Empty case for when added
 	};
 */
 
-switch (_lt_wpnTMP) do 
+switch (_sideWpn) do 
 {
-	case 0: {
+	case 0:
+	{
 		if (fileExists "Scripts\customWeapon.sqf") then 
 		{
 			call compileScript ["Scripts\customWeapon.sqf"]
@@ -23,19 +24,24 @@ switch (_lt_wpnTMP) do
 			#include "\lt_template_gear\Reference\LT_wpn_CUSTOM.sqf"
 		};
 	};
-	case 1: {
+	case 1:
+	{
 		#include "\lt_template_gear\Loadout_VN\Weapon\LT_wpn_US_M16A1_Black.sqf"
 	};
-	case 2: {
+	case 2:
+	{
 		#include "\lt_template_gear\Loadout_VN\Weapon\LT_wpn_US_M16A1_Camo.sqf"
 	};
-	case 3: {
+	case 3:
+	{
 		#include "\lt_template_gear\Loadout_VN\Weapon\LT_wpn_US_Navy_SEALS.sqf"
 	};
-	case 6: {
+	case 6:
+	{
 		#include "\lt_template_gear\Loadout_VN\Weapon\LT_wpn_XM17.sqf"
 	};
-	case 7: {
+	case 7:
+	{
 		#include "\lt_template_gear\Loadout_VN\Weapon\LT_wpn_XM17Camo.sqf"
 	};
 };

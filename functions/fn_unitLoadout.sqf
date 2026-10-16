@@ -12,7 +12,7 @@ _this select 1 = side unit
 _this select 2 = unit role
 
 Example:
-[this, "WEST"] call LT_fnc_unitLoadout
+[this, "WEST",""] call LT_fnc_unitLoadout
 
 */
 
@@ -33,7 +33,16 @@ if ((_unitRole == "custom") OR (_unitSide == "CIV")) exitWith
 
     _return
 };
+Diag_Log format["[LT] (initPostUnit) Unit %1 has Side %2 and Role: %3",name _unit, _unitSide, _unitRole];
+if ("lt_debug" call bis_fnc_getParamValue == 1) then 
+{
+	systemChat format["[LT] (initPostUnit) Unit %1 has Side %2 and Role: %3",name _unit, _unitSide, _unitRole];
+};
 _return = true;
+
+//Apply ACE Drag/Carry to apply ignore weight
+[_unit,true,[0,1.2,0],180,true,true] call ace_dragging_fnc_setDraggable;
+[_unit,true,[.35,-.1,-1.2],180,true,true] call ace_dragging_fnc_setCarryable;
 
 // Map/GPS/Bino
 _unitLink = _unit getVariable ["LT_unit_link", true];
@@ -375,12 +384,9 @@ if (_unitSpecial) then
 					(backpackContainer _unit) addItemCargoGlobal [_x, 6];
 				}forEach _ammoSP;
 				_unit addWeapon (selectRandom _weaponSP);
-				if (_unitRole == "ar") then
 				{
-					{
-						_unit addPrimaryWeaponItem _x;
-					}forEach (_weaponHash get "Att");
-				};
+					_unit addPrimaryWeaponItem _x;
+				}forEach (_weaponHash get "Att");
 			};
 		};
 	};
@@ -412,7 +418,7 @@ if (_unitWeapon) then
 		}forEach _glAmmo;
 		if (_glHG #0) then
 		{
-			(backpackContainer _unit) addWeaponCargoGlobal (_glHG #1);
+			(backpackContainer _unit) addWeaponCargoGlobal [(_glHG #1), 1];
 		};
 	};
 	if (typeName _weaponHash != typeName true) then
@@ -435,7 +441,7 @@ if (_unitWeapon) then
 	_ammo = _weaponHash get "Ammo";
 	_weaponAtt = _weaponHash get "Att";
 	(vestContainer _unit) addItemCargoGlobal [_ammo #0,3];
-	_unit addWeapon _weapon;
+	_unit addWeapon (selectRandom _weapon);
 	removeAllHandgunItems _unit;
 	{
 		_unit addHandgunItem _x;

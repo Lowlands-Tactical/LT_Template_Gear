@@ -12,9 +12,10 @@ Empty case for when added
 	};
 */
 
-switch (_lt_camoTMP) do 
+switch (_sideGear) do 
 {
-	case 0: {
+	case 0:
+	{
 		if (fileExists "Scripts\customGear.sqf") then 
 		{
 			call compileScript ["Scripts\customGear.sqf"]
@@ -23,67 +24,88 @@ switch (_lt_camoTMP) do
 			#include "\lt_template_gear\Reference\LT_camo_CUSTOM.sqf"
 		};
 	};
-	case 1: {
+	case 1:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_US_Army_Olive.sqf"
 	};
-	case 2: {
+	case 2:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_US_Army_Brown.sqf"
 	};
-	case 3: {
+	case 3:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_US_Navy_Olive.sqf"
 	};
-	case 4: {
+	case 4:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_US_SF_66_Leopard.sqf"
 	};
-	case 5: {
+	case 5:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_US_SF_Tiger.sqf"
 	};
-	case 6: {
+	case 6:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_AUS_Army_Olive.sqf"
 	};
-	case 7: {
+	case 7:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_AUS_SAS_ERDL.sqf"
 	};
-	case 8: {
+	case 8:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_ROK_Army_Frog.sqf"
 	};
-	case 9: {
+	case 9:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_MACV.sqf"
 	};
-	case 10: {
+	case 10:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_MACVDark.sqf"
 	};
-	case 11: {
+	case 11:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_VC_Main_Force_Black.sqf"
 	};
-	case 12: {
+	case 12:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_VC_Local_Cadre_Mixed.sqf"
 	};
-	case 13: {
+	case 13:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_KR_Army_Black.sqf"
 	};
-	case 14: {
+	case 14:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_PL_Army_Brown.sqf"
 	};
-	case 15: {
+	case 15:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_PAVN_Army_Olive.sqf"
 	};
-	case 16: {
+	case 16:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_PAVN_Marines_BlueWhite.sqf"
 	};
-	case 17: {
+	case 17:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_PAVN_Commandos_Mixed.sqf"
 	};
-	case 18: {
+	case 18:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_FANK_Army_Olive.sqf"
 	};
-	case 19: {
+	case 19:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_ARVN_Army_Olive.sqf"
 	};
-	case 20: {
+	case 20:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_ARVN_Ranger_BDQ.sqf"
 	};
-	case 21: {
+	case 21:
+	{
 		#include "\lt_template_gear\Loadout_VN\Camo\LT_camo_RLA_Army_Olive.sqf"
 	};
 };

@@ -20,8 +20,8 @@ _unifMedic = _unif;
 _vestMedic = _vest;
 _helmMedic = _helm;
 
-_nvgs = ["NVGogglesB_blk_F"];
-_goggles = [""];
+_nvgs = ["O_NVGoggles_blk_F"];
+_goggles = ["G_Bandanna_beast"];
 
 _unifCrew = ["NAF_U_GVTT_blk"];
 _vestCrew = ["NAF_V_PlateCarrier1_blk"];

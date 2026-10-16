@@ -63,6 +63,7 @@ if (isNil "_ltMission") exitWith
 
     _itemsGL = ["","","",""];
     _itemsGLNVG = ["","","",""];
+    _itemsGLAmt = [];
 
     _rifleMark = [""];
     _rifleMark_Mags = "";
@@ -98,6 +99,16 @@ if (isNil "_ltMission") exitWith
 
     _launcher = [""];
     _launcher_Mags = [""];
+
+    _launcherAA = "";
+    _launcherAA_Mags = "";
+
+    _mmg = "";
+    _mmg_Mag = "";
+    _mmg_Scope = "";
+
+    _mat = "";
+    _mat_Mags = [""];
 
 _missionPeriod = MissionSettings get "Period";
 _missionScope = MissionSettings get "SCOPE";
@@ -140,10 +151,10 @@ LT_fnc_weaponItems={
     };
     _result = [[_weapon,_attachments #1,_attachments #0,_attachments #3,[],[],_attachments #2],_attachments];
 
-    Diag_log format["[LT] (Weapon) WeaponWithAttachments: %1", _result #0];
+    Diag_log format["[LT] (XEH) WeaponWithAttachments: %1", _result #0];
     if ("lt_debug" call bis_fnc_getParamValue == 1) then 
     {
-        systemChat format["[LT] (Weapon) WeaponWithAttachments: %1", _result #0];
+        systemChat format["[LT] (XEH) WeaponWithAttachments: %1", _result #0];
     };
     _result;
 };
@@ -190,6 +201,7 @@ _loadRole = TabletSettings get "ROLES";
     if ((_helmJet select 0) == "") then {_helmJet = _helmHeli};
     if ((_itemsGL select 0) == "") then {_itemsGL = ((ItemsGear get "GL") get _missionPeriod)#0};
     if ((_itemsGLNVG select 0) == "") then {_itemsGLNVG = ((ItemsGear get "GL") get _missionPeriod)#1};
+    if (_mmg_Scope == "" AND _missionScope) then {_mmg_Scope = (((UnitWeapons get (_loadRole #14)) get _missionPeriod) get "SCOPE")};
 
     // Check GL Weapon and define GL Ammo
     _glBool = false;
@@ -199,16 +211,28 @@ _loadRole = TabletSettings get "ROLES";
         _glBool = true;
         _rifleGL = _rifle;
     };
-    _ammoGL = if (MissionSettings get "NVG") then{_itemsGLNVG;}else{_itemsGL;};
-    _itemsGLAmt	= [19,6,4,4];
+    _ammoGL = if ((MissionSettings get "NVG")) then{_itemsGLNVG;}else{_itemsGL;};
+    _itemsGLAmt = if (_itemsGLAmt isEqualTo []) then {((ItemsGear get "GL") get "Amount")} else {_itemsGLAmt};
+
 
     // Pre select heavy weapon types
-    _periodWPN=createHashMapFromArray[
-        [_loadRole #7,[_launcher_Mags,_launcher]],
-        [_loadRole #8,((UnitWeapons get (_loadRole #8)) get _missionPeriod) get _x],
-        [_loadRole #14,((UnitWeapons get (_loadRole #14)) get _missionPeriod) get _x],
-        [_loadRole #15,((UnitWeapons get (_loadRole #15)) get _missionPeriod) get _x]
-    ];
+    if (_launcherAA isNotEqualTo "") then
+    {
+        ((UnitWeapons get (_loadRole #8)) get _missionPeriod) set [_x, [_launcherAA_Mags,_launcherAA]];
+    };
+    if (_mmg isNotEqualTo "") then
+    {
+        ((UnitWeapons get (_loadRole #14)) get _missionPeriod) set [_x, [_mmg_Mag,_mmg]];
+    };
+    if (_mat isNotEqualTo "") then
+    {
+        ((UnitWeapons get (_loadRole #15)) get _missionPeriod) set [_x, [_mat_Mags,_mat]];
+    };
+    _weaponAT = [_launcher_Mags,_launcher];
+    _weaponAA = ((UnitWeapons get (_loadRole #8)) get _missionPeriod) get _x;
+    _weaponMMG = ((UnitWeapons get (_loadRole #14)) get _missionPeriod) get _x;
+    _weaponMAT = ((UnitWeapons get (_loadRole #15)) get _missionPeriod) get _x;
+    
     _rifleAtt = [_missionScope,_missionAtt,[(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)],"Rifle", (selectRandom _rifle)] call LT_fnc_weaponItems;
     _rifleGLAtt = [_missionScope,_missionAtt,[(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)],"Rifle(GL)", (selectRandom _rifleGL)] call LT_fnc_weaponItems;
     _rifleCrewAtt = [_missionScope,_missionAtt,[(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)],"Rifle(Crew)", (selectRandom _rifleCrew)] call LT_fnc_weaponItems;
@@ -264,14 +288,14 @@ _loadRole = TabletSettings get "ROLES";
                     ["Att",     _rifleHGAtt #1]
                 ]],
                 [_loadRole #7,/*riflat*/ createHashMapFromArray[
-                    ["Weapon",  (_periodWPN get (_loadRole #7))#1],
-                    ["Ammo",    (_periodWPN get (_loadRole #7))#0],
-                    ["WithAtt", [((_periodWPN get (_loadRole #7))#1)#0,"","","",[((_periodWPN get (_loadRole #7))#0)#0,1],[],""]]
+                    ["Weapon",  (_weaponAT #1)],
+                    ["Ammo",    (_weaponAT #0)],
+                    ["WithAtt", [((_weaponAT #1)#0),"","","",[((_weaponAT #0)#0),1],[],""]]
                 ]],
                 [_loadRole #8,/*riflaa*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #8))#1]],
-                    ["Ammo",    [(_periodWPN get (_loadRole #8))#0]],
-                    ["WithAtt", [(_periodWPN get (_loadRole #8))#1,"","","",[(_periodWPN get (_loadRole #8))#0,1],[],""]]
+                    ["Weapon",  [(_weaponAA #1)]],
+                    ["Ammo",    [(_weaponAA #0)]],
+                    ["WithAtt", [(_weaponAA #1),"","","",[(_weaponAA #0),1],[],""]]
                 ]],
                 [_loadRole #9,/*dmr*/ createHashMapFromArray[
                     ["Weapon",  _rifleMark],
@@ -286,14 +310,15 @@ _loadRole = TabletSettings get "ROLES";
                     ["Att",     _rifleARAtt #1]
                 ]],
                 [_loadRole #14,/*mmg*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #14))#1]],
-                    ["Ammo",    [(_periodWPN get (_loadRole #14))#0]],
-                    ["WithAtt", [(_periodWPN get (_loadRole #14))#1,"","","",[(_periodWPN get (_loadRole #14))#0,1],[],""]]
+                    ["Weapon",  [(_weaponMMG #1)]],
+                    ["Ammo",    [(_weaponMMG #0)]],
+                    ["WithAtt", [(_weaponMMG #1),"","",_mmg_Scope,[(_weaponMMG #0),1],[],""]],
+                    ["Att",     [_mmg_Scope]]
                 ]],
                 [_loadRole #15,/*mat*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #15))#1]],
-                    ["Ammo",    (_periodWPN get (_loadRole #15))#0],
-                    ["WithAtt", [(_periodWPN get (_loadRole #15))#1,"","","",[((_periodWPN get (_loadRole #15))#0)#0,1],[],""]]
+                    ["Weapon",  [(_weaponMAT #1)]],
+                    ["Ammo",    (_weaponMAT #0)],
+                    ["WithAtt", [(_weaponMAT #1),"","","",[((_weaponMAT #0)#0),1],[],""]]
                 ]]
             ];
             publicVariable "westGear";
@@ -346,14 +371,14 @@ _loadRole = TabletSettings get "ROLES";
                     ["Att",     _rifleHGAtt #1]
                 ]],
                 [_loadRole #7,/*riflat*/ createHashMapFromArray[
-                    ["Weapon",  (_periodWPN get (_loadRole #7))#1],
-                    ["Ammo",    (_periodWPN get (_loadRole #7))#0],
-                    ["WithAtt", [((_periodWPN get (_loadRole #7))#1)#0,"","","",[((_periodWPN get (_loadRole #7))#0)#0,1],[],""]]
+                    ["Weapon",  (_weaponAT #1)],
+                    ["Ammo",    (_weaponAT #0)],
+                    ["WithAtt", [((_weaponAT #1)#0),"","","",[((_weaponAT #0)#0),1],[],""]]
                 ]],
                 [_loadRole #8,/*riflaa*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #8))#1]],
-                    ["Ammo",    [(_periodWPN get (_loadRole #8))#0]],
-                    ["WithAtt", [(_periodWPN get (_loadRole #8))#1,"","","",[(_periodWPN get (_loadRole #8))#0,1],[],""]]
+                    ["Weapon",  [(_weaponAA #1)]],
+                    ["Ammo",    [(_weaponAA #0)]],
+                    ["WithAtt", [(_weaponAA #1),"","","",[(_weaponAA #0),1],[],""]]
                 ]],
                 [_loadRole #9,/*dmr*/ createHashMapFromArray[
                     ["Weapon",  _rifleMark],
@@ -368,14 +393,15 @@ _loadRole = TabletSettings get "ROLES";
                     ["Att",     _rifleARAtt #1]
                 ]],
                 [_loadRole #14,/*mmg*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #14))#1]],
-                    ["Ammo",    [(_periodWPN get (_loadRole #14))#0]],
-                    ["WithAtt", [(_periodWPN get (_loadRole #14))#1,"","","",[(_periodWPN get (_loadRole #14))#0,1],[],""]]
+                    ["Weapon",  [(_weaponMMG #1)]],
+                    ["Ammo",    [(_weaponMMG #0)]],
+                    ["WithAtt", [(_weaponMMG #1),"","",_mmg_Scope,[(_weaponMMG #0),1],[],""]],
+                    ["Att",     [_mmg_Scope]]
                 ]],
                 [_loadRole #15,/*mat*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #15))#1]],
-                    ["Ammo",    (_periodWPN get (_loadRole #15))#0],
-                    ["WithAtt", [(_periodWPN get (_loadRole #15))#1,"","","",[((_periodWPN get (_loadRole #15))#0)#0,1],[],""]]
+                    ["Weapon",  [(_weaponMAT #1)]],
+                    ["Ammo",    (_weaponMAT #0)],
+                    ["WithAtt", [(_weaponMAT #1),"","","",[((_weaponMAT #0)#0),1],[],""]]
                 ]]
             ];
             publicVariable "eastGear";
@@ -428,14 +454,14 @@ _loadRole = TabletSettings get "ROLES";
                     ["Att",     _rifleHGAtt #1]
                 ]],
                 [_loadRole #7,/*riflat*/ createHashMapFromArray[
-                    ["Weapon",  (_periodWPN get (_loadRole #7))#1],
-                    ["Ammo",    (_periodWPN get (_loadRole #7))#0],
-                    ["WithAtt", [((_periodWPN get (_loadRole #7))#1)#0,"","","",[((_periodWPN get (_loadRole #7))#0)#0,1],[],""]]
+                    ["Weapon",  (_weaponAT #1)],
+                    ["Ammo",    (_weaponAT #0)],
+                    ["WithAtt", [((_weaponAT #1)#0),"","","",[((_weaponAT #0)#0),1],[],""]]
                 ]],
                 [_loadRole #8,/*riflaa*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #8))#1]],
-                    ["Ammo",    [(_periodWPN get (_loadRole #8))#0]],
-                    ["WithAtt", [(_periodWPN get (_loadRole #8))#1,"","","",[(_periodWPN get (_loadRole #8))#0,1],[],""]]
+                    ["Weapon",  [(_weaponAA #1)]],
+                    ["Ammo",    [(_weaponAA #0)]],
+                    ["WithAtt", [(_weaponAA #1),"","","",[(_weaponAA #0),1],[],""]]
                 ]],
                 [_loadRole #9,/*dmr*/ createHashMapFromArray[
                     ["Weapon",  _rifleMark],
@@ -450,14 +476,15 @@ _loadRole = TabletSettings get "ROLES";
                     ["Att",     _rifleARAtt #1]
                 ]],
                 [_loadRole #14,/*mmg*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #14))#1]],
-                    ["Ammo",    [(_periodWPN get (_loadRole #14))#0]],
-                    ["WithAtt", [(_periodWPN get (_loadRole #14))#1,"","","",[(_periodWPN get (_loadRole #14))#0,1],[],""]]
+                    ["Weapon",  [(_weaponMMG #1)]],
+                    ["Ammo",    [(_weaponMMG #0)]],
+                    ["WithAtt", [(_weaponMMG #1),"","",_mmg_Scope,[(_weaponMMG #0),1],[],""]],
+                    ["Att",     [_mmg_Scope]]
                 ]],
                 [_loadRole #15,/*mat*/ createHashMapFromArray[
-                    ["Weapon",  [(_periodWPN get (_loadRole #15))#1]],
-                    ["Ammo",    (_periodWPN get (_loadRole #15))#0],
-                    ["WithAtt", [(_periodWPN get (_loadRole #15))#1,"","","",[((_periodWPN get (_loadRole #15))#0)#0,1],[],""]]
+                    ["Weapon",  [(_weaponMAT #1)]],
+                    ["Ammo",    (_weaponMAT #0)],
+                    ["WithAtt", [(_weaponMAT #1),"","","",[((_weaponMAT #0)#0),1],[],""]]
                 ]]
             ];
             publicVariable "guerGear";
@@ -688,6 +715,7 @@ weaponCrates = createHashMapFromArray[
             ["Rifle",       [westWeapons get "Rifle",false,0,true,[48,12]]],
             ["RifleGL",     [westWeapons get "RifleGL",false,0,true,[24,12,6,6]]],
             ["Crew",        [westWeapons get "Crew",false,0,true,[24,6]]],
+            ["AIR",         [westWeapons get "AIR",false,0,true,[16]]],
             ["HG",          [westWeapons get "HG",false,0,true,[16]]],
             [_loadRole #7,  [westWeapons get (_loadRole #7),true,4,true,[4]]],
             [_loadRole #8,  [westWeapons get (_loadRole #8),true,4,true,[4]]],
@@ -706,6 +734,7 @@ weaponCrates = createHashMapFromArray[
             ["Rifle",       [westWeapons get "Rifle",false,0,true,[8,8]]],
             ["RifleGL",     [westWeapons get "RifleGL",false,0,true,[10,5,0,0]]],
             ["Crew",        [westWeapons get "Crew",false,0,true,[8,8]]],
+            ["AIR",         [westWeapons get "AIR",false,0,true,[8]]],
             ["HG",          [westWeapons get "HG",false,0,true,[8]]],
             [_loadRole #8,  [westWeapons get (_loadRole #8),true,0,true,[2]]],
             [_loadRole #9,  [westWeapons get (_loadRole #9),false,0,true,[4]]],
@@ -716,6 +745,7 @@ weaponCrates = createHashMapFromArray[
             ["Rifle",       [westWeapons get "Rifle",false,0,true,[16,16]]],
             ["RifleGL",     [westWeapons get "RifleGL",false,0,true,[20,10,4,4]]],
             ["Crew",        [westWeapons get "Crew",false,0,true,[16,16]]],
+            ["AIR",         [westWeapons get "AIR",false,0,true,[16]]],
             ["HG",          [westWeapons get "HG",false,0,true,[16]]],
             [_loadRole #7,  [westWeapons get (_loadRole #7),true,6,true,[6]]],
             [_loadRole #8,  [westWeapons get (_loadRole #8),true,6,true,[6]]],
@@ -728,6 +758,7 @@ weaponCrates = createHashMapFromArray[
             ["Rifle",       [westWeapons get "Rifle",false,0,true,[24,24]]],
             ["RifleGL",     [westWeapons get "RifleGL",false,0,true,[30,15,8,8]]],
             ["Crew",        [westWeapons get "Crew",false,0,true,[24,24]]],
+            ["AIR",         [westWeapons get "AIR",false,0,true,[24]]],
             ["HG",          [westWeapons get "HG",false,0,true,[24]]],
             [_loadRole #7,  [westWeapons get (_loadRole #7),true,8,true,[8]]],
             [_loadRole #8,  [westWeapons get (_loadRole #8),true,8,true,[8]]],
@@ -755,6 +786,7 @@ weaponCrates = createHashMapFromArray[
             ["Rifle",       [eastWeapons get "Rifle",false,0,true,[48,12]]],
             ["RifleGL",     [eastWeapons get "RifleGL",false,0,true,[24,12,6,6]]],
             ["Crew",        [eastWeapons get "Crew",false,0,true,[24,6]]],
+            ["AIR",         [eastWeapons get "AIR",false,0,true,[16]]],
             ["HG",          [eastWeapons get "HG",false,0,true,[16]]],
             [_loadRole #7,  [eastWeapons get (_loadRole #7),true,4,true,[4]]],
             [_loadRole #8,  [eastWeapons get (_loadRole #8),true,4,true,[4]]],
@@ -773,6 +805,7 @@ weaponCrates = createHashMapFromArray[
             ["Rifle",       [eastWeapons get "Rifle",false,0,true,[8,8]]],
             ["RifleGL",     [eastWeapons get "RifleGL",false,0,true,[10,5,0,0]]],
             ["Crew",        [eastWeapons get "Crew",false,0,true,[8,8]]],
+            ["AIR",         [eastWeapons get "AIR",false,0,true,[8]]],
             ["HG",          [eastWeapons get "HG",false,0,true,[8]]],
             [_loadRole #8,  [eastWeapons get (_loadRole #8),true,0,true,[2]]],
             [_loadRole #9,  [eastWeapons get (_loadRole #9),false,0,true,[4]]],
@@ -783,6 +816,7 @@ weaponCrates = createHashMapFromArray[
             ["Rifle",       [eastWeapons get "Rifle",false,0,true,[16,16]]],
             ["RifleGL",     [eastWeapons get "RifleGL",false,0,true,[20,10,4,4]]],
             ["Crew",        [eastWeapons get "Crew",false,0,true,[16,16]]],
+            ["AIR",         [eastWeapons get "AIR",false,0,true,[16]]],
             ["HG",          [eastWeapons get "HG",false,0,true,[16]]],
             [_loadRole #7,  [eastWeapons get (_loadRole #7),true,6,true,[6]]],
             [_loadRole #8,  [eastWeapons get (_loadRole #8),true,6,true,[6]]],
@@ -795,6 +829,7 @@ weaponCrates = createHashMapFromArray[
             ["Rifle",       [eastWeapons get "Rifle",false,0,true,[24,24]]],
             ["RifleGL",     [eastWeapons get "RifleGL",false,0,true,[30,15,8,8]]],
             ["Crew",        [eastWeapons get "Crew",false,0,true,[24,24]]],
+            ["AIR",         [eastWeapons get "AIR",false,0,true,[24]]],
             ["HG",          [eastWeapons get "HG",false,0,true,[24]]],
             [_loadRole #7,  [eastWeapons get (_loadRole #7),true,8,true,[8]]],
             [_loadRole #8,  [eastWeapons get (_loadRole #8),true,8,true,[8]]],
@@ -822,6 +857,7 @@ weaponCrates = createHashMapFromArray[
             ["Rifle",       [guerWeapons get "Rifle",false,0,true,[48,12]]],
             ["RifleGL",     [guerWeapons get "RifleGL",false,0,true,[24,12,6,6]]],
             ["Crew",        [guerWeapons get "Crew",false,0,true,[24,6]]],
+            ["AIR",         [guerWeapons get "AIR",false,0,true,[16]]],
             ["HG",          [guerWeapons get "HG",false,0,true,[16]]],
             [_loadRole #7,  [guerWeapons get (_loadRole #7),true,4,true,[4]]],
             [_loadRole #8,  [guerWeapons get (_loadRole #8),true,4,true,[4]]],
@@ -840,6 +876,7 @@ weaponCrates = createHashMapFromArray[
             ["Rifle",       [guerWeapons get "Rifle",false,0,true,[8,8]]],
             ["RifleGL",     [guerWeapons get "RifleGL",false,0,true,[10,5,0,0]]],
             ["Crew",        [guerWeapons get "Crew",false,0,true,[8,8]]],
+            ["AIR",         [guerWeapons get "AIR",false,0,true,[8]]],
             ["HG",          [guerWeapons get "HG",false,0,true,[8]]],
             [_loadRole #8,  [guerWeapons get (_loadRole #8),true,0,true,[2]]],
             [_loadRole #9,  [guerWeapons get (_loadRole #9),false,0,true,[4]]],
@@ -850,6 +887,7 @@ weaponCrates = createHashMapFromArray[
             ["Rifle",       [guerWeapons get "Rifle",false,0,true,[16,16]]],
             ["RifleGL",     [guerWeapons get "RifleGL",false,0,true,[20,10,4,4]]],
             ["Crew",        [guerWeapons get "Crew",false,0,true,[16,16]]],
+            ["AIR",         [guerWeapons get "AIR",false,0,true,[16]]],
             ["HG",          [guerWeapons get "HG",false,0,true,[16]]],
             [_loadRole #7,  [guerWeapons get (_loadRole #7),true,6,true,[6]]],
             [_loadRole #8,  [guerWeapons get (_loadRole #8),true,6,true,[6]]],
@@ -862,6 +900,7 @@ weaponCrates = createHashMapFromArray[
             ["Rifle",       [guerWeapons get "Rifle",false,0,true,[24,24]]],
             ["RifleGL",     [guerWeapons get "RifleGL",false,0,true,[30,15,8,8]]],
             ["Crew",        [guerWeapons get "Crew",false,0,true,[24,24]]],
+            ["AIR",         [guerWeapons get "AIR",false,0,true,[24]]],
             ["HG",          [guerWeapons get "HG",false,0,true,[24]]],
             [_loadRole #7,  [guerWeapons get (_loadRole #7),true,8,true,[8]]],
             [_loadRole #8,  [guerWeapons get (_loadRole #8),true,8,true,[8]]],

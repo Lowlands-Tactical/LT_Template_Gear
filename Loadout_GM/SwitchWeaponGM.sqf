@@ -12,7 +12,7 @@ Empty case for when added
 	};
 */
 
-switch (_lt_wpnTMP) do 
+switch (_sideWpn) do 
 {
 	case 0:
 	{
