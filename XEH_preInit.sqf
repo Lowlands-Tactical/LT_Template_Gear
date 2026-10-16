@@ -442,8 +442,4 @@ itemsCrates=createHashMapFromArray[
 ];
 publicVariable "itemsCrates";
 
-Diag_log "[LT] (XEH) Template Gear PreInit finished";
-if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-{
-	systemChat "[LT] (XEH) Template Gear PreInit finished";
-};
+["XEH_Gear","Template Gear PreInit finished",2] call LT_fnc_log;

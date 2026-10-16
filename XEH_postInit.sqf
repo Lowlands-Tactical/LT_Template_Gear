@@ -125,11 +125,7 @@ LT_fnc_weaponItems={
 
     if !(isClass (configFile >> "cfgWeapons" >> _weapon)) exitWith 
     {
-        Diag_log format["[LT] (Weapon) Wrong weapon classname: -%1", _weapon];
-        if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-        {
-            systemChat format["[LT] (Weapon) Wrong weapon classname: -%1", _weapon];
-        };
+        ["XEH_Gear",format ["Wrong weapon classname: -%1", _weapon],2] call LT_fnc_log;
     };
 
     if !(_missionScope) then {_attArr set [4,""]};
@@ -151,11 +147,7 @@ LT_fnc_weaponItems={
     };
     _result = [[_weapon,_attachments #1,_attachments #0,_attachments #3,[],[],_attachments #2],_attachments];
 
-    Diag_log format["[LT] (XEH) WeaponWithAttachments: %1", _result #0];
-    if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-    {
-        systemChat format["[LT] (XEH) WeaponWithAttachments: %1", _result #0];
-    };
+    ["XEH_Gear",format ["WeaponWithAttachments: %1", _result #0],2] call LT_fnc_log;
     _result;
 };
 
@@ -491,13 +483,8 @@ _loadRole = TabletSettings get "ROLES";
             publicVariable "guerWeapons";
         };
     };
-    Diag_log format["[LT] (XEH) Gear set for side:%1 ",_x];
-    Diag_log format["[LT] (XEH) Weapon set for side:%1 ",_x];
-    if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-    {
-        systemChat format["[LT] (XEH) Gear set for side:%1 ",_x];
-        systemChat format["[LT] (XEH) Weapon set for side:%1 ",_x];
-    };
+    ["XEH_Gear",format ["Gear set for side:%1 ", _x],2] call LT_fnc_log;
+    ["XEH_Gear",format ["Weapon set for side:%1 ",_x],2] call LT_fnc_log;
 }forEach _sides;
 
 /*
@@ -926,8 +913,4 @@ weaponCrates = createHashMapFromArray[
 ];
 publicVariable "weaponCrates";
 
-Diag_log "[LT] (XEH) Template Gear PostInit finished";
-if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-{
-	systemChat "[LT] (XEH) Template Gear PostInit finished";
-};
+["XEH_Gear","Template Gear PostInit finished",2] call LT_fnc_log;
