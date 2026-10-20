@@ -49,12 +49,7 @@ _unitGear = (_unitNewVars #3);
 // Eject incorrect
 if ((_unitRole == "custom") OR (_unitSide == "CIV")) exitWith 
 {
-	Diag_log format["[LT] (initPostUnit) role:%1 of side:%2 is incorrect no gear is set",_unitRole,_unitSide];
-	if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-	{
-		systemChat format["[LT] (initPostUnit) role:%1 of side:%2 is incorrect no gear is set",_unitRole,_unitSide];
-	};
-
+	["initPostUnit",format ["role:%1 of side:%2 is incorrect no gear is set",_unitRole,_unitSide],3] call LT_fnc_log;
 	_return
 };
 _return = true;

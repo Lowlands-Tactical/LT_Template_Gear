@@ -9,10 +9,7 @@ ERROR when customFile is not found in mission fallback to this
 
 */
 
-_errorMismatch = "[LT] (customGear) Mission has no Scripts\customGear.sqf fallback applied";
-Diag_log _errorMismatch;
-systemChat _errorMismatch;
-[_errorMismatch] remoteExec ["globalChat", 2];
+["customGear","Mission has no Scripts\customGear.sqf fallback applied",3] call LT_fnc_log;
 
 //=====================================================================================
 

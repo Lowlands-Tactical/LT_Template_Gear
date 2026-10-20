@@ -28,27 +28,15 @@ _setRespawn = _vehicle getVariable ["LT_veh_setRepawn", 0];
 // Eject vaulty variables
 if (_vehSide == "CIV") exitWith
 {
-	Diag_Log format["[LT] (InitPostVehicle) Side is civilian for Vehicle: %1", typeOf _vehicle];
-	if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-	{
-		systemChat format["[LT] (InitPostVehicle) Side is civilian for Vehicle: %1", typeOf _vehicle];
-	};
+	["vehicleLoadout",format ["Side is civilian for Vehicle: %1", typeOf _vehicle],3] call LT_fnc_log;
 	_return
 };
 if !(_loadout isEqualType "") exitWith 
 {
-	Diag_Log format["[LT] (InitPostVehicle) Loadout is not STRING: %1 for Vehicle: %2", _loadout,typeOf _vehicle];
-	if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-	{
-		systemChat format["[LT] (InitPostVehicle) Loadout is not STRING: %1 for Vehicle: %2", _loadout,typeOf _vehicle];
-	};
+	["vehicleLoadout",format ["Loadout is not STRING: %1 for Vehicle: %2", _loadout,typeOf _vehicle],3] call LT_fnc_log;
 	_return
 };
-Diag_Log format["[LT] (InitPostVehicle) Vehicle %1 has side %2 and Loadout: %3",typeOf _vehicle, _vehSide, _loadout];
-if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-{
-	systemChat format["[LT] (InitPostVehicle) Vehicle %1 has side %2 and Loadout: %3",typeOf _vehicle,  _vehSide, _loadout];
-};
+["vehicleLoadout",format ["Vehicle %1 has side %2 and Loadout: %3",typeOf _vehicle, _vehSide, _loadout],2] call LT_fnc_log;
 
 _check = true;
 switch (_loadout) do
@@ -231,11 +219,7 @@ if (_setRespawn == 0) then
 	if (_vehicle isKindOf "LandVehicle" OR _vehicle isKindOf "Air" OR _vehicle isKindOf "Ship") then 
 	{
 		_vehRespawn = _vehicle getVariable ["LT_veh_respawn", 0];
-		Diag_Log format["[LT] (InitPostVehicle) Vehicle: %1 has Respawn: %2", _vehicle, _vehRespawn];
-		if ("lt_debug" call bis_fnc_getParamValue == 1) then 
-		{
-			systemChat format["[LT] (InitPostVehicle) Vehicle: %1 has Respawn: %2", _vehicle, _vehRespawn];
-		};
+		["vehicleLoadout",["Vehicle: %1 has Respawn: %2", _vehicle, _vehRespawn],2] call LT_fnc_log;
 		if (_vehRespawn != 0) then 
 		{
 			_vehicle setVariable ["LT_veh_setRepawn", 1];
