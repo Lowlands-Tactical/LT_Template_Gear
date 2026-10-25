@@ -11,7 +11,7 @@ Defines gear/weapon settings to be used in initPosts
 _ltMission = getMissionConfigValue "LT_Loadout_ID";
 if (isNil "_ltMission") exitWith
 {
-	Diag_log format ["[LT] (XEH) %1 Eject is not mission template", __FILE__];
+	Diag_log format ["[LT] (XEH_Gear) %1 Eject is not mission template", __FILE__];
 };
 
 _missionPeriod = MissionSettings get "Period";
