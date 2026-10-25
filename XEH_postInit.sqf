@@ -18,7 +18,7 @@ _missionPeriod = MissionSettings get "Period";
 _missionScope = MissionSettings get "SCOPE";
 _missionAtt = MissionSettings get "ATT";
 
-LT_fnc_weaponItems={
+_fnc_weaponItems={
     params [
         ["_missionScope", MissionSettings get "SCOPE", [MissionSettings get "SCOPE"]],
         ["_caseNum", MissionSettings get "ATT", [MissionSettings get "ATT"]],
@@ -27,9 +27,11 @@ LT_fnc_weaponItems={
         ["_weapon", "", [""]]
     ];
 
+    _result = [["","","","",[],[],""],["","","",""]];
     if !(isClass (configFile >> "cfgWeapons" >> _weapon)) exitWith 
     {
-        ["XEH_Gear",format ["Wrong weapon classname: -%1", _weapon],2] call LT_fnc_log;
+        ["XEH_Gear",format ["%1: Wrong weapon classname '%2', slot stays empty", _wpnName, _weapon],2] call LT_fnc_log;
+        _result
     };
 
     if !(_missionScope) then {_attArr set [4,""]};
@@ -49,10 +51,13 @@ LT_fnc_weaponItems={
         case 8: {[_attFL,(_attArr #2),(_attArr #3),(_attArr #4)]};
         case 9: {["","","",(_attArr #4)]}; // None unless scope is true
     };
+
     _result = [[_weapon,_attachments #1,_attachments #0,_attachments #3,[],[],_attachments #2],_attachments];
 
     ["XEH_Gear",format ["WeaponWithAttachments: %1", _result #0],2] call LT_fnc_log;
-    _result;
+
+    _result
+};
 };
 
 _sides = TabletSettings get "SIDES";
