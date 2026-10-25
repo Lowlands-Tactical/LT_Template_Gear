@@ -1,6 +1,6 @@
 /*
 
-File: fn_initPostUnit.sqf
+File: fn_unitLoadout.sqf
 Author: Brainless_Ben
 
 Description:
@@ -12,7 +12,7 @@ _this select 1 = side unit
 _this select 2 = unit role
 
 Example:
-[this, "WEST",""] call LT_fnc_initPostUnit
+[this, "WEST",""] call LT_fnc_unitLoadout
 
 */
 
@@ -25,10 +25,10 @@ if !(local _unit) exitWith {_return};
 // Eject incorrect
 if ((_unitRole == "custom") OR (_unitSide == "CIV")) exitWith 
 {
-	["initPostUnit",format ["Role:%1 of Side:%2 is incorrect no gear is set for Unit:%3",_unitRole,_unitSide, name _unit],3] call LT_fnc_log;
+	["unitLoadout",format ["Role:%1 of Side:%2 is incorrect no gear is set for Unit:%3",_unitRole,_unitSide, name _unit],3] call LT_fnc_log;
     _return
 };
-["initPostUnit",format ["Unit %1 has Side %2 and Role: %3",name _unit, _unitSide, _unitRole],3] call LT_fnc_log;
+["unitLoadout",format ["Unit %1 has Side %2 and Role: %3",name _unit, _unitSide, _unitRole],2] call LT_fnc_log;
 _return = true;
 
 //Apply ACE Drag/Carry to apply ignore weight
@@ -321,7 +321,7 @@ if (_unitSpecial) then
 		};
 		if (typeName _roleCont == typeName true) exitWith
 		{
-			["initPostUnit",["Role:%1 does not get role items",_unitRole],3] call LT_fnc_log;
+			["unitLoadout",["Role:%1 does not get role items",_unitRole],3] call LT_fnc_log;
 		};
 		{
 			_roleCont addItemCargoGlobal [_x, _roleAmt select _forEachIndex];
