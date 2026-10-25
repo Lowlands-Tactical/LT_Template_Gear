@@ -62,9 +62,18 @@ _unit setVariable ["LT_unit_gear",_unitGear];
 
 [_unit, _unitSide, _unitRole] spawn
 {
-	params ["_unit","_unitSide","_unitRole"];
-	waitUntil {sleep 0.2;((((westWeapons get "Rifle") get "Weapon")#0) != "")};
-	[_unit, _unitSide, _unitRole] remoteExec ["LT_fnc_unitLoadout"];
+	private ["_until"];
+	params ["_unit", "_unitSide", "_unitRole"];
+	_until = diag_tickTime + 60;
+	waitUntil {sleep 0.2; ((missionNamespace getVariable ["LT_gear_ready", false]) || (diag_tickTime > _until))};
+	if (missionNamespace getVariable ["LT_gear_ready", false]) then
+	{
+		[_unit, _unitSide, _unitRole] remoteExec ["LT_fnc_unitLoadout"];
+	} else
+	{
+		["initPostUnit", format ["gear tables not ready, no loadout for %1", name _unit], 3] call LT_fnc_log;
+		_return = false;
+	};
 };
 
 _return
