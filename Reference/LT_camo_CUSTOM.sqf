@@ -18,9 +18,9 @@ _unif = ["U_C_Journalist"];
 _vest = ["V_Press_F"];
 _helm = ["H_Cap_press"];
 	//Optioneel medic kleding
-_unifMedic = [""];
-_vestMedic = [""];
-_helmMedic = [""];
+_unifMedic = _unif;
+_vestMedic = _vest;
+_helmMedic = _helm;
 
 _nvgs = ["NVGoggles_OPFOR"];
 _goggles = ["G_Goggles_VR"];
@@ -37,9 +37,9 @@ _helmHeli = _helm;
 _unifJet = _unif;
 _helmJet = _helm;
 
-_backpackSmall = [""];
-_backpackLarge = [""];
-_backpackMedic = [""];
-_backpackRadio = [""];
+_backpackSmall = ["B_AssaultPack_mcamo"];
+_backpackLarge = ["B_Carryall_oucamo"];
+_backpackMedic = _backpackSmall;
+_backpackRadio = ["B_RadioBag_01_sage_F"];
 
 //=====================================================================================
