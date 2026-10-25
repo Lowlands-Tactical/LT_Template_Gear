@@ -914,3 +914,5 @@ weaponCrates = createHashMapFromArray[
 publicVariable "weaponCrates";
 
 ["XEH_Gear","Template Gear PostInit finished",2] call LT_fnc_log;
+
+LT_gear_ready = true;
