@@ -55,6 +55,19 @@ Kies bij de camouflage of wapens de optie *Use customGear* of *Use customWeapon*
 
 Als het bestand ontbreekt, valt de mod terug op `Reference/LT_camo_CUSTOM.sqf` en `Reference/LT_wpn_CUSTOM.sqf`. Die geven een foutmelding in het RPT en de chat. Gebruik `Reference/LT_camo_.sqf` en `Reference/LT_wpn_.sqf` als leeg sjabloon.
 
+## Prioriteit en terugval
+
+De missieparameters hebben altijd voorrang. `XEH_postInit.sqf` werkt per kant in deze volgorde:
+
+1. Alle variabelen (`_unif`, `_rifle` enzovoort) worden op een lege waarde gezet.
+2. `SwitchGear*.sqf` en `SwitchWeapon*.sqf` vullen ze, ook `customGear.sqf` en `customWeapon.sqf`. Elke include draait in `isNil { }`, zodat een fout in een bestand de rest niet stopt.
+3. Daarna wordt elke klasse gecontroleerd: hij moet bestaan, bruikbaar zijn (`scope >= 1`) en in het juiste slot passen (primair wapen, handwapen, launcher, uniform, vest, helm, nachtkijker; bij een rugzak moet het een rugzak zijn). Ongeldige klassen worden verwijderd.
+4. Alleen als een slot leeg of helemaal ongeldig blijft, krijgt het een vaste standaard (bijvoorbeeld MX, P07, NLAW of de mcam-uniform). Een tracer-magazijn valt terug op het gewone magazijn, een ongeldig magazijn op het eerste passende.
+
+Elke verwijdering of terugval staat als `WARNING:` met `XEH_Gear` in het RPT en in de chat. Staat er na een missiestart zo'n regel, dan klopt er iets niet in de gear van de missie.
+
+Een nieuwe variabele die een `Camo/*.sqf` of `Weapon/*.sqf` zet, moet ook bovenaan de lus in `XEH_postInit.sqf` met een lege waarde worden aangemaakt. Anders is de waarde buiten de `case` weg en krijg je altijd de standaard.
+
 ## Een nieuwe camouflage of wapenset toevoegen
 
 1. Kopieer het sjabloon `Reference/LT_camo_.sqf` (of `LT_wpn_.sqf`) naar de map van het tijdperk, in `Camo/` of `Weapon/`, en geef het een naam als `LT_camo_Naam.sqf`.
@@ -69,7 +82,7 @@ Als het bestand ontbreekt, valt de mod terug op `Reference/LT_camo_CUSTOM.sqf` e
 | `config.cpp` | CfgPatches, CfgFunctions, CfgRemoteExec en Extended Event Handlers |
 | `XEH_preInit.sqf` | Itemlijsten, rolgroepen (`RoleSettings`) en wapens per rol |
 | `XEH_postInit.sqf` | Bouwt de sets voor het gekozen tijdperk |
-| `functions/` | `unitLoadout`, `vehicleLoadout`, `initPostUnit`, `initPostVeh`, `resetMaxLoad`, `buildinNVG` |
+| `functions/` | `unitLoadout`, `vehicleLoadout`, `initPostUnit`, `initPostVeh`, `resetMaxLoad` |
 | `Loadout_*/` | Per tijdperk: `Camo/`, `Weapon/`, `params*.hpp` en de `Switch*.sqf` bestanden |
 | `Reference/` | Sjablonen en fallback voor eigen gear |
 
