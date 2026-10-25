@@ -220,10 +220,15 @@ if (_unitLink) then
 	if (_nvgBool) then
 	{
 		_nvgs = (_gearUnits get "NVG")#1;
-		_buildInNVG = [(headGear _unit)] call LT_fnc_buildinNVG;
-		if (!_buildInNVG) then
+		// A helmet with a built-in NVG is removed when an NVG is linked: put it back and drop the extra NVG
+		_helmet = headgear _unit;
+		_nvgLink = selectRandom _nvgs;
+		_unit linkItem _nvgLink;
+		if ((headgear _unit) != _helmet) then
 		{
-			_unit linkItem (selectRandom _nvgs);
+			_unit unlinkItem _nvgLink;
+			_unit addHeadgear _helmet;
+			["unitLoadout",format ["Helmet %1 has a built-in NVG, the linked NVG is removed",_helmet],2] call LT_fnc_log;
 		};
 	};
 	_binoRole = RoleSettings get "wpnBino";

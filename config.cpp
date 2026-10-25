@@ -75,7 +75,6 @@ class cfgFunctions
         class template_gear
         {
             file="\lt_template_gear\functions";
-			class buildInNVG {};
             class initPostUnit {};
             class resetMaxLoad {};
 			class unitLoadout {};
@@ -92,7 +91,6 @@ class cfgRemoteExec
         // 0= all machines 1= only clients 2= only server
         mode=2;
         jip=1;
-		class LT_fnc_buildinNVG		{allowedTargets=0;};
         class LT_fnc_InitPostUnit	{allowedTargets=0;};
 		class LT_fnc_resetMaxLoad	{allowedTargets=2;};
 		class LT_fnc_unitLoadout	{allowedTargets=2;};
