@@ -27,7 +27,7 @@ _fnc_weaponItems={
         ["_weapon", "", [""]]
     ];
 
-    _result = [["","","","",[],[],""],["","","",""]];
+    private _result = [["","","","",[],[],""],["","","",""]];
     if !(isClass (configFile >> "cfgWeapons" >> _weapon)) exitWith 
     {
         ["XEH_Gear",format ["%1: Wrong weapon classname '%2', slot stays empty", _wpnName, _weapon],2] call LT_fnc_log;
@@ -58,6 +58,66 @@ _fnc_weaponItems={
 
     _result
 };
+
+// Keeps the valid classnames of a list (array or single string). Only when none is valid the fallback is used and logged
+// (also when a mod is not loaded). A class is valid when it exists, is usable (scope >= 1) and fits the slot:
+// _type 1 = primary weapon, 2 = handgun, 4 = launcher, 801 = uniform, 701 = vest, 605 = helmet, 616 = NVG, -1 = no type check
+// (in cfgVehicles the class has to be a backpack)
+_fnc_keep = {
+	params [
+		["_list", [], [[], ""]],
+		["_fallback", [], [[]]],
+		["_section", "cfgWeapons", [""]],
+		["_name", "?", [""]],
+		["_type", -1, [0]]
+	];
+	private _all = flatten [_list];
+	// && is lazy on purpose: >> would raise an error on a non-string
+	private _valid = _all select {
+		(_x isEqualType "") && {
+			private _cfg = configFile >> _section >> _x;
+			(isClass _cfg) && {(getNumber (_cfg >> "scope")) >= 1} && {
+				switch (true) do
+				{
+					case (_type in [1,2,4]): {(getNumber (_cfg >> "type")) == _type};
+					case (_type > 0): {(getNumber (_cfg >> "ItemInfo" >> "type")) == _type};
+					case (_section == "cfgVehicles"): {(getNumber (_cfg >> "isBackpack")) == 1};
+					default {true};
+				}
+			}
+		}
+	};
+	private _dropped = (_all - _valid) - [""];
+	if ((_dropped isNotEqualTo []) && (_valid isNotEqualTo [])) then
+	{
+		["XEH_Gear", format ["%1: invalid or wrong slot type, removed: %2", _name, _dropped], 1] call LT_fnc_log;
+	};
+	if (_valid isEqualTo []) exitWith
+	{
+		["XEH_Gear", format ["%1: no valid class in %2 (invalid or wrong slot type), fallback %3 used", _name, _list, _fallback], 1] call LT_fnc_log;
+		_fallback
+	};
+	_valid
+};
+
+// A magazine that fits the weapon: the given one, else the given fallback magazine, else the first compatible magazine
+_fnc_mag = {
+	params [
+		["_mag", "", [""]],
+		["_weapon", "", [""]],
+		["_fallbackMag", "", [""]],
+		["_name", "?", [""]]
+	];
+	if (isClass (configFile >> "cfgMagazines" >> _mag)) exitWith {_mag};
+	private _result = if (isClass (configFile >> "cfgMagazines" >> _fallbackMag)) then
+    {
+        _fallbackMag
+    } else
+    {
+        (compatibleMagazines _weapon) param [0, ""]
+    };
+	["XEH_Gear", format ["%1: magazine '%2' not valid, '%3' used", _name, _mag, _result], 1] call LT_fnc_log;
+	_result
 };
 
 _sides = TabletSettings get "SIDES";
@@ -67,41 +127,180 @@ _loadRole = TabletSettings get "ROLES";
     _sideGear = (MissionSettings get "GEAR") get _x;
     _sideWpn = (MissionSettings get "WEAPON") get _x;
 
-    switch (_missionPeriod) do 
-    {
-        case "BASE":
+    // Every side starts from "nothing chosen": placeholders that are never valid.
+    // The variables have to exist here: a variable first set inside an include (a case scope) is lost after that scope.
+    // Only what the includes do not set (or set wrong) is replaced by a fallback further down.
+    // Clothing
+    _unif = [""];
+    _vest = [""];
+    _helm = [""];
+    _unifMedic = [""];
+    _vestMedic = [""];
+    _helmMedic = [""];
+    _nvgs = [""];
+    _goggles = [""];
+    _unifCrew = [""];
+    _vestCrew = [""];
+    _helmCrew = [""];
+    _unifHeliP = [""];
+    _unifHeliC = [""];
+    _vestHeli = [""];
+    _helmHeli = [""];
+    _unifJet = [""];
+    _helmJet = [""];
+    _backpackSmall = [""];
+    _backpackLarge = [""];
+    _backpackMedic = [""];
+    _backpackRadio = [""];
+    // Weapons
+    _rifle = [""];
+    _rifleGL = [""];
+    _rifle_Mags = "";
+    _rifle_Mags_Tr = "";
+    _rifleCrew = [""];
+    _rifleCrew_Mags = "";
+    _rifleCrew_Mags_Tr = "";
+    _rifleAttRailIR = [""];
+    _rifleAttRailFL = [""];
+    _rifleAttMuzzle = [""];
+    _rifleAttBipod = [""];
+    _rifleAttScope = [""];
+    _itemsGL = ["","","",""];
+    _itemsGLNVG = ["","","",""];
+    _itemsGLAmt = [];
+    _rifleMark = [""];
+    _rifleMark_Mags = "";
+    _rifleMarkAttRailIR = [""];
+    _rifleMarkAttRailFL = [""];
+    _rifleMarkAttMuzzle = [""];
+    _rifleMarkAttBipod = [""];
+    _rifleMarkAttScope = [""];
+    _rifleAir = [""];
+    _rifleAir_Mags = "";
+    _rifleAirAttRailIR = [""];
+    _rifleAirAttRailFL = [""];
+    _rifleAirAttMuzzle = [""];
+    _rifleAirAttBipod = [""];
+    _rifleAirAttScope = [""];
+    _rifleAR = [""];
+    _rifleAR_Mags = "";
+    _rifleARAttRailIR = [""];
+    _rifleARAttRailFL = [""];
+    _rifleARAttMuzzle = [""];
+    _rifleARAttBipod = [""];
+    _rifleARAttScope = [""];
+    _handGun = [""];
+    _handGun_Mags = "";
+    _handGunAttRailIR = [""];
+    _handGunAttRailFL = [""];
+    _handGunAttMuzzle = [""];
+    _handGunAttBipod = [""];
+    _handGunAttScope = [""];
+    _launcher = [""];
+    _launcher_Mags = [""];
+    _launcherAA = "";
+    _launcherAA_Mags = "";
+    _mmg = "";
+    _mmg_Mag = "";
+    _mmg_Scope = "";
+    _mat = "";
+    _mat_Mags = [""];
+
+    // Priority 1: the mission parameters. The includes fill the variables above.
+    // isNil: an error inside an include (for example a custom file) only stops that include, the rest of the script keeps running.
+    isNil {
+        switch (_missionPeriod) do
         {
-            #include "\lt_template_gear\Loadout_BASE\SwitchGearBASE.sqf"
-            #include "\lt_template_gear\Loadout_BASE\SwitchWeaponBASE.sqf"
-        };
-        case "GM":
-        {
-            #include "\lt_template_gear\Loadout_GM\SwitchGearGM.sqf"
-            #include "\lt_template_gear\Loadout_GM\SwitchWeaponGM.sqf"
-        };
-        case "VN":
-        {
-            #include "\lt_template_gear\Loadout_VN\SwitchGearVN.sqf"
-            #include "\lt_template_gear\Loadout_VN\SwitchWeaponVN.sqf"
-        };
-        case "40K":
-        {
-            #include "\lt_template_gear\Loadout_40K\SwitchGear40K.sqf"
-            #include "\lt_template_gear\Loadout_40K\SwitchWeapon40K.sqf"
+            case "BASE": { 
+                #include "\lt_template_gear\Loadout_BASE\SwitchGearBASE.sqf"
+            };
+            case "GM": { 
+                #include "\lt_template_gear\Loadout_GM\SwitchGearGM.sqf"
+            };
+            case "VN": { 
+                #include "\lt_template_gear\Loadout_VN\SwitchGearVN.sqf"
+            };
+            case "40K": { 
+                #include "\lt_template_gear\Loadout_40K\SwitchGear40K.sqf"
+            };
         };
     };
-    // In case of custom gear check classes and correct if needed.
-    if ((_unifMedic select 0) == "") then {_unifMedic = _unif};
-    if ((_vestMedic select 0) == "") then {_vestMedic = _vest};
-    if ((_helmMedic select 0) == "") then {_helmMedic = _helm};
-    if ((_backpackMedic select 0) == "") then {_backpackMedic = _backpackSmall};
-    if ((_unifCrew select 0) == "") then {_unifCrew = _unif};
-    if ((_vestCrew select 0) == "") then {_vestCrew = _vest};
-    if ((_helmCrew select 0) == "") then {_helmCrew = _helm};
-    if ((_unifJet select 0) == "") then {_unifJet = _unifHeliP};
-    if ((_helmJet select 0) == "") then {_helmJet = _helmHeli};
-    if ((_itemsGL select 0) == "") then {_itemsGL = ((ItemsGear get "GL") get _missionPeriod)#0};
-    if ((_itemsGLNVG select 0) == "") then {_itemsGLNVG = ((ItemsGear get "GL") get _missionPeriod)#1};
+    isNil {
+        switch (_missionPeriod) do
+        {
+            case "BASE": { 
+                #include "\lt_template_gear\Loadout_BASE\SwitchWeaponBASE.sqf"
+            };
+            case "GM": { 
+                #include "\lt_template_gear\Loadout_GM\SwitchWeaponGM.sqf"
+            };
+            case "VN": { 
+                #include "\lt_template_gear\Loadout_VN\SwitchWeaponVN.sqf"
+            };
+            case "40K": { 
+                #include "\lt_template_gear\Loadout_40K\SwitchWeapon40K.sqf"
+            };
+        };
+    };
+
+    // Priority 2: fallback, only for what is empty or invalid after the includes (every use is logged).
+    // Clothing: a valid default exists for every slot
+    _unif = [_unif,["U_B_CombatUniform_mcam"],"cfgWeapons","_unif",801] call _fnc_keep;
+    _vest = [_vest,["V_PlateCarrier1_rgr"],"cfgWeapons","_vest",701] call _fnc_keep;
+    _helm = [_helm,["H_HelmetB"],"cfgWeapons","_helm",605] call _fnc_keep;
+
+    _unifMedic = [_unifMedic,_unif,"cfgWeapons","_unifMedic",801] call _fnc_keep;
+    _vestMedic = [_vestMedic,_vest,"cfgWeapons","_vestMedic",701] call _fnc_keep;
+    _helmMedic = [_helmMedic,_helm,"cfgWeapons","_helmMedic",605] call _fnc_keep;
+
+    _unifCrew = [_unifCrew,_unif,"cfgWeapons","_unifCrew",801] call _fnc_keep;
+    _vestCrew = [_vestCrew,_vest,"cfgWeapons","_vestCrew",701] call _fnc_keep;
+    _helmCrew = [_helmCrew,_helm,"cfgWeapons","_helmCrew",605] call _fnc_keep;
+
+    _unifHeliP = [_unifHeliP,["NAF_U_HeliCoveralls_Support"],"cfgWeapons","_unifHeliP",801] call _fnc_keep;
+    _unifHeliC = [_unifHeliC,_unifHeliP,"cfgWeapons","_unifHeliC",801] call _fnc_keep;
+    _vestHeli = [_vestHeli,["V_TacVest_blk"],"cfgWeapons","_vestHeli",701] call _fnc_keep;
+    _helmHeli = [_helmHeli,["H_PilotHelmetHeli_O"],"cfgWeapons","_helmHeli",605] call _fnc_keep;
+
+    _unifJet = [_unifJet,_unifHeliP,"cfgWeapons","_unifJet",801] call _fnc_keep;
+    _helmJet = [_helmJet,_helmHeli,"cfgWeapons","_helmJet",605] call _fnc_keep;
+
+    _nvgs = [_nvgs,["NVGoggles"],"cfgWeapons","_nvgs",616] call _fnc_keep;
+    // No goggles is allowed: the fallback is an empty slot
+    _goggles = [_goggles,[""],"cfgGlasses","_goggles"] call _fnc_keep;
+
+    _backpackSmall = [_backpackSmall,["B_AssaultPack_mcamo"],"cfgVehicles","_backpackSmall"] call _fnc_keep;
+    _backpackLarge = [_backpackLarge,["B_Carryall_oucamo"],"cfgVehicles","_backpackLarge"] call _fnc_keep;
+    _backpackMedic = [_backpackMedic,_backpackSmall,"cfgVehicles","_backpackMedic"] call _fnc_keep;
+    _backpackRadio = [_backpackRadio,["B_RadioBag_01_sage_F"],"cfgVehicles","_backpackRadio"] call _fnc_keep;
+
+    // Weapons: every slot falls back to a slot that always exists
+    _rifle = [_rifle,["arifle_MX_F"],"cfgWeapons","_rifle",1] call _fnc_keep;
+    _rifleGL = [_rifleGL,_rifle,"cfgWeapons","_rifleGL",1] call _fnc_keep;
+    _rifleCrew = [_rifleCrew,_rifle,"cfgWeapons","_rifleCrew",1] call _fnc_keep;
+    _rifleAir = [_rifleAir,_rifleCrew,"cfgWeapons","_rifleAir",1] call _fnc_keep;
+    _rifleAR = [_rifleAR,_rifle,"cfgWeapons","_rifleAR",1] call _fnc_keep;
+    _rifleMark = [_rifleMark,_rifle,"cfgWeapons","_rifleMark",1] call _fnc_keep;
+    _handGun = [_handGun,["hgun_P07_F"],"cfgWeapons","_handGun",2] call _fnc_keep;
+
+    // Launcher: only magazines that fit the (valid) launcher
+    _launcher = [_launcher,["launch_NLAW_F"],"cfgWeapons","_launcher",4] call _fnc_keep;
+    _launcher_Mags = (flatten [_launcher_Mags]) select {_x in compatibleMagazines (_launcher #0)};
+    if (_launcher_Mags isEqualTo []) then
+    {
+        _launcher_Mags = (compatibleMagazines (_launcher #0)) select [0, 2];
+        ["XEH_Gear", format ["_launcher_Mags: no fitting magazine, %1 used", _launcher_Mags], 1] call LT_fnc_log;
+    };
+
+    // Magazines: the given one, else one that fits
+    _rifle_Mags = [_rifle_Mags,_rifle #0,"","_rifle_Mags"] call _fnc_mag;
+    _rifle_Mags_Tr = [_rifle_Mags_Tr,_rifle #0,_rifle_Mags,"_rifle_Mags_Tr"] call _fnc_mag;
+    _rifleCrew_Mags = [_rifleCrew_Mags,_rifleCrew #0,"","_rifleCrew_Mags"] call _fnc_mag;
+    _rifleCrew_Mags_Tr = [_rifleCrew_Mags_Tr,_rifleCrew #0,_rifleCrew_Mags,"_rifleCrew_Mags_Tr"] call _fnc_mag;
+    _rifleAir_Mags = [_rifleAir_Mags,_rifleAir #0,"","_rifleAir_Mags"] call _fnc_mag;
+    _rifleAR_Mags = [_rifleAR_Mags,_rifleAR #0,"","_rifleAR_Mags"] call _fnc_mag;
+    _handGun_Mags = [_handGun_Mags,_handGun #0,"","_handGun_Mags"] call _fnc_mag;
+
     if (_mmg_Scope == "" AND _missionScope) then {_mmg_Scope = (((UnitWeapons get (_loadRole #14)) get _missionPeriod) get "SCOPE")};
 
     // Check GL Weapon and define GL Ammo
@@ -112,6 +311,8 @@ _loadRole = TabletSettings get "ROLES";
         _glBool = true;
         _rifleGL = _rifle;
     };
+    if ((_itemsGL select 0) == "") then {_itemsGL = ((ItemsGear get "GL") get _missionPeriod)#0};
+    if ((_itemsGLNVG select 0) == "") then {_itemsGLNVG = ((ItemsGear get "GL") get _missionPeriod)#1};
     _ammoGL = if ((MissionSettings get "NVG")) then{_itemsGLNVG;}else{_itemsGL;};
     _itemsGLAmt = if (_itemsGLAmt isEqualTo []) then {((ItemsGear get "GL") get "Amount")} else {_itemsGLAmt};
 
@@ -134,13 +335,90 @@ _loadRole = TabletSettings get "ROLES";
     _weaponMMG = ((UnitWeapons get (_loadRole #14)) get _missionPeriod) get _x;
     _weaponMAT = ((UnitWeapons get (_loadRole #15)) get _missionPeriod) get _x;
     
-    _rifleAtt = [_missionScope,_missionAtt,[(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)],"Rifle", (selectRandom _rifle)] call LT_fnc_weaponItems;
-    _rifleGLAtt = [_missionScope,_missionAtt,[(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)],"Rifle(GL)", (selectRandom _rifleGL)] call LT_fnc_weaponItems;
-    _rifleCrewAtt = [_missionScope,_missionAtt,[(selectRandom _rifleAttRailIR),(selectRandom _rifleAttRailFL),(selectRandom _rifleAttMuzzle),(selectRandom _rifleAttBipod),(selectRandom _rifleAttScope)],"Rifle(Crew)", (selectRandom _rifleCrew)] call LT_fnc_weaponItems;
-    _rifleAirAtt = [_missionScope,_missionAtt,[(selectRandom _rifleAirAttRailIR),(selectRandom _rifleAirAttRailFL),(selectRandom _rifleAirAttMuzzle),(selectRandom _rifleAirAttBipod),(selectRandom _rifleAirAttScope)],"Air", (selectRandom _rifleAir)] call LT_fnc_weaponItems;
-    _rifleHGAtt = [_missionScope,_missionAtt,[(selectRandom _handGunAttRailIR),(selectRandom _handGunAttRailFL),(selectRandom _handGunAttMuzzle),(selectRandom _handGunAttBipod),(selectRandom _handGunAttScope)],"HG", (selectRandom _handGun)] call LT_fnc_weaponItems;
-    _rifleDMRAtt = [_missionScope,_missionAtt,[(selectRandom _rifleMarkAttRailIR),(selectRandom _rifleMarkAttRailFL),(selectRandom _rifleMarkAttMuzzle),(selectRandom _rifleMarkAttBipod),(selectRandom _rifleMarkAttScope)],_loadRole #9, (selectRandom _rifleMark)] call LT_fnc_weaponItems;
-    _rifleARAtt = [_missionScope,_missionAtt,[(selectRandom _rifleARAttRailIR),(selectRandom _rifleARAttRailFL),(selectRandom _rifleARAttMuzzle),(selectRandom _rifleARAttBipod),(selectRandom _rifleARAttScope)],_loadRole #10, (selectRandom _rifleAR)] call LT_fnc_weaponItems;
+    _rifleAtt=[
+        _missionScope,_missionAtt,
+        [
+            (selectRandom _rifleAttRailIR),
+            (selectRandom _rifleAttRailFL),
+            (selectRandom _rifleAttMuzzle),
+            (selectRandom _rifleAttBipod),
+            (selectRandom _rifleAttScope)
+        ],
+        "Rifle",(selectRandom _rifle)
+    ] call _fnc_weaponItems;
+    
+    _rifleGLAtt=[
+        _missionScope,_missionAtt,
+        [
+            (selectRandom _rifleAttRailIR),
+            (selectRandom _rifleAttRailFL),
+            (selectRandom _rifleAttMuzzle),
+            (selectRandom _rifleAttBipod),
+            (selectRandom _rifleAttScope)
+        ],
+        "Rifle(GL)",(selectRandom _rifleGL)
+    ] call _fnc_weaponItems;
+
+    _rifleCrewAtt=[
+        _missionScope,_missionAtt,
+        [
+            (selectRandom _rifleAttRailIR),
+            (selectRandom _rifleAttRailFL),
+            (selectRandom _rifleAttMuzzle),
+            (selectRandom _rifleAttBipod),
+            (selectRandom _rifleAttScope)
+        ],
+        "Rifle(Crew)",(selectRandom _rifleCrew)
+    ] call _fnc_weaponItems;
+
+    _rifleAirAtt=[
+        _missionScope,_missionAtt,
+        [
+            (selectRandom _rifleAirAttRailIR),
+            (selectRandom _rifleAirAttRailFL),
+            (selectRandom _rifleAirAttMuzzle),
+            (selectRandom _rifleAirAttBipod),
+            (selectRandom _rifleAirAttScope)
+        ],
+        "Air",(selectRandom _rifleAir)
+    ] call _fnc_weaponItems;
+
+    _rifleHGAtt=[
+        _missionScope,_missionAtt,
+        [
+            (selectRandom _handGunAttRailIR),
+            (selectRandom _handGunAttRailFL),
+            (selectRandom _handGunAttMuzzle),
+            (selectRandom _handGunAttBipod),
+            (selectRandom _handGunAttScope)
+        ],
+        "HG",(selectRandom _handGun)
+    ] call _fnc_weaponItems;
+
+    _rifleDMRAtt=[
+        _missionScope,_missionAtt,
+        [
+            (selectRandom _rifleMarkAttRailIR),
+            (selectRandom _rifleMarkAttRailFL),
+            (selectRandom _rifleMarkAttMuzzle),
+            (selectRandom _rifleMarkAttBipod),
+            (selectRandom _rifleMarkAttScope)
+        ],
+        _loadRole #9,(selectRandom _rifleMark)
+    ] call _fnc_weaponItems;
+
+    _rifleARAtt=[
+        _missionScope,_missionAtt,
+        [
+            (selectRandom _rifleARAttRailIR),
+            (selectRandom _rifleARAttRailFL),
+            (selectRandom _rifleARAttMuzzle),
+            (selectRandom _rifleARAttBipod),
+            (selectRandom _rifleARAttScope)
+        ],
+        _loadRole #10,(selectRandom _rifleAR)
+    ] call _fnc_weaponItems;
+
     switch (_x) do {
         case "WEST":{
             westGear = createHashMapFromArray[
