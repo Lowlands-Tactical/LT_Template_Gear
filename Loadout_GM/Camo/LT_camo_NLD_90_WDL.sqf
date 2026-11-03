@@ -21,7 +21,7 @@ _vestMedic = _vest;
 _helmMedic = _helm;
 
 _nvgs = ["gm_ferod51_oli"];
-_goggles = [""];
+_goggles = ["gm_ge_facewear_dustglasses"];
 
 _unifCrew = _unif;
 _vestCrew = _vest;

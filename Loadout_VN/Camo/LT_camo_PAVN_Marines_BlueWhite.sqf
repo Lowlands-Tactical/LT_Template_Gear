@@ -15,7 +15,7 @@
 _unif = ["vn_o_uniform_nva_navy_01","vn_o_uniform_nva_navy_02","vn_o_uniform_nva_navy_03","vn_o_uniform_nva_navy_04"];
 _vest = ["vn_o_vest_01","vn_o_vest_03","vn_o_vest_07","vn_o_vest_02"];
 _helm = ["vn_o_helmet_nva_06"];
-// Optioneel medic kleding
+
 _unifMedic = ["vn_o_uniform_nva_navy_01"];
 _vestMedic = ["vn_o_vest_06"];
 _helmMedic = ["vn_o_helmet_nva_06"];

@@ -15,13 +15,13 @@
 _unif = ["vn_b_uniform_aus_03_01","vn_b_uniform_aus_04_01"];
 _vest = ["vn_b_vest_anzac_01","vn_b_vest_anzac_02","vn_b_vest_anzac_03","vn_b_vest_anzac_04","vn_b_vest_anzac_07"];
 _helm = ["vn_b_boonie_08_02","vn_b_boonie_08_01","vn_b_boonie_07_02","vn_b_boonie_07_01","vn_b_boonie_06_02","vn_b_boonie_06_01"];
-// Optioneel medic kleding
-_unifMedic = [""];
+
+_unifMedic = _unif;
 _vestMedic = ["vn_b_vest_anzac_06"];
-_helmMedic = [""];
+_helmMedic = _helm;
 
 _nvgs = [""];
-_goggles = [""];
+_goggles = ["vn_none"];
 
 _unifCrew = ["vn_b_uniform_aus_01_01"];
 _vestCrew = ["vn_b_vest_anzac_09"];

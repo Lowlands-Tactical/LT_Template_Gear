@@ -15,13 +15,13 @@ Reset player weapons set from mission parameters
 _unif = ["gm_xx_uniform_soldier_bdu_nogloves_80_oli","gm_xx_uniform_soldier_bdu_rolled_80_oli"];
 _vest = ["gm_ge_army_vest_80_rifleman","gm_ge_army_vest_80_rifleman_smg","gm_ge_army_vest_80_leader","gm_ge_army_vest_80_machinegunner"];
 _helm = ["gm_ge_headgear_m62_net","gm_ge_headgear_m62"];
-	//Optioneel medic kleding
+
 _unifMedic = _unif;
 _vestMedic = ["gm_ge_army_vest_80_medic"];
 _helmMedic = _helm;
 
-_nvgs = [""];
-_goggles = [""];
+_nvgs = ["gm_ferod51_oli"];
+_goggles = ["gm_ge_facewear_dustglasses"];
 
 _unifCrew = _unif;
 _vestCrew = ["gm_ge_army_vest_80_rifleman"];

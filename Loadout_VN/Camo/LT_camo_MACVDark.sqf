@@ -15,13 +15,13 @@ Reset player weapons set from mission parameters
 _unif = ["vn_b_uniform_sog_02_03", "vn_b_uniform_sog_01_03", "vn_b_uniform_sog_02_06", "vn_b_uniform_sog_01_06"];
 _vest = ["vn_b_vest_sog_01", "vn_b_vest_sog_06", "vn_b_vest_sog_04"];
 _helm = ["vn_b_bandana_03", "vn_b_boonie_02_03", "vn_b_boonie_02_09", "vn_b_boonie_03_03", "vn_b_boonie_03_09",  "vn_b_boonie_04_03", "vn_b_boonie_04_09",  "vn_b_boonie_05_03", "vn_b_boonie_05_09", "vn_b_boonie_01_03", "vn_b_boonie_01_09"];
-	//Optioneel medic kleding
-_unifMedic = [""];
-_vestMedic = [""];
-_helmMedic = [""];
+
+_unifMedic = _unif;
+_vestMedic = _vest;
+_helmMedic = _helm;
 
 _nvgs = [""];
-_goggles = [""];
+_goggles = ["vn_none"];
 
 _unifCrew = ["vn_b_uniform_macv_01_01"];
 _vestCrew = ["vn_b_vest_usarmy_14"];

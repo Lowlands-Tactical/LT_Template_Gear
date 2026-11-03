@@ -15,13 +15,13 @@
 _unif = ["vn_b_uniform_macv_01_07","vn_b_uniform_macv_03_07","vn_b_uniform_macv_06_07","vn_b_uniform_macv_02_16","vn_b_uniform_macv_04_16","vn_b_uniform_macv_06_16"];
 _vest = ["vn_b_vest_usarmy_02","vn_b_vest_usarmy_03","vn_b_vest_usarmy_04","vn_b_vest_usarmy_05","vn_b_vest_usarmy_08","vn_b_vest_usarmy_09"];
 _helm = ["vn_i_helmet_m1_03_01","vn_b_helmet_m1_01_01","vn_b_helmet_m1_03_01","vn_b_helmet_m1_02_01"];
-// Optioneel medic kleding
+
 _unifMedic = ["vn_b_uniform_macv_03_16"];
 _vestMedic = ["vn_b_vest_usarmy_07"];
 _helmMedic = ["vn_i_helmet_m1_02_01"];
 
 _nvgs = [""];
-_goggles = [""];
+_goggles = ["vn_none"];
 
 _unifCrew = ["vn_b_uniform_macv_01_01"];
 _vestCrew = ["vn_b_vest_usarmy_10"];

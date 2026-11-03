@@ -15,7 +15,7 @@
 _unif = ["vn_o_uniform_nva_army_01_03","vn_o_uniform_nva_army_01_03","vn_o_uniform_nva_army_03_03","vn_o_uniform_nva_army_04_03","vn_o_uniform_nva_army_05_03","vn_o_uniform_nva_army_06_03","vn_o_uniform_nva_army_07_03","vn_o_uniform_nva_army_08_03","vn_o_uniform_nva_army_09_03"];
 _vest = ["vn_o_vest_01","vn_o_vest_03","vn_o_vest_07","vn_o_vest_02"];
 _helm = ["vn_o_helmet_nva_02","vn_o_helmet_nva_07","vn_o_helmet_nva_04","vn_o_helmet_nva_05","vn_o_helmet_nva_10","vn_o_helmet_nva_03","vn_o_helmet_nva_09"];
-// Optioneel medic kleding
+
 _unifMedic = ["vn_o_uniform_nva_army_08_03"];
 _vestMedic = ["vn_o_vest_06"];
 _helmMedic = ["vn_o_helmet_nva_02"];

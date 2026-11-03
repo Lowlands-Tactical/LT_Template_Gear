@@ -20,7 +20,7 @@ _vestMedic = ["gm_ge_army_vest_80_medic"];
 _helmMedic = _helm;
 
 _nvgs = ["gm_ferod51_oli"];
-_goggles = [""];
+_goggles = ["gm_ge_facewear_dustglasses"];
 
 _unifCrew = ["gm_ge_army_uniform_crew_80_oli"];
 _vestCrew = ["gm_ge_army_vest_80_crew"];

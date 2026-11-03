@@ -15,7 +15,7 @@
 _unif = ["vn_o_uniform_vc_01_01","vn_o_uniform_vc_mf_01_07","vn_o_uniform_vc_mf_10_07"];
 _vest = ["vn_o_vest_vc_01","vn_o_vest_vc_02","vn_o_vest_vc_03","vn_o_vest_vc_05"];
 _helm = ["vn_o_helmet_vc_01","vn_o_helmet_vc_02","vn_o_helmet_vc_03","vn_o_helmet_vc_04","vn_o_helmet_vc_05"];
-// Optioneel medic kleding
+
 _unifMedic = ["vn_o_uniform_vc_mf_12_07"];
 _vestMedic = ["vn_o_vest_vc_04"];
 _helmMedic = ["vn_o_helmet_vc_02"];

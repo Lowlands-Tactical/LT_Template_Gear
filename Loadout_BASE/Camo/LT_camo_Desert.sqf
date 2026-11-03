@@ -21,7 +21,7 @@ _vestMedic = _vest;
 _helmMedic = _helm;
 
 _nvgs = ["ACE_NVG_Wide"];
-_goggles = [""];
+_goggles = ["G_Tactical_Clear"];
 
 _unifCrew = ["NAF_U_GVTT_dst"];
 _vestCrew = ["NAF_V_PlateCarrier1_dst"];
