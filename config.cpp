@@ -83,17 +83,15 @@ class cfgFunctions
     };
 };
 
-// Defines the functions that can we remote executed and for whom.
+// Remote executable functions of the Gear mod, 0 = every machine, 1 = clients only, 2 = server only.
+// mode and jip are set once in lt_template_base (config.cpp), this class only adds entries.
 class cfgRemoteExec
 {
     class Functions
     {
-        // 0= all machines 1= only clients 2= only server
-        mode=2;
-        jip=1;
         class LT_fnc_InitPostUnit	{allowedTargets=0;};
 		class LT_fnc_resetMaxLoad	{allowedTargets=2;};
-		class LT_fnc_unitLoadout	{allowedTargets=2;};
+		class LT_fnc_unitLoadout	{allowedTargets=0;};
         class LT_fnc_VehicleLoadout	{allowedTargets=2;};
     };
 };

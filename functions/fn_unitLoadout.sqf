@@ -441,9 +441,9 @@ if (_unitWeapon) then
 };
 
 // Reset unit gear load with extra space
-[(uniformContainer _unit), (ceil(loadabs (uniformContainer _unit))) +50] remoteExec ["LT_fnc_resetMaxLoad"];
-[(vestContainer _unit), (ceil(loadabs (vestContainer _unit))) +200] remoteExec ["LT_fnc_resetMaxLoad"];
-[(backpackContainer _unit), (ceil(loadabs (backpackContainer _unit))) +500] remoteExec ["LT_fnc_resetMaxLoad"];
+[(uniformContainer _unit), (ceil(loadabs (uniformContainer _unit))) +50] remoteExec ["LT_fnc_resetMaxLoad", 2];
+[(vestContainer _unit), (ceil(loadabs (vestContainer _unit))) +200] remoteExec ["LT_fnc_resetMaxLoad", 2];
+[(backpackContainer _unit), (ceil(loadabs (backpackContainer _unit))) +500] remoteExec ["LT_fnc_resetMaxLoad", 2];
 
 //setUnitTrait per role
 switch (_unitRole) do

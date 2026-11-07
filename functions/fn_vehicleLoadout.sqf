@@ -123,7 +123,7 @@ if (_check) then
 										_pack addItemCargoGlobal [_x, _amtAdd select _forEachIndex];
 									}forEach _ammoAdd;
 								};
-								[_pack, ((ceil(loadabs _pack)) + 100)] remoteExec ["LT_fnc_resetMaxLoad"];
+								[_pack, ((ceil(loadabs _pack)) + 100)] remoteExec ["LT_fnc_resetMaxLoad", 2];
 							};
 						};
 					}forEach (everyBackpack _vehicle);
@@ -207,7 +207,7 @@ if (_check) then
 	};
 	sleep 0.2;
 
-	[_vehicle, ((ceil(loadabs _vehicle)) + 2000)] remoteExec ["LT_fnc_resetMaxLoad"];
+	[_vehicle, ((ceil(loadabs _vehicle)) + 2000)] remoteExec ["LT_fnc_resetMaxLoad", 2];
 
 	_return = true;
 }else{_return = false};
