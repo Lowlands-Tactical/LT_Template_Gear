@@ -38,13 +38,14 @@ _items=
     "ACE_HandFlare_Green",          // _items #23
     "ACE_HandFlare_Red",            // _items #24
     "ACE_SpraypaintWhite",          // _items #25
-    "ACE_SpraypaintYellow"          // _items #26
+    "ACE_SpraypaintYellow",         // _items #26
+    "ItemGPS"                       // _items #27
 ];
 _itemsLink=[
-    ["ItemMap","ItemCompass","ItemWatch","ItemGPS"],                    // (_itemsLink #0)
+    ["ItemMap","ItemCompass","ItemWatch","ItemAndroid"],                // (_itemsLink #0)
     ["ItemMap","gm_ge_army_conat2","gm_watch_kosei_80","ACE_DAGR"],     // (_itemsLink #1)
     ["vn_b_item_map","vn_b_item_compass","vn_b_item_watch","ACE_DAGR"], // (_itemsLink #2)
-    ["ItemMap","ItemCompass","ItemWatch","ItemGPS"]                     // (_itemsLink #3)
+    ["ItemMap","ItemCompass","ItemWatch","ItemAndroid"]                 // (_itemsLink #3)
 ];
 _itemsRadio=[
     ["ACRE_PRC343","ACRE_PRC152","ACRE_PRC117F"],   // (_itemsRadio #0)
@@ -67,10 +68,22 @@ _itemsTrowAmt=[
     [0,4,4,6,6,6]           // (_itemsTrowAmt #5)
 ];
 _itemsGL=[
-    [["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"]],              // (_itemsGL #0)
-    [["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"]],              // (_itemsGL #1)
-    [["vn_40mm_m381_he_mag","vn_40mm_m680_smoke_w_mag","vn_40mm_m715_smoke_g_mag","vn_40mm_m682_smoke_r_mag"],["vn_40mm_m381_he_mag","vn_40mm_m583_flare_w_mag","vn_40mm_m661_flare_g_mag","vn_40mm_m662_flare_r_mag"]],// (_itemsGL #2)
-    [["TIOW_IG_GL_Frag_mag","TIOW_IG_GL_Krak_mag","TIOW_IG_GL_Flame_mag","TIOW_IG_GL_Smoke_mag"],["TIOW_IG_GL_Frag_mag","TIOW_IG_GL_Krak_mag","TIOW_IG_GL_Flame_mag","TIOW_IG_GL_Flare_mag"]]                           // (_itemsGL #3)
+    [
+        ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],
+        ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"]
+    ],// (_itemsGL #0)
+    [
+        ["1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],
+        ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F"]
+    ],// (_itemsGL #1)
+    [
+        ["vn_40mm_m381_he_mag","vn_40mm_m680_smoke_w_mag","vn_40mm_m715_smoke_g_mag","vn_40mm_m682_smoke_r_mag"],
+        ["vn_40mm_m381_he_mag","vn_40mm_m583_flare_w_mag","vn_40mm_m661_flare_g_mag","vn_40mm_m662_flare_r_mag"]
+    ],// (_itemsGL #2)
+    [
+        ["TIOW_IG_GL_Frag_mag","TIOW_IG_GL_Krak_mag","TIOW_IG_GL_Flame_mag","TIOW_IG_GL_Smoke_mag"],
+        ["TIOW_IG_GL_Frag_mag","TIOW_IG_GL_Krak_mag","TIOW_IG_GL_Flame_mag","TIOW_IG_GL_Flare_mag"]
+    ]// (_itemsGL #3)
 ];
 
 _medic=[
