@@ -14,7 +14,7 @@ Reset player weapons set from mission parameters
 _rifle = ["JCA_arifle_M4A1_black_F"];
 _rifleGL = ["JCA_arifle_M4A1_GL_black_F"];
 _rifle_Mags	= "30Rnd_556x45_Stanag";
-_rifle_Mags_Tr = "30Rnd_556x45_Stanag_green";
+_rifle_Mags_Tr = "30Rnd_556x45_Stanag_Tracer_Green";
 
 _rifleCrew = ["JCA_arifle_M4A1_short_black_F"];
 _rifleCrew_Mags = _rifle_Mags;
