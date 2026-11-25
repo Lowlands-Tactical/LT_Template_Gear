@@ -266,8 +266,6 @@ _loadRole = TabletSettings get "ROLES";
     _helmJet = [_helmJet,_helmHeli,"cfgWeapons","_helmJet",605] call _fnc_keep;
 
     _nvgs = [_nvgs,["NVGoggles"],"cfgWeapons","_nvgs",616] call _fnc_keep;
-    // No goggles is allowed: the fallback is an empty slot
-    _goggles = [_goggles,[""],"cfgGlasses","_goggles"] call _fnc_keep;
 
     _backpackSmall = [_backpackSmall,["B_AssaultPack_mcamo"],"cfgVehicles","_backpackSmall"] call _fnc_keep;
     _backpackLarge = [_backpackLarge,["B_Carryall_oucamo"],"cfgVehicles","_backpackLarge"] call _fnc_keep;
