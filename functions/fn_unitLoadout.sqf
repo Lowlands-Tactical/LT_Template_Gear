@@ -351,6 +351,7 @@ if (_unitSpecial) then
 				if (_disposable) then
 				{
 					(backpackContainer _unit) addWeaponWithAttachmentsCargoGlobal [_weaponAttSP,3];
+					_unit addWeapon _weaponSP;
 				}else
 				{
 					{
